@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("open");
 
-        // Dynamically toggle the button text between Hamburg (≡) and Close (X)
         if (navMenu.classList.contains("open")) {
             menuToggle.textContent = "X";
         } else {
