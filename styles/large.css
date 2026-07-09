@@ -1,0 +1,38 @@
+/* --- DESKTOP GRID OVERRIDES --- */
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Hide toggle click option buttons on large monitors */
+#menu-toggle {
+    display: none;
+}
+
+/* Force horizontal layout structure */
+nav {
+    display: block !important;
+}
+
+nav ul {
+    flex-direction: row;
+}
+
+nav ul li {
+    flex: 1;
+}
+
+nav ul li a {
+    text-align: center;
+    border-bottom: none;
+}
+
+/* Rearrange components side-by-side */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.courses-list {
+    grid-template-columns: repeat(4, 1fr);
+}

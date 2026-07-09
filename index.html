@@ -4,11 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231</title>
+    <title>WDD 231 - Course Home Page</title>
+
+    <!-- Base Layout / Mobile First Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Desktop Layout Override Stylesheet (Triggers at 768px wide screens) -->
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)">
+
+    <!-- JavaScript File -->
+    <script defer src="scripts/getdates.js"></script>
 </head>
 
 <body>
-    <h1>WDD 231 - Buyannemekh</h1>
+
+    <!-- HEADER SECTION -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <!-- Paste the code directly here -->
+                <svg xmlns="http://w3.org" viewBox="0 0 100 100" width="50" height="50">
+                    <rect width="100" height="100" rx="15" fill="#002244" />
+                    <path d="M 32 30 L 17 50 L 32 70" fill="none" stroke="#ffe082" stroke-width="6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M 68 30 L 83 50 L 68 70" fill="none" stroke="#ffe082" stroke-width="6"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <line x1="58" y1="23" x2="42" y2="77" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
+                </svg>
+                <h1>WDD 231: Web Frontend Development I</h1>
+            </div>
+            <!-- Mobile Hamburger Toggle Menu Button -->
+            <button id="menu-toggle" aria-label="Toggle navigation">≡</button>
+        </div>
+        <p class="subtitle">Buyannemekh Chimeddorj - Course Home Page</p>
+    </header>
+
+    <!-- NAVIGATION MENU -->
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Chamber Project</a></li>
+            <li><a href="#">Final Project</a></li>
+        </ul>
+    </nav>
+
+    <h2>Home</h2>
+
+    <!-- MAIN CONTENT AREA -->
+    <main>
+        <!-- Top Profile Row / Column Section -->
+        <div class="profile-grid">
+            <section class="card about-card">
+                <h3>About Me</h3>
+                <p>Welcome to my course home page! I am a student studying Web Frontend Development I. In this course, I
+                    will be learning how to use semantic HTML, CSS, JavaScript, and modern web design principles to
+                    build functional and responsive websites.</p>
+            </section>
+
+            <section class="card photo-card">
+                <h3>Student Photo</h3>
+                <img src="images/profile.jpg" alt="Profile picture of Buyannemekh Chimeddorj">
+            </section>
+        </div>
+
+        <!-- Course Filtering and Metrics Cards Section -->
+        <section class="card courses-card">
+            <h3>Web Certificate Courses</h3>
+
+            <!-- Category Filtering Buttons -->
+            <div class="filter-buttons">
+                <button class="btn active" id="btn-all">All</button>
+                <button class="btn" id="btn-cse">CSE</button>
+                <button class="btn" id="btn-wdd">WDD</button>
+            </div>
+
+            <!-- List Grid Elements -->
+            <div class="courses-list">
+                <div class="course-item cse">CSE 111</div>
+                <div class="course-item wdd">WDD 130</div>
+                <div class="course-item wdd">WDD 131</div>
+                <div class="course-item wdd active-course">WDD 231</div>
+            </div>
+
+            <p class="credits-text">The total credits for courses listed above is <span id="total-credits">11</span></p>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://x.com" target="_blank">X</a>
+        </div>
+        <p>&copy; <span id="currentyear"></span> | Buyannemekh Chimeddorj | Ulaanbaatar, Mongolia</p>
+        <p id="lastModified"></p>
+    </footer>
 
 </body>
 
