@@ -2,6 +2,11 @@
 body {
     max-width: 1000px;
     margin: 0 auto;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.header-title {
+    font-size: 2rem;
 }
 
 /* Hide toggle click option buttons on large monitors */

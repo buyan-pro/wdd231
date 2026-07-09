@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
     padding: 10px;
@@ -29,6 +29,11 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 #menu-toggle {
@@ -76,9 +81,10 @@ nav ul li a:hover {
     background-color: #444;
 }
 
-h2 {
-    margin: 15px 0 5px 0;
-    font-size: 1.4rem;
+main h1 {
+    margin: 15px 0;
+    font-size: 1.6rem;
+    text-align: left;
 }
 
 /* --- MOBILE COLUMN CONTENT CARDS --- */
@@ -101,7 +107,7 @@ main {
     overflow: hidden;
 }
 
-.card h3 {
+.card h2 {
     background-color: #222;
     color: white;
     padding: 8px;
@@ -198,6 +204,3 @@ footer {
     font-weight: bold;
     text-decoration: none;
 }
-
-/* INTERNAL IMPORT SWITCH: Keeps files completely separate but passes audit rules */
-@import url("large.css") screen and (min-width: 768px);

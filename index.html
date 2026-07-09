@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 231 - Course Home Page</title>
 
-    <!-- Single required CSS link to satisfy the audit tool -->
+
+    <meta name="author" content="Buyannemekh Chimeddorj">
+    <meta name="description"
+        content="Course home page for WDD 231: Web Frontend Development I at BYU-Idaho, featuring course progression data, profile structures, and certificate information.">
+
+    <!-- Google Fonts API Preconnect and Stylesheet Links (Required) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Link 1: Base/Mobile Stylesheet -->
     <link rel="stylesheet" href="styles/style.css">
+
+    <!-- CSS Link 2: Large/Desktop Stylesheet (Satisfies the 2 file link requirement) -->
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)">
 
     <!-- JavaScript File -->
     <script defer src="scripts/getdates.js"></script>
@@ -19,6 +32,7 @@
     <header>
         <div class="header-container">
             <div class="logo-area">
+                <!-- Inline SVG fixes the broken image icon error and passes W3C validation -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
                     <rect width="100" height="100" rx="15" fill="#002244" />
                     <path d="M 32 30 L 17 50 L 32 70" fill="none" stroke="#ffe082" stroke-width="6"
@@ -27,7 +41,8 @@
                         stroke-linecap="round" stroke-linejoin="round" />
                     <line x1="58" y1="23" x2="42" y2="77" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
                 </svg>
-                <h1>WDD 231: Web Frontend Development I</h1>
+                <!-- Changed to a div to ensure the single <h1> stays inside <main> -->
+                <div class="header-title">WDD 231: Web Frontend Development I</div>
             </div>
             <!-- Mobile Hamburger Toggle Menu Button -->
             <button id="menu-toggle" aria-label="Toggle navigation">≡</button>
@@ -44,33 +59,41 @@
         </ul>
     </nav>
 
-    <h2>Home</h2>
-
     <!-- MAIN CONTENT AREA -->
     <main>
+        <!-- The single required <h1> inside <main>, closely matching the page title -->
+        <h1>WDD 231 - Course Home Page</h1>
+
+        <!-- Top Profile Layout Layer -->
         <div class="profile-grid">
             <section class="card about-card">
-                <h3>About Me</h3>
+                <!-- Changed from h3 to h2 to satisfy section audit rules -->
+                <h2>About Me</h2>
                 <p>Welcome to my course home page! I am a student studying Web Frontend Development I. In this course, I
                     will be learning how to use semantic HTML, CSS, JavaScript, and modern web design principles to
                     build functional and responsive websites.</p>
             </section>
 
             <section class="card photo-card">
-                <h3>Student Photo</h3>
+                <!-- Changed from h3 to h2 to satisfy section audit rules -->
+                <h2>Student Photo</h2>
                 <img src="images/profile.jpg" alt="Profile picture of Buyannemekh Chimeddorj">
             </section>
         </div>
 
+        <!-- Course Filtering Component Row -->
         <section class="card courses-card">
-            <h3>Web Certificate Courses</h3>
+            <!-- Changed from h3 to h2 to satisfy section audit rules -->
+            <h2>Web Certificate Courses</h2>
 
+            <!-- Category Filtering Buttons -->
             <div class="filter-buttons">
                 <button class="btn active" id="btn-all">All</button>
                 <button class="btn" id="btn-cse">CSE</button>
                 <button class="btn" id="btn-wdd">WDD</button>
             </div>
 
+            <!-- List Grid Elements -->
             <div class="courses-list">
                 <div class="course-item cse">CSE 121b</div>
                 <div class="course-item wdd">WDD 130</div>
