@@ -1,43 +1,47 @@
-/* --- DESKTOP GRID OVERRIDES --- */
-body {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-family: 'Roboto', Arial, sans-serif;
-}
+/* --- LARGE MONITOR SCREEN OVERRIDES --- */
+@media screen and (min-width: 768px) {
 
-.header-title {
-    font-size: 2rem;
-}
+    body {
+        max-width: 1000px;
+        margin: 0 auto;
+        font-family: 'Roboto', Arial, sans-serif;
+    }
 
-/* Hide toggle click option buttons on large monitors */
-#menu-toggle {
-    display: none;
-}
+    .header-title {
+        font-size: 2rem;
+    }
 
-/* Force horizontal layout structure */
-nav {
-    display: block !important;
-}
+    /* Hide toggle click option buttons on large monitors */
+    #menu-toggle {
+        display: none;
+    }
 
-nav ul {
-    flex-direction: row;
-}
+    /* Force horizontal layout structure */
+    nav {
+        display: block !important;
+    }
 
-nav ul li {
-    flex: 1;
-}
+    nav ul {
+        flex-direction: row;
+    }
 
-nav ul li a {
-    text-align: center;
-    border-bottom: none;
-}
+    nav ul li {
+        flex: 1;
+    }
 
-/* Rearrange components side-by-side */
-.profile-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
+    nav ul li a {
+        text-align: center;
+        border-bottom: none;
+    }
 
-.courses-list {
-    grid-template-columns: repeat(4, 1fr);
+    /* Rearrange components side-by-side */
+    .profile-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    /* Courses align horizontally across the grid space */
+    .courses-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
