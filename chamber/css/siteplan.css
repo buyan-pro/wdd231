@@ -1,0 +1,241 @@
+/* ==========================================================================
+   Reset & Global Base Configuration
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #0A2540;
+    /* Deep Royal Sapphire Base */
+    --secondary-color: #A61C24;
+    /* Oxblood Crimson Accent */
+    --accent-color: #D4AF37;
+    /* Muted Metallic Gold Highlight */
+    --bg-light: #F4F6F9;
+    /* Platinum Ice Canvas */
+    --card-bg: #FFFFFF;
+    /* Pristine White Card Elements */
+    --text-main: #1C2A38;
+    /* Premium Dark Navy Charcoal Text */
+    --text-muted: #627D98;
+    /* Soft Slate Metadata Labeling */
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    padding: 30px 20px;
+}
+
+/* ==========================================================================
+   Header Styling
+   ========================================================================== */
+header {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-bottom: 5px solid var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(10, 37, 64, 0.1);
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+header h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--accent-color);
+}
+
+.author {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #E2E8F0;
+}
+
+/* ==========================================================================
+   Main Content Layout Architecture
+   ========================================================================== */
+main {
+    max-width: 1140px;
+    /* Aligns maximum width perfectly with your directory page */
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(10, 37, 64, 0.02);
+    border-left: 5px solid var(--primary-color);
+    border-top: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 6px;
+}
+
+/* Persona Section Internals */
+.persona {
+    background: var(--bg-light);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.persona h4 {
+    color: var(--secondary-color);
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+/* Lists and Details Formatting */
+ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   Dynamic Color Palette Swatch System
+   ========================================================================== */
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.color-swatch {
+    flex: 1 1 160px;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   Semantic Site Map Visualizer
+   ========================================================================== */
+.sitemap-tree {
+    text-align: center;
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+}
+
+.sitemap-node {
+    background: var(--primary-color);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sitemap-node.root {
+    background: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.sitemap-children {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sitemap-children .sitemap-node {
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Wireframe Simulation Placeholders
+   ========================================================================== */
+.wireframe-mock {
+    background: #E9ECEF;
+    border: 2px dashed var(--text-muted);
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 6px;
+}
+
+.wireframe-mock h4 {
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.wireframe-mock p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Global Footer Layout
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid #E2E8F0;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   Adaptive Mobile Media Layout Optimization
+   ========================================================================== */
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .sitemap-children {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .color-swatch {
+        flex: 1 1 100%;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}

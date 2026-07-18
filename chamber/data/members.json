@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Ulaanbaatar Logistics & Freight Co.",
+        "address": "Peace Avenue 42, Sukhbaatar District, Ulaanbaatar",
+        "phone": "+976 11 312 456",
+        "url": "https://ublogistics.mn",
+        "image": "images/logo-ub-logistics.png",
+        "membership": 3,
+        "tagline": "Connecting the Steppe to Southeast Asia supply chains."
+    },
+    {
+        "name": "Hanoi Agricultural Export Group",
+        "address": "12 Hoang Hoa Tham St, Ba Dinh, Hanoi, Vietnam",
+        "phone": "+84 24 3845 9999",
+        "url": "https://hanoiagexport.vn",
+        "image": "images/logo-hanoi-agri.png",
+        "membership": 3,
+        "tagline": "Premium tropical produce distribution across Mongolia."
+    },
+    {
+        "name": "Altan Taria Flour & Grain Trading",
+        "address": "Industrial Zone 5, Bayangol District, Ulaanbaatar",
+        "phone": "+976 11 245 789",
+        "url": "https://altantaria.mn",
+        "image": "images/logo-altan-taria.png",
+        "membership": 2,
+        "tagline": "Primary cold-chain food supply network distributions."
+    },
+    {
+        "name": "Saigon Textile and Manufacturing Corp",
+        "address": "45 Nguyen Hue Boulevard, District 1, Ho Chi Minh City",
+        "phone": "+84 28 3829 1234",
+        "url": "https://saigontextile.com",
+        "image": "images/logo-saigon-textile.png",
+        "membership": 2,
+        "tagline": "Heavy winter garment and commercial raw materials supplier."
+    },
+    {
+        "name": "Lotus Trans-Eurasia Consulting",
+        "address": "Chinggis Avenue 11, Khan-Uul District, Ulaanbaatar",
+        "phone": "+976 70 112 233",
+        "url": "https://lotustrans.mn",
+        "image": "images/logo-lotus.png",
+        "membership": 1,
+        "tagline": "Bilateral legal and customs regulatory clearance advisory."
+    },
+    {
+        "name": "Gobi Cashmere Export Hub",
+        "address": "Industrial Street, Khan-Uul District, Ulaanbaatar",
+        "phone": "+976 11 343 434",
+        "url": "https://gobi.mn",
+        "image": "images/logo-gobi.png",
+        "membership": 3,
+        "tagline": "Premium Mongolian knitwear shipping directly to Vietnam outlets."
+    },
+    {
+        "name": "Vietnam Maritime Shipping Joint-Stock",
+        "address": "215 Lachtray Street, Ngo Quyen District, Hai Phong",
+        "phone": "+84 225 3739 888",
+        "url": "https://vinalines.com.vn",
+        "image": "images/logo-vinalines.png",
+        "membership": 1,
+        "tagline": "Direct ocean cargo networks handling global transit lines."
+    }
+]

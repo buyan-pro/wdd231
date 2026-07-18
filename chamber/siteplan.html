@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongolia Vietnam Chamber of Commerce - Site Plan</title>
+    <meta name="description"
+        content="Official website design planning framework and project specifications for the Mongolia Vietnam Chamber of Commerce application.">
+    <meta name="author" content="Buyannemekh Chimeddorj">
+    <link rel="stylesheet" href="siteplan.css">
+</head>
+
+<body>
+    <header>
+        <h1>Mongolia Vietnam Chamber of Commerce (MVCC)</h1>
+        <h2>Official Website Site Plan</h2>
+        <p class="author">WDD 231 Web Frontend Development I | Project Blueprint</p>
+    </header>
+
+    <main>
+        <!-- Site Overview Section -->
+        <section class="card">
+            <h3>Site Name</h3>
+            <p>Mongolia Vietnam Chamber of Commerce (MVCC)</p>
+        </section>
+
+        <section class="card">
+            <h3>Site Purpose</h3>
+            <p>Based in Ulaanbaatar, Mongolia, this website serves as the primary bilateral gateway to promote trade,
+                investment, and economic cooperation between Mongolia and Vietnam. It provides a formal registration hub
+                for active businesses, cross-border legal resources, trade data, and local networking events to foster
+                strong international commercial relations.</p>
+        </section>
+
+        <!-- Target Market & Personas -->
+        <section class="card">
+            <h3>Target Market</h3>
+            <p>Importers, exporters, manufacturing entities, agricultural logistics coordinators, and corporate
+                executives operating out of Ulaanbaatar, Hanoi, and Ho Chi Minh City looking to expand cross-border
+                business.</p>
+        </section>
+
+        <section class="card">
+            <h3>User Personas</h3>
+            <div class="persona">
+                <h4>1. Mongolian Logistics Manager (Altangerel, 42)</h4>
+                <p><strong>Scenario:</strong> Needs to locate verified Vietnamese textile and agricultural suppliers. He
+                    visits the website to access the member directory and confirm trade compliance standards.</p>
+            </div>
+            <div class="persona">
+                <h4>2. Vietnamese Agricultural Exporter (Nguyen, 35)</h4>
+                <p><strong>Scenario:</strong> Wants to register her business with the Chamber in Ulaanbaatar to secure
+                    local distribution networks. She uses the site to find membership fees and submit her online
+                    application.</p>
+            </div>
+            <div class="persona">
+                <h4>3. Trade Attache / Investor (Batu, 50)</h4>
+                <p><strong>Scenario:</strong> Needs high-level updates on customs tariffs and bilateral agreements
+                    between the two nations. He checks the blog, news feeds, and calendar for upcoming trade summits.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEO Strategy Section -->
+        <section class="card">
+            <h3>SEO Plan</h3>
+            <ul>
+                <li><strong>Keywords:</strong> Mongolia Vietnam trade, Ulaanbaatar business directory, MVCC
+                    registration, bilateral commerce, Vietnam import export.</li>
+                <li><strong>Verification:</strong> Register the physical Ulaanbaatar office on Google Business Profile.
+                </li>
+                <li><strong>Backlinks:</strong> Establish mandatory reciprocal profile linking on all registered member
+                    company websites.</li>
+                <li><strong>Analytics:</strong> Integrate native Google Analytics scripts globally across all active
+                    pages.</li>
+            </ul>
+        </section>
+
+        <!-- Design Brief & System Palette (Updated with Refined Corporate Colors) -->
+        <section class="card">
+            <h3>Design Brief</h3>
+            <div class="color-palette">
+                <div class="color-swatch" style="background-color: #0A2540; color: white;">Primary: #0A2540<br>Royal
+                    Sapphire</div>
+                <div class="color-swatch" style="background-color: #A61C24; color: white;">Secondary: #A61C24<br>Oxblood
+                    Crimson</div>
+                <div class="color-swatch" style="background-color: #D4AF37; color: #1C2A38;">Accent: #D4AF37<br>Metallic
+                    Gold</div>
+                <div class="color-swatch" style="background-color: #F4F6F9; color: #1C2A38;">Background:
+                    #F4F6F9<br>Platinum Ice</div>
+                <div class="color-swatch" style="background-color: #1C2A38; color: white;">Text: #1C2A38<br>Charcoal
+                    Dark</div>
+            </div>
+            <p style="margin-top: 15px;"><strong>Typography:</strong> Font Family: <em>'Helvetica Neue', Helvetica,
+                    Arial, sans-serif</em>. Clean, modern, international corporate sans-serif feel.</p>
+        </section>
+
+        <!-- Site Map & Architecture Section -->
+        <section class="card">
+            <h3>Site Map</h3>
+            <div class="sitemap-tree">
+                <div class="sitemap-node root">Home</div>
+                <div class="sitemap-children">
+                    <div class="sitemap-node">Directory</div>
+                    <div class="sitemap-node">Join Us</div>
+                    <div class="sitemap-node">Trade Resources</div>
+                    <div class="sitemap-node">Events</div>
+                    <div class="sitemap-node">Contact</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wireframe Placeholders Section -->
+        <section class="card">
+            <h3>Wireframe Layout Reference</h3>
+            <p>The site development closely implements the structure provided in the official course syllabus:</p>
+            <div class="wireframe-mock">
+                <h4>[ Desktop Wireframe Profile ]</h4>
+                <p>Header (Logo & Nav) → Grid Base Business Directory (3x2 Block Matrix Layout) → Footer (Social &
+                    Siteplan Anchor Link)</p>
+            </div>
+            <div class="wireframe-mock">
+                <h4>[ Mobile Wireframe Profile ]</h4>
+                <p>Stacked Header Navigation Toggle → Linear Directory Feed (Single Column List) → Centered Info Footer
+                    Card</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia Vietnam Chamber
+            of Commerce Project Plan</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Last Structural Modification: <span
+                id="last-modified-date"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+        document.getElementById("last-modified-date").textContent = document.lastModified;
+    </script>
+</body>
+
+</html>

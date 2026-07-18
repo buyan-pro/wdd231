@@ -1,0 +1,343 @@
+/* ==========================================================================
+   Refined Corporate Color Palette Variables Matrix
+   ========================================================================== */
+:root {
+    --primary-color: #0A2540;
+    /* Deep Royal Sapphire Base */
+    --secondary-color: #A61C24;
+    /* Oxblood Crimson Accent */
+    --accent-color: #D4AF37;
+    /* Muted Metallic Gold Highlight */
+    --bg-light: #F4F6F9;
+    /* Platinum Ice Canvas */
+    --card-bg: #FFFFFF;
+    /* Pristine White Card Elements */
+    --text-main: #1C2A38;
+    /* Premium Dark Navy Charcoal Text */
+    --text-muted: #627D98;
+    /* Soft Slate Metadata Labeling */
+}
+
+/* Base Body Setup */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Header Component Architecture
+   ========================================================================== */
+header {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    position: relative;
+    border-bottom: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(10, 37, 64, 0.15);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flag-icon {
+    font-size: 2rem;
+}
+
+.branding-text h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.branding-text p {
+    font-size: 0.75rem;
+    margin: 0;
+    color: var(--accent-color);
+}
+
+/* Mobile Dropdown Navigation Menu */
+#menu-toggle {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#nav-menu {
+    display: none;
+    background-color: #06182B;
+}
+
+#nav-menu.open {
+    display: block;
+}
+
+#nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu ul li a {
+    display: block;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#nav-menu ul li a.active,
+#nav-menu ul li a:hover {
+    background-color: var(--secondary-color);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Main Core Content Layout & Workspace Constraints
+   ========================================================================== */
+main {
+    padding: 30px 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.directory-control-panel {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.directory-control-panel h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: 1.75rem;
+}
+
+.directory-control-panel p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* View Switcher Control Buttons */
+.view-switch-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.view-switch-buttons button {
+    background-color: #E2E8F0;
+    border: 1px solid #CBD5E1;
+    color: var(--text-main);
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.view-switch-buttons button.active,
+.view-switch-buttons button:hover {
+    background-color: var(--secondary-color);
+    color: #FFFFFF;
+    border-color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   Grid Layout Configuration Baseline (Default Card Matrix)
+   ========================================================================== */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.business-card {
+    background-color: var(--card-bg);
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(10, 37, 64, 0.02);
+}
+
+/* Membership Levels Borders for Grid Layout */
+.business-card.level-1 {
+    border-top: 5px solid #CBD5E1;
+}
+
+.business-card.level-2 {
+    border-top: 5px solid #94A3B8;
+}
+
+.business-card.level-3 {
+    border-top: 5px solid var(--accent-color);
+}
+
+.business-card h3 {
+    font-size: 1.25rem;
+    margin: 12px 0 6px 0;
+    color: var(--primary-color);
+}
+
+.business-card .tagline {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.business-card p {
+    font-size: 0.9rem;
+    margin: 6px 0;
+    color: var(--text-main);
+}
+
+.business-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.business-card a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   List Layout Configuration Baseline (Single-Column Row Flow)
+   ========================================================================== */
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.list-layout .business-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+    border-radius: 6px;
+    border-top: none;
+}
+
+/* Membership Levels Stripe Bars for List Layout */
+.list-layout .business-card.level-1 {
+    border-left: 6px solid #CBD5E1;
+}
+
+.list-layout .business-card.level-2 {
+    border-left: 6px solid #94A3B8;
+}
+
+.list-layout .business-card.level-3 {
+    border-left: 6px solid var(--accent-color);
+}
+
+.list-layout .business-card .card-logo-wrap,
+.list-layout .business-card .tagline {
+    display: none;
+}
+
+/* ==========================================================================
+   Footer Component Architecture
+   ========================================================================== */
+footer {
+    background-color: var(--primary-color);
+    color: #F8F9FA;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--secondary-color);
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-contact h3,
+.footer-social h3 {
+    margin: 0 0 10px 0;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.footer-contact p,
+.footer-meta p {
+    margin: 6px 0;
+    color: #E2E8F0;
+}
+
+/* High-Contrast White Links Layout */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.social-links a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+    color: var(--accent-color) !important;
+    text-decoration: underline;
+}
+
+/* High-Contrast Gold Site Plan Link */
+.footer-meta a.siteplan-link {
+    color: var(--accent-color) !important;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.footer-meta a.siteplan-link:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 6px 0;
+}
+
+.modified-timestamp {
+    font-size: 0.8rem;
+    color: #94A3B8;
+}
