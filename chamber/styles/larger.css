@@ -1,106 +1,108 @@
 /* ==========================================================================
    High-Density Layout Overrides for Wide Screen Viewports Layout (>= 1024px)
    ========================================================================== */
-body {
-    background-color: var(--bg-light);
-    color: var(--text-main);
-}
+@media screen and (min-width: 64rem) {
+    body {
+        background-color: var(--bg-light);
+        color: var(--text-main);
+    }
 
-.header-container {
-    padding: 20px 40px;
-}
+    .header-container {
+        padding: 20px 40px;
+    }
 
-#menu-toggle {
-    display: none;
-}
+    #menu-toggle {
+        display: none;
+    }
 
-#nav-menu {
-    display: block !important;
-    background-color: var(--primary-color) !important;
-    padding: 0 40px;
-}
+    #nav-menu {
+        display: block !important;
+        background-color: var(--primary-color) !important;
+        padding: 0 40px;
+    }
 
-#nav-menu ul {
-    display: flex;
-    justify-content: flex-start;
-    gap: 5px;
-}
+    #nav-menu ul {
+        display: flex;
+        justify-content: flex-start;
+        gap: 5px;
+    }
 
-#nav-menu ul li a {
-    border-top: none;
-    padding: 18px 25px;
-    font-size: 1rem;
-    transition: all 0.2s ease;
-}
+    #nav-menu ul li a {
+        border-top: none;
+        padding: 18px 25px;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+    }
 
-#nav-menu ul li a.active {
-    background-color: var(--secondary-color);
-    color: var(--card-bg);
-    border-radius: 4px;
-}
+    #nav-menu ul li a.active {
+        background-color: var(--secondary-color);
+        color: var(--card-bg);
+        border-radius: 4px;
+    }
 
-#nav-menu ul li a:hover {
-    color: var(--accent-color);
-    background-color: var(--nav-border-line);
-}
+    #nav-menu ul li a:hover {
+        color: var(--accent-color);
+        background-color: var(--nav-border-line);
+    }
 
-/* Desktop Grid View Architecture (3-Columns) */
-.grid-layout {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
+    /* Desktop Grid View Architecture (3-Columns) */
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
 
-.grid-layout .business-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    .grid-layout .business-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-.grid-layout .business-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px var(--shadow-header);
-}
+    .grid-layout .business-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px var(--shadow-header);
+    }
 
-/* Desktop List View Rows Restructuring */
-.list-layout .business-card {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-}
+    /* Desktop List View Rows Restructuring */
+    .list-layout .business-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
 
-.list-layout .business-card:nth-child(even) {
-    background-color: var(--bg-light);
-}
+    .list-layout .business-card:nth-child(even) {
+        background-color: var(--bg-light);
+    }
 
-.list-layout .business-card h3 {
-    flex: 2;
-    margin: 0;
-    font-size: 1.1rem;
-}
+    .list-layout .business-card h3 {
+        flex: 2;
+        margin: 0;
+        font-size: 1.1rem;
+    }
 
-.list-layout .business-card .address {
-    flex: 2.5;
-    margin: 0;
-    padding: 0 15px;
-}
+    .list-layout .business-card .address {
+        flex: 2.5;
+        margin: 0;
+        padding: 0 15px;
+    }
 
-.list-layout .business-card .phone {
-    flex: 1.5;
-    margin: 0;
-}
+    .list-layout .business-card .phone {
+        flex: 1.5;
+        margin: 0;
+    }
 
-.list-layout .business-card a {
-    flex: 1.5;
-    margin: 0;
-    text-align: right;
-}
+    .list-layout .business-card a {
+        flex: 1.5;
+        margin: 0;
+        text-align: right;
+    }
 
-/* Split-Panel Dual Layout Footer Columns */
-.footer-top {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
+    /* Split-Panel Dual Layout Footer Columns */
+    .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-.footer-meta {
-    text-align: right;
+    .footer-meta {
+        text-align: right;
+    }
 }
