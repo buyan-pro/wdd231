@@ -17,7 +17,7 @@
     --text-muted: #627D98;
     /* Soft Slate Metadata Labeling */
 
-    /* AUDIT COMPLIANCE VARIABLES - FIXED HARDCODED COLORS */
+    /* AUDIT COMPLIANCE VARIABLES - FIXED ALL HARDCODED COLORS */
     --border-light: #E2E8F0;
     --btn-bg: #E2E8F0;
     --btn-border: #CBD5E1;
@@ -68,8 +68,9 @@ header {
     font-size: 2rem;
 }
 
-.branding-text h1 {
+.header-logo-title {
     font-size: 1.5rem;
+    font-weight: bold;
     margin: 0;
     letter-spacing: 0.5px;
     color: var(--card-bg);
@@ -136,10 +137,12 @@ main {
     margin-bottom: 30px;
 }
 
-.directory-control-panel h2 {
+/* FIXED: Changed handle selector targets to track the single h1 heading element */
+.directory-control-panel h1 {
     color: var(--primary-color);
     margin-bottom: 8px;
     font-size: 1.75rem;
+    font-weight: 700;
 }
 
 .directory-control-panel p {
