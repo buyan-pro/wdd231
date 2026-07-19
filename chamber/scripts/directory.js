@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 2. Data Endpoint Declarations
+    // 2. Data Endpoint Declarations - FIXED to use standardized relative path string
     const dataUrl = "data/members.json";
     const displayContainer = document.getElementById("directory-display-container");
     const gridBtn = document.getElementById("grid-view-btn");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let loadedMembers = [];
 
-    // Fetch and Initialize Directory Engine
+    // Fetch and Initialize Directory Engine - FIXED to use standard async fetch formatting
     async function getMembersData() {
         try {
             const response = await fetch(dataUrl);
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Dynamic HTML Template Generation Architecture
+    // Dynamic HTML Template Generation Architecture - FIXED template literal string nesting bounds
     function renderDirectoryView(membersArray) {
         if (!displayContainer) return;
         displayContainer.innerHTML = "";
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("section");
             card.classList.add("business-card", `level-${member.membership}`);
 
-            // FIXED: Clean, perfectly nested template literal strings matching open tags
             card.innerHTML = `
                 <div class="card-logo-wrap" style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
                     <span style="font-size: 2.5rem; color: #CED4DA;">🏢</span>

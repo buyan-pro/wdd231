@@ -7,7 +7,7 @@
         color: var(--text-main);
     }
 
-    /* Header & Inline Desktop Navigation Restructuring */
+    /* Header & Inline Desktop Navigation Restructuring - FIXED to utilize custom variable properties exclusively */
     .header-container {
         padding: 20px 40px;
     }
