@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const listBtn = document.getElementById("list-view-btn");
     let loadedMembers = [];
 
-    // FIXED: Strict internal path mapping format to pass fetch checks directly
+    // Safe internal relative path string declaration
     async function getMembersData() {
         try {
             const dataUrl = "data/members.json";
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Dynamic HTML Template Generation Architecture - FIXED literal alignments
+    // Dynamic HTML Template Generation Architecture
     function renderDirectoryView(membersArray) {
         if (!displayContainer) return;
         displayContainer.innerHTML = "";
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 3. View Switcher Interaction Handlers
+    // 3. View Switcher Interaction Handlers - FIXED: Added structural checks to prevent crashes on non-directory pages
     if (gridBtn && listBtn && displayContainer) {
         gridBtn.addEventListener("click", () => {
             displayContainer.classList.add("grid-layout");
@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
     if (lastModifiedEl) lastModifiedEl.textContent = document.lastModified;
 
-    // Fire application engine loop
-    getMembersData();
+    // Fire application engine loop safely only if the container exists on the current page
+    if (displayContainer) {
+        getMembersData();
+    }
 });
