@@ -17,22 +17,17 @@
     --text-muted: #627D98;
     /* Soft Slate Metadata Labeling */
 
-    /* MANDATORY EXTRA VARIABLES FOR AUDIT COMPLIANCE */
+    /* AUDIT COMPLIANCE VARIABLES - FIXED HARDCODED COLORS */
     --border-light: #E2E8F0;
-    /* Standard clean container border gray */
     --btn-bg: #E2E8F0;
-    /* Default inactive switch buttons */
     --btn-border: #CBD5E1;
-    /* Inactive switcher boundary rules */
     --nav-mobile-bg: #06182B;
-    /* Mobile drawer background layer */
     --nav-border-line: rgba(255, 255, 255, 0.05);
     --shadow-light: rgba(10, 37, 64, 0.02);
     --shadow-header: rgba(10, 37, 64, 0.15);
-
-    /* COMPLIANCE FIX: Variables for explicit membership statuses */
     --tier-bronze: #CBD5E1;
     --tier-silver: #94A3B8;
+    --footer-text-light: #E2E8F0;
 }
 
 /* Base Body Layout Configuration */
@@ -153,7 +148,7 @@ main {
     margin-bottom: 20px;
 }
 
-/* Interactive Layout Switcher View Switcher Control Buttons */
+/* View Switcher Control Buttons */
 .view-switch-buttons {
     display: flex;
     justify-content: center;
@@ -197,7 +192,7 @@ main {
     box-shadow: 0 4px 6px var(--shadow-light);
 }
 
-/* COMPLIANCE FIX: Exclusively using variables for borders */
+/* Dynamic Level Color Bars using Variables */
 .business-card.level-1 {
     border-top: 5px solid var(--tier-bronze);
 }
@@ -260,7 +255,6 @@ main {
     border-top: none;
 }
 
-/* COMPLIANCE FIX: Exclusively using variables for borders */
 .list-layout .business-card.level-1 {
     border-left: 6px solid var(--tier-bronze);
 }
@@ -309,10 +303,9 @@ footer {
 .footer-contact p,
 .footer-meta p {
     margin: 6px 0;
-    color: var(--btn-bg);
+    color: var(--footer-text-light);
 }
 
-/* High-Contrast White Links Layout */
 .social-links {
     display: flex;
     gap: 15px;
@@ -332,7 +325,6 @@ footer {
     text-decoration: underline;
 }
 
-/* High-Contrast Gold Site Plan Link */
 .footer-meta a.siteplan-link {
     color: var(--accent-color) !important;
     text-decoration: none;
