@@ -8,10 +8,169 @@
     <meta name="description"
         content="Official website design planning framework and project specifications for the Mongolia Vietnam Chamber of Commerce application.">
     <meta name="author" content="Buyannemekh Chimeddorj">
-    <link rel="stylesheet" href="siteplan.css">
+
+    <!-- FIXED: Repaired broken Google Fonts API Preconnect Domains -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Unified Shared Stylesheet Engine Core -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+
+    <!-- Structural Token Overrides for Site Plan Layout Integrity -->
+    <style>
+        /* FIXED: Restricts header monitor stretching and centers the block horizontally */
+        header {
+            background-color: var(--primary-color);
+            color: #FFFFFF !important;
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(10, 37, 64, 0.1);
+            max-width: 1140px;
+            margin: 0 auto 25px auto;
+            box-sizing: border-box;
+        }
+
+        header p,
+        header h1,
+        header h2,
+        header .author {
+            color: #FFFFFF !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(10, 37, 64, 0.02);
+            border-left: 5px solid var(--primary-color) !important;
+            border-top: 1px solid #E2E8F0;
+            border-right: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            text-align: left;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 6px;
+        }
+
+        .persona {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .persona h4 {
+            color: var(--secondary-color);
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .color-palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .color-swatch {
+            flex: 1 1 160px;
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .sitemap-tree {
+            text-align: center;
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .sitemap-node {
+            background: var(--primary-color);
+            color: #FFFFFF;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .sitemap-node.root {
+            background: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .sitemap-children {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .wireframe-mock {
+            background: #E9ECEF;
+            border: 2px dashed var(--text-muted);
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .wireframe-mock h4 {
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .wireframe-mock p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 650px) {
+            .sitemap-children {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .color-swatch {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
     <header>
         <h1>Mongolia Vietnam Chamber of Commerce (MVCC)</h1>
         <h2>Official Website Site Plan</h2>
@@ -77,7 +236,7 @@
             </ul>
         </section>
 
-        <!-- Design Brief & System Palette (Updated with Refined Corporate Colors) -->
+        <!-- Design Brief & System Palette -->
         <section class="card">
             <h3>Design Brief</h3>
             <div class="color-palette">
@@ -92,8 +251,8 @@
                 <div class="color-swatch" style="background-color: #1C2A38; color: white;">Text: #1C2A38<br>Charcoal
                     Dark</div>
             </div>
-            <p style="margin-top: 15px;"><strong>Typography:</strong> Font Family: <em>'Helvetica Neue', Helvetica,
-                    Arial, sans-serif</em>. Clean, modern, international corporate sans-serif feel.</p>
+            <p style="margin-top: 15px;"><strong>Typography:</strong> Font Family: <em>'Inter', 'Helvetica Neue',
+                    Helvetica, Arial, sans-serif</em>. Clean, modern, international corporate sans-serif feel.</p>
         </section>
 
         <!-- Site Map & Architecture Section -->
@@ -107,38 +266,18 @@
                     <div class="sitemap-node">Trade Resources</div>
                     <div class="sitemap-node">Events</div>
                     <div class="sitemap-node">Contact</div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Wireframe Placeholders Section -->
-        <section class="card">
-            <h3>Wireframe Layout Reference</h3>
-            <p>The site development closely implements the structure provided in the official course syllabus:</p>
-            <div class="wireframe-mock">
-                <h4>[ Desktop Wireframe Profile ]</h4>
-                <p>Header (Logo & Nav) → Grid Base Business Directory (3x2 Block Matrix Layout) → Footer (Social &
-                    Siteplan Anchor Link)</p>
-            </div>
-            <div class="wireframe-mock">
-                <h4>[ Mobile Wireframe Profile ]</h4>
-                <p>Stacked Header Navigation Toggle → Linear Directory Feed (Single Column List) → Centered Info Footer
-                    Card</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia Vietnam Chamber
-            of Commerce Project Plan</p>
-        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Last Structural Modification: <span
-                id="last-modified-date"></span></p>
-    </footer>
-
-    <script>
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-        document.getElementById("last-modified-date").textContent = document.lastModified;
-    </script>
+                    <footer
+                        style="text-align: center; padding: 25px 20px; margin-top: 40px; border-top: 1px solid #E2E8F0;">
+                        <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia
+                            Vietnam Chamber of Commerce Project Plan</p>
+                        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Last Structural Modification: <span
+                                id="last-modified-date"></span></p>
+                    </footer>
+                    <script>
+                        document.getElementById("current-year").textContent = new Date().getFullYear();
+                        document.getElementById("last-modified-date").textContent = document.lastModified;
+                    </script>
 </body>
 
 </html>

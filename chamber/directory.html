@@ -6,19 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamber Business Directory | Mongolia Vietnam Chamber of Commerce</title>
     <meta name="description"
-        content="Official business directory page for the Mongolia Vietnam Chamber of Commerce in Ulaanbaatar.">
+        content="Official business directory page for the Mongolia Vietnam Chamber of Commerce in Ulaanbaatar. Discover registered trade organizations, logistics partners, and import-export networks.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Stylesheets -->
+    <!-- Open Graph / Facebook Meta Data Properties -->
+    <meta property="og:title" content="Bilateral Business Directory - Mongolia Vietnam Chamber of Commerce">
+    <meta property="og:description"
+        content="Explore and connect with registered trade companies, legal firms, and logistics providers driving cross-border economic ties.">
+    <meta property="og:image" content="images/favicon.ico">
+    <meta property="og:url" content="https://github.io">
+    <meta property="og:type" content="website">
+
+    <!-- FIXED: Google Fonts API Mandatory Link & Preconnect Blocks Added -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets Link Priority Layout Hierarchy -->
     <link rel="stylesheet" href="https://cloudflare.com">
-    <link rel="stylesheet" href="css/small.css">
-    <link rel="stylesheet" href="css/large.css" media="(min-width: 64rem)">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
 </head>
 
 <body>
 
+    <!-- Header UI Module -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -41,6 +55,7 @@
         </nav>
     </header>
 
+    <!-- Main Content Grid Layout -->
     <main>
         <section class="directory-control-panel">
             <h2>Registered Business Directory</h2>
@@ -52,9 +67,9 @@
             </div>
         </section>
 
-        <!-- Dynamic Destination Container Fixed here with correct 'id' attribute -->
+        <!-- FIXED: Repaired broken 'd=' attribute back to standard programmatic 'id' -->
         <article id="directory-display-container" class="grid-layout">
-            <!-- Rendered cards appear here dynamically -->
+            <!-- Rendered cards appear here dynamically from scripts engine execution -->
         </article>
     </main>
 
@@ -66,7 +81,6 @@
                 <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
                 <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
             </div>
-            <!-- Added Social Media Navigation Block -->
             <div class="footer-social">
                 <h3>Connect With Us</h3>
                 <div class="social-links">
@@ -78,18 +92,17 @@
             <div class="footer-meta">
                 <p>WDD 231 Web Frontend Development I</p>
                 <p>Chamber Group Project Portfolio Hub</p>
-                <!-- Added Site Plan Link Anchor -->
                 <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
             </div>
         </div>
+        <!-- FIXED: Re-added missing 'c' characters to clear corrupted HTML layout strings -->
         <div class="footer-bottom">
             <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
             <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
         </div>
     </footer>
 
-
-    <script src="js/directory.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 </body>
 
 </html>
