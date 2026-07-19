@@ -137,7 +137,6 @@ main {
     margin-bottom: 30px;
 }
 
-/* FIXED: Changed handle selector targets to track the single h1 heading element */
 .directory-control-panel h1 {
     color: var(--primary-color);
     margin-bottom: 8px;
@@ -353,4 +352,18 @@ footer {
 .modified-timestamp {
     font-size: 0.8rem;
     color: var(--tier-silver);
+}
+
+/* ==========================================================================
+   Accessibility Utilities: FIXED External CSS Rule replacing inline style
+   ========================================================================== */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
