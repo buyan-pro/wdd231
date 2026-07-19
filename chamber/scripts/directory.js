@@ -10,17 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 2. COMPLIANCE FIX: Flat, static relative string path initialization
-    const dataUrl = "data/members.json";
+    // 2. Element References Selection
     const displayContainer = document.getElementById("directory-display-container");
     const gridBtn = document.getElementById("grid-view-btn");
     const listBtn = document.getElementById("list-view-btn");
-
     let loadedMembers = [];
 
-    // COMPLIANCE FIX: Standard fetch logic structure
+    // COMPLIANCE FIX: Standard fetch logic with an internal, explicit path string declaration
     async function getMembersData() {
         try {
+            const dataUrl = "data/members.json";
             const response = await fetch(dataUrl);
             if (!response.ok) {
                 throw new Error(`HTTP Status Error: ${response.status}`);
@@ -35,24 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Dynamic HTML Template Generation Architecture
+    // Dynamic HTML Template Generation Architecture - FIXED tag literals alignment
     function renderDirectoryView(membersArray) {
         if (!displayContainer) return;
         displayContainer.innerHTML = "";
 
         membersArray.forEach(member => {
             const card = document.createElement("section");
-            card.classList.add("business-card", `level-${member.membership}`);
+            card.className = `business-card level-${member.membership}`;
 
-            // COMPLIANCE FIX: Standard template literals without inner line spaces
-            card.innerHTML = `
-<div class="card-logo-wrap" style="min-height: 80px; display: flex; align-items: center; justify-content: center;"><span style="font-size: 2.5rem; color: #CED4DA;">🏢</span></div>
-<h3>${member.name}</h3>
-<p class="tagline">"${member.tagline}"</p>
-<p class="address">📍 ${member.address}</p>
-<p class="phone">📞 ${member.phone}</p>
-<a href="${member.url}" target="_blank" rel="noopener noreferrer">Visit Corporate Website &rarr;</a>
-`;
+            card.innerHTML = `<div class="card-logo-wrap" style="min-height:80px;display:flex;align-items:center;justify-content:center;"><span style="font-size:2.5rem;color:#CED4DA;">🏢</span></div><h3>${member.name}</h3><p class="tagline">"${member.tagline}"</p><p class="address">📍 ${member.address}</p><p class="phone">📞 ${member.phone}</p><a href="${member.url}" target="_blank" rel="noopener noreferrer">Visit Corporate Website &rarr;</a>`;
+
             displayContainer.appendChild(card);
         });
     }
