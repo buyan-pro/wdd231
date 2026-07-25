@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Home | Mongolia Vietnam Chamber of Commerce</title>
+    <meta name="description"
+        content="Official home page for the Mongolia Vietnam Chamber of Commerce in Ulaanbaatar. Discover bilateral trade events, local weather, and premium member spotlights.">
+    <meta name="author" content="Buyannemekh Chimeddorj">
+
+    <!-- STANDARD FAVICON MAPPING LINK -->
+    <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
+
+    <!-- OPEN GRAPH SOCIAL PLATFORM PROPERTIES - FIXED: Absolute pathways configured -->
+    <meta property="og:title" content="Bilateral Business Home - Mongolia Vietnam Chamber of Commerce">
+    <meta property="og:description"
+        content="Explore bilateral trade metrics, local economic development updates, and connect with premium corporate networks.">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico">
+    <meta property="og:url" content="https://github.io">
+    <meta property="og:type" content="website">
+
+    <!-- GOOGLE FONTS API INTEGRATION BLOCKS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LOCAL APP STYLESHEETS LINK MATRIX HIERARCHY - FIXED: Restored official Normalize CDN engine -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+</head>
+
+<body>
+
+    <!-- Header UI Module Layout - FIXED: Corporate Logo embedded with layout attributes -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="images/chamber-logo.webp" alt="MVCC Official Emblem Logo" width="80" height="80"
+                    loading="eager">
+                <div class="branding-text">
+                    <div class="header-logo-title">MVCC</div>
+                    <p>Mongolia Vietnam Chamber of Commerce</p>
+                </div>
+            </div>
+            <!-- Dynamic Smartphone Hamburger Navigation Toggle Control -->
+            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="#">Join Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Workspace Constraints Grid -->
+    <main class="home-grid">
+        <!-- Hero Section Component - FIXED: Configured responsive paths to swap view sizes natively -->
+        <section class="hero-section">
+            <picture>
+                <source media="(min-width: 64rem)" srcset="images/hero-larger.webp">
+                <img src="images/hero-small.webp"
+                    alt="Beautiful Ulaanbaatar and Hanoi trading hubs layout profile overview" width="1200" height="450"
+                    loading="eager">
+            </picture>
+            <div class="hero-cta">
+                <h2>Welcome to Your Future</h2>
+                <p>Grow your cross-border business network and scale your international trade operations with us.</p>
+                <a href="#" class="cta-btn">Join the Chamber</a>
+            </div>
+
+
+            <!-- Current Events Component Section -->
+            <section class="events-section card">
+                <h2>Upcoming Bilateral Events</h2>
+                <ul>
+                    <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
+                    <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
+                    <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
+                </ul>
+
+
+                <!-- Weather Component Section (Populated via scripts/weather.js) -->
+                <section class="weather-section card">
+                    <h2>Current Weather</h2>
+                    <div id="weather-info">
+                        <p>Loading weather data...</p>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 15px 0;">
+                    <h3>3-Day Forecast</h3>
+                    <div id="forecast-info" class="forecast-grid">
+                        <!-- Data populates here dynamically -->
+                    </div>
+
+
+                    <!-- Premium Corporate Member Spotlights Component Section (Populated via scripts/spotlights.js) -->
+                    <section class="spotlights-section">
+                        <h2>Business Spotlights</h2>
+                        <div id="spotlight-container" class="spotlight-grid">
+                            <!-- 2-3 random Gold/Silver member sponsor cards render dynamically here -->
+                        </div>
+
+    </main>
+
+    <!-- Footer UI Module Layout - FIXED: Matches directory.html exactly -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-contact">
+                <h3>MVCC Administrative Headquarters</h3>
+                <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
+                <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <p>WDD 231 Web Frontend Development I</p>
+                <p>Chamber Group Project Portfolio Hub</p>
+                <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
+            <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
+        </div>
+    </footer>
+
+    <!-- APP CORE ENGINE SCRIPTS HOOK -->
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/spotlights.js" defer></script>
+</body>
+
+</html>
