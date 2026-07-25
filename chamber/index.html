@@ -60,8 +60,8 @@
 
     <!-- Main Content Workspace Constraints Grid -->
     <main class="home-grid">
-        <!-- Hero Section Component - FIXED: Configured responsive paths to swap view sizes natively -->
-        <section class="hero-section">
+        <!-- Hero Section Component - FIXED: Changed section tag to a division wrapper -->
+        <div class="hero-section">
             <picture>
                 <source media="(min-width: 64rem)" srcset="images/hero-larger.webp">
                 <img src="images/hero-small.webp"
@@ -73,37 +73,37 @@
                 <p>Grow your cross-border business network and scale your international trade operations with us.</p>
                 <a href="#" class="cta-btn">Join the Chamber</a>
             </div>
+        </div> <!-- FIXED: Added the required matching closing div tag right here -->
+
+        <!-- Current Events Component Section -->
+        <section class="events-section card">
+            <h2>Upcoming Bilateral Events</h2>
+            <ul>
+                <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
+                <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
+                <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
+            </ul>
 
 
-            <!-- Current Events Component Section -->
-            <section class="events-section card">
-                <h2>Upcoming Bilateral Events</h2>
-                <ul>
-                    <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
-                    <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
-                    <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
-                </ul>
+            <!-- Weather Component Section (Populated via scripts/weather.js) -->
+            <section class="weather-section card">
+                <h2>Current Weather</h2>
+                <div id="weather-info">
+                    <p>Loading weather data...</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 15px 0;">
+                <h3>3-Day Forecast</h3>
+                <div id="forecast-info" class="forecast-grid">
+                    <!-- Data populates here dynamically -->
+                </div>
 
 
-                <!-- Weather Component Section (Populated via scripts/weather.js) -->
-                <section class="weather-section card">
-                    <h2>Current Weather</h2>
-                    <div id="weather-info">
-                        <p>Loading weather data...</p>
+                <!-- Premium Corporate Member Spotlights Component Section (Populated via scripts/spotlights.js) -->
+                <section class="spotlights-section">
+                    <h2>Business Spotlights</h2>
+                    <div id="spotlight-container" class="spotlight-grid">
+                        <!-- 2-3 random Gold/Silver member sponsor cards render dynamically here -->
                     </div>
-                    <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 15px 0;">
-                    <h3>3-Day Forecast</h3>
-                    <div id="forecast-info" class="forecast-grid">
-                        <!-- Data populates here dynamically -->
-                    </div>
-
-
-                    <!-- Premium Corporate Member Spotlights Component Section (Populated via scripts/spotlights.js) -->
-                    <section class="spotlights-section">
-                        <h2>Business Spotlights</h2>
-                        <div id="spotlight-container" class="spotlight-grid">
-                            <!-- 2-3 random Gold/Silver member sponsor cards render dynamically here -->
-                        </div>
 
     </main>
 

@@ -64,6 +64,11 @@ header {
     gap: 12px;
 }
 
+.logo-area img {
+    height: auto;
+    object-fit: contain;
+}
+
 .flag-icon {
     font-size: 2rem;
 }
@@ -123,13 +128,25 @@ header {
 }
 
 /* ==========================================================================
-   Main Core Content Layout & Workspace Constraints
+   Main Core Content Layout & Fluid Workspace Constraints
    ========================================================================== */
+main.home-grid,
 main {
-    padding: 30px 20px;
-    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+}
+
+/* Side Margins: Protects text components from touching viewport edges on mobile */
+.card,
+.spotlights-section,
+.directory-control-panel {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .directory-control-panel {
@@ -176,8 +193,204 @@ main {
     border-color: var(--secondary-color);
 }
 
+/* Card Presentation Foundations */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 6px var(--shadow-light);
+}
+
+.card h1,
+.card h2,
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
 /* ==========================================================================
-   Grid Layout Configuration Baseline
+   Hero Container System & Absolute Translucent Content Placement Overlays
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    /* Spatial boundary anchor point for overlay cards */
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-section picture img {
+    width: 100%;
+    /* Forces image fluid bleed to absolute edge of mobile viewports */
+    height: auto;
+    max-height: 450px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-cta {
+    position: absolute;
+    /* Pulls text out of page flow to lock layered above image graphic */
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(10, 37, 64, 0.85);
+    /* 85% opacity premium dark sapphire canvas */
+    padding: 20px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-cta h2 {
+    color: var(--accent-color) !important;
+    margin: 0 0 6px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.hero-cta p {
+    color: #FFFFFF !important;
+    margin: 0 0 14px 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #FFFFFF !important;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+    background-color: #BD212B;
+}
+
+/* ==========================================================================
+   Real-Time Asynchronous Weather API UI Subcomponents
+   ========================================================================== */
+.current-weather-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.current-weather-display .temp {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.current-weather-display .desc {
+    margin: 0;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.forecast-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.forecast-day {
+    flex: 1;
+    background-color: var(--bg-light);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.forecast-date {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+}
+
+.forecast-temp {
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+/* ==========================================================================
+   Dynamic Sponsor Spotlight Layout Architecture (Home Page Only)
+   ========================================================================== */
+.spotlights-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.spotlight-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.spotlight-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px var(--shadow-light);
+}
+
+.spotlight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.spotlight-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.company-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: var(--bg-light);
+}
+
+.spotlight-card.tier-3 .company-badge {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+
+.spotlight-tagline {
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0 0 15px 0;
+}
+
+.spotlight-details p {
+    margin: 6px 0;
+    font-size: 0.85rem;
+}
+
+.spotlight-details a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Grid Layout Configuration Baseline (Directory Page Only)
    ========================================================================== */
 .grid-layout {
     display: grid;
@@ -194,7 +407,6 @@ main {
     box-shadow: 0 4px 6px var(--shadow-light);
 }
 
-/* Dynamic Level Color Bars using Variables */
 .business-card.level-1 {
     border-top: 5px solid var(--tier-bronze);
 }
@@ -239,9 +451,7 @@ main {
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   List Layout Configuration Baseline
-   ========================================================================== */
+/* List Layout Configuration Baseline (Directory Page Only) */
 .list-layout {
     display: flex;
     flex-direction: column;
@@ -274,9 +484,10 @@ main {
     display: none;
 }
 
-/* ==========================================================================
-   Footer Component Architecture
-   ========================================================================== */
+/* ================================================================
+Footer Component Architecture
+================================================================ */
+
 footer {
     background-color: var(--primary-color);
     color: var(--bg-light);
@@ -296,6 +507,7 @@ footer {
 }
 
 .footer-contact h3,
+
 .footer-social h3 {
     margin: 0 0 10px 0;
     color: var(--accent-color);
@@ -354,9 +566,10 @@ footer {
     color: var(--tier-silver);
 }
 
-/* ==========================================================================
-   Accessibility Utilities: FIXED External CSS Rule replacing inline style
-   ========================================================================== */
+/* ======================================================
+Accessibility Utilities: Structural Heading Hide
+======================================================= */
+
 .visually-hidden {
     position: absolute;
     width: 1px;

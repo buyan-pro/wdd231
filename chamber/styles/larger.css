@@ -45,7 +45,62 @@
         background-color: var(--nav-border-line);
     }
 
-    /* Desktop Grid View Architecture (3-Columns) */
+    /* ==========================================================================
+       ADDED: Home Page Grid System Dashboard Configuration (3-Columns)
+       ========================================================================== */
+    .home-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    /* Hero section expands completely edge-to-edge across the top row */
+    .hero-section {
+        grid-column: 1 / -1;
+    }
+
+    .hero-section picture img {
+        min-height: 450px;
+        /* FIXED: Prevents hero overlay from sagging over spotlights */
+    }
+
+    /* Desktop Overlay Alignment: Boxes text cleanly to the left overlay area */
+    .hero-cta {
+        max-width: 450px;
+        bottom: 40px;
+        left: 40px;
+        right: auto;
+    }
+
+    /* Interior content layouts: Splits events and weather columns cleanly */
+    .events-section {
+        grid-column: span 1;
+        margin-left: 40px;
+        margin-right: 0;
+    }
+
+    .weather-section {
+        grid-column: span 2;
+        margin-left: 0;
+        margin-right: 40px;
+    }
+
+    /* Spotlight container cards span edge-to-edge on the bottom row */
+    .spotlights-section {
+        grid-column: 1 / -1;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .spotlight-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    /* ==========================================================================
+       Directory Page View Class System Overrides (Left Intact)
+       ========================================================================== */
     .grid-layout {
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
@@ -60,7 +115,6 @@
         box-shadow: 0 12px 20px var(--shadow-header);
     }
 
-    /* Desktop List View Rows Restructuring */
     .list-layout .business-card {
         flex-direction: row;
         align-items: center;
