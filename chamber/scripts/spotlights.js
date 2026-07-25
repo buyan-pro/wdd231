@@ -63,6 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Initialize business randomizer loop
+    // 7. Dynamic Date Timestamp Metrics Hooks - INSERT THIS RIGHT ABOVE getSpotlightMembers()
+    const currentYearEl = document.getElementById("current-year");
+    const lastModifiedEl = document.getElementById("last-modified-date");
+
+    if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+    if (lastModifiedEl) lastModifiedEl.textContent = document.lastModified;
+
+    // Initialize business randomizer loop (This is your existing final call line)
     getSpotlightMembers();
 });

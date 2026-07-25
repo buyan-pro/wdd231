@@ -75,28 +75,52 @@
             </div>
         </div> <!-- FIXED: Added the required matching closing div tag right here -->
 
-        <!-- Current Events Component Section -->
+        <!-- Current Events Component Section - FIXED: Structured for 2-column layout -->
         <section class="events-section card">
             <h2>Upcoming Bilateral Events</h2>
-            <ul>
-                <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
-                <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
-                <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
-            </ul>
+            <div class="events-split-container">
+                <!-- Column 1: Graphic/Image Placement Container -->
+                <div class="events-image-placeholder">
+                    <span class="meeting-icon">🤝</span>
+                    <p>Bilateral Business Forum Image</p>
+                </div>
+
+                <!-- Column 2: Event Text Details -->
+                <div class="events-details-list">
+                    <ul>
+                        <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
+                        <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
+                        <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
+                    </ul>
+                </div>
+            </div>
 
 
-            <!-- Weather Component Section (Populated via scripts/weather.js) -->
+            <!-- Weather Component Section - FIXED: Prepared for Ulaanbaatar & Hanoi Dual rendering -->
             <section class="weather-section card">
-                <h2>Current Weather</h2>
-                <div id="weather-info">
-                    <p>Loading weather data...</p>
-                </div>
-                <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 15px 0;">
-                <h3>3-Day Forecast</h3>
-                <div id="forecast-info" class="forecast-grid">
-                    <!-- Data populates here dynamically -->
-                </div>
+                <h2>Chamber Regional Weather Profiles</h2>
+                <div class="dual-weather-grid">
+                    <!-- City 1: Ulaanbaatar -->
+                    <div class="weather-city-block">
+                        <h3>Mongolia Head Office</h3>
+                        <div id="ub-weather">
+                            <p>Loading Ulaanbaatar climate profile...</p>
+                        </div>
+                    </div>
 
+                    <!-- City 2: Hanoi -->
+                    <div class="weather-city-block">
+                        <h3>Vietnam Trade Hub</h3>
+                        <div id="hanoi-weather">
+                            <p>Loading Hanoi climate profile...</p>
+                        </div>
+                    </div>
+                </div>
+                <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 20px 0;">
+                <h3 style="text-align: center; margin-bottom: 15px;">3-Day Regional Outlook</h3>
+                <div id="forecast-info" class="forecast-grid">
+                    <!-- Combined forecast data hooks drop here dynamically -->
+                </div>
 
                 <!-- Premium Corporate Member Spotlights Component Section (Populated via scripts/spotlights.js) -->
                 <section class="spotlights-section">

@@ -210,38 +210,40 @@ main {
 }
 
 /* ==========================================================================
-   Hero Container System & Absolute Translucent Content Placement Overlays
+   Hero Section Component - Mobile Stacked Setup
    ========================================================================== */
 .hero-section {
     position: relative;
-    /* Spatial boundary anchor point for overlay cards */
     width: 100%;
     overflow: hidden;
+    background-color: var(--primary-color);
+    /* Matches the sapphire block */
 }
 
 .hero-section picture img {
     width: 100%;
-    /* Forces image fluid bleed to absolute edge of mobile viewports */
     height: auto;
-    max-height: 450px;
+    max-height: 300px;
     display: block;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
 }
 
+/* Stacks naturally on mobile views, preventing clipping */
 .hero-cta {
-    position: absolute;
-    /* Pulls text out of page flow to lock layered above image graphic */
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: rgba(10, 37, 64, 0.85);
-    /* 85% opacity premium dark sapphire canvas */
+    position: relative;
+    /* Changed from absolute to flow naturally */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    background-color: var(--primary-color);
     padding: 20px;
-    border-radius: 6px;
     color: #FFFFFF;
     box-sizing: border-box;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
 }
 
 .hero-cta h2 {
@@ -579,4 +581,139 @@ Accessibility Utilities: Structural Heading Hide
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* Center alignment variables for Upcoming Events cards */
+.events-section {
+    text-align: center;
+}
+
+.events-section ul {
+    list-style-type: none;
+    /* Removes bullet formatting markers to balance layout text */
+    padding: 0;
+    margin: 15px auto 0 auto;
+    display: inline-block;
+    /* Aligns text columns uniformly around center lines */
+    text-align: left;
+    /* Restores crisp left text baseline alignment within centered wrapper */
+}
+
+.events-section ul li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   W03: Upcoming Events 2-Column Split System Layouts
+   ========================================================================== */
+.events-section {
+    text-align: center;
+}
+
+.events-split-container {
+    display: flex;
+    flex-direction: column;
+    /* Stacks vertically on phone screen widths */
+    gap: 20px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.events-image-placeholder {
+    width: 100%;
+    max-width: 350px;
+    height: 180px;
+    background-color: var(--bg-light);
+    border: 2px dashed var(--btn-border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.events-image-placeholder .meeting-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.events-details-list {
+    width: 100%;
+    text-align: center;
+}
+
+.events-details-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.events-details-list ul li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   W03: Upcoming Events & Dual-Weather Layout Foundations
+   ========================================================================== */
+.events-split-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.events-image-placeholder {
+    width: 100%;
+    max-width: 340px;
+    height: 180px;
+    background-color: var(--bg-light);
+    border: 2px dashed var(--btn-border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+.events-image-placeholder .meeting-icon {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.events-details-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.events-details-list ul li {
+    margin-bottom: 12px;
+}
+
+/* Dual Weather Block Framework */
+.dual-weather-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.weather-city-block {
+    background-color: var(--bg-light);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+}
+
+.weather-city-block h3 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: var(--primary-color);
 }
