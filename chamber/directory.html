@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+
 </head>
 
 <body>
@@ -46,14 +47,16 @@
                 </div>
             </div>
             <!-- Dynamic Smartphone Hamburger Navigation Toggle Control -->
-            <button id="menu-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+            <!-- LOCATE THIS LINE IN DIRECTORY.HTML AND CHANGE ID TO MATCH MAIN.JS -->
+            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+
         </div>
         <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Discover</a></li>
                 <li><a href="directory.html" class="active">Directory</a></li>
-                <li><a href="#">Join Us</a></li>
+                <li><a href="join.html">Join Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -109,7 +112,24 @@
         </div>
     </footer>
 
+    <!-- APP GLOBAL CORE ENGINE SCRIPTS HOOK -->
+    <script src="scripts/main.js" defer></script>
     <script src="scripts/directory.js" defer></script>
+
+    <!-- INJECT THIS TARGETED EVENT HANDLER TO DEFEAT OVERWRITE CONFLICTS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("menu-toggle");
+            const nav = document.getElementById("nav-menu");
+            if (btn && nav) {
+                // Attach a direct event loop trigger to guarantee execution
+                btn.onclick = () => {
+                    nav.classList.toggle("open");
+                    btn.innerHTML = nav.classList.contains("open") ? "&#x2715;" : "&#9776;";
+                };
+            }
+        });
+    </script>
 </body>
 
 </html>

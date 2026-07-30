@@ -46,7 +46,7 @@
     }
 
     /* ==========================================================================
-       ADDED: Home Page Grid System Dashboard Configuration (3-Columns)
+       Home Page Grid System Dashboard Configuration (3-Columns)
        ========================================================================== */
     .home-grid {
         display: grid;
@@ -61,7 +61,6 @@
 
     .hero-section picture img {
         min-height: 450px;
-        /* FIXED: Prevents hero overlay from sagging over spotlights */
     }
 
     /* Restores the overlay card ONLY on large monitor viewports */
@@ -103,6 +102,73 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 25px;
+    }
+
+
+    /* ==========================================================================
+       W03 UI Improvements: 2-Column Split Framework for Events & Weather Modules
+       ========================================================================== */
+    .events-split-container {
+        display: flex !important;
+        flex-direction: row !important;
+        /* Forces left-to-right alignment explicitly on monitor screens */
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 40px !important;
+        width: 100% !important;
+        padding: 20px 40px !important;
+    }
+
+    .events-image-placeholder {
+        flex: 1 !important;
+        max-width: 45% !important;
+        /* Restricts the signing photo to the left half */
+        height: auto !important;
+    }
+
+    .events-details-list {
+        flex: 1 !important;
+        max-width: 45% !important;
+        /* Restricts your text lists to the right half */
+        text-align: left !important;
+        /* Guarantees clean left baseline text formatting */
+        padding-left: 0 !important;
+    }
+
+    .weather-city-block {
+        flex: 1;
+        margin: 0 10px;
+    }
+
+
+    /* ==========================================================================
+       W04: Join Us Desktop Multi-Column Split Framework (Form vs. Sidebar)
+       ========================================================================== */
+    .join-main-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /* Asymmetric grid layout mapping */
+        gap: 40px;
+        align-items: start;
+        padding: 40px;
+    }
+
+    .form-section {
+        padding: 40px;
+    }
+
+    .benefits-sidebar {
+        position: sticky;
+        top: 40px;
+        /* Locks the cards container during scroll actions */
+    }
+
+    .tier-benefit-card {
+        transition: transform 0.2s ease;
+    }
+
+    .tier-benefit-card:hover {
+        transform: scale(1.02);
     }
 
     /* ==========================================================================
@@ -168,46 +234,4 @@
     }
 }
 
-/* Converts the events layout into 2 balanced columns on desktop views */
-.events-split-container {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    text-align: left;
-    padding: 10px 20px;
-}
-
-.events-image-placeholder {
-    flex: 1;
-    max-width: 400px;
-    height: 200px;
-}
-
-.events-details-list {
-    flex: 1;
-    padding-left: 20px;
-    text-align: left;
-}
-
-/* Unlocks desktop 2-column configurations for events and weather cards */
-.events-split-container,
-.dual-weather-grid {
-    flex-direction: row !important;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.events-image-placeholder {
-    flex: 1;
-    max-width: 380px;
-}
-
-.events-details-list {
-    flex: 1;
-    padding-left: 30px;
-}
-
-.weather-city-block {
-    flex: 1;
-    margin: 0 10px;
-}
+/* FIXED: Media query curly bracket now correctly encapsulates the entire file */

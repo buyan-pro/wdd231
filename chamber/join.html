@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Chamber | Mongolia Vietnam Chamber of Commerce</title>
+    <meta name="description"
+        content="Apply for corporate membership with the Mongolia Vietnam Chamber of Commerce. Select from NP, Bronze, Silver, or Gold tiers to expand your network.">
+    <meta name="author" content="Buyannemekh Chimeddorj">
+
+    <!-- STANDARD FAVICON MAPPING LINK -->
+    <link rel="icon" href="https://github.io" type="image/x-icon">
+
+    <!-- OPEN GRAPH SOCIAL PLATFORM PROPERTIES -->
+    <meta property="og:title" content="Membership Application - Mongolia Vietnam Chamber of Commerce">
+    <meta property="og:description"
+        content="Submit your business registration profile and lock in your premium corporate networking level.">
+    <meta property="og:image" content="https://github.io">
+    <meta property="og:url" content="https://github.io">
+    <meta property="og:type" content="website">
+
+    <!-- GOOGLE FONTS API INTEGRATION BLOCKS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- LOCAL APP STYLESHEETS LINK MATRIX HIERARCHY -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+</head>
+
+<body>
+
+    <!-- Header UI Module Layout (Synchronized across all pages) -->
+    <header>
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="images/chamber-logo.webp" alt="MVCC Official Emblem Logo" width="80" height="80"
+                    loading="eager">
+                <div class="branding-text">
+                    <div class="header-logo-title">MVCC</div>
+                    <p>Mongolia Vietnam Chamber of Commerce</p>
+                </div>
+            </div>
+            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="active">Join Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="join-main-layout">
+        <!-- Section 1: The Membership Registration Form -->
+        <section class="form-section card">
+            <h2>Chamber Membership Application</h2>
+            <form method="get" action="thankyou.html" class="application-form">
+
+                <label class="form-label">
+                    <span>First Name *</span>
+                    <input type="text" name="fname" required autocomplete="given-name">
+                </label>
+
+                <label class="form-label">
+                    <span>Last Name *</span>
+                    <input type="text" name="lname" required autocomplete="family-name">
+                </label>
+
+                <label class="form-label">
+                    <span>Your Organizational Title *</span>
+                    <input type="text" name="title" required pattern="[A-Za-z\s\-]{4,}"
+                        title="Please enter a valid title (at least 4 characters long, alphabetic strings only)">
+                </label>
+
+                <label class="form-label">
+                    <span>Email Address *</span>
+                    <input type="email" name="email" required placeholder="example@company.com" autocomplete="email">
+                </label>
+
+                <label class="form-label">
+                    <span>Mobile Phone Number *</span>
+                    <input type="tel" name="phone" required placeholder="+976..." autocomplete="tel">
+                </label>
+
+                <label class="form-label">
+                    <span>Business / Organization Name *</span>
+                    <input type="text" name="organization" required autocomplete="organization">
+                </label>
+
+                <label class="form-label">
+                    <span>Select Membership Level *</span>
+                    <select name="membership-level" required>
+                        <option value="" disabled selected>-- Choose Level --</option>
+                        <option value="np">Non-Profit Tier (Free)</option>
+                        <option value="bronze">Bronze Membership Tier</option>
+                        <option value="silver">Silver Membership Tier</option>
+                        <option value="gold">Gold Membership Tier</option>
+                    </select>
+                </label>
+
+                <label class="form-label">
+                    <span>Business Entity Description</span>
+                    <textarea name="description" rows="4"
+                        placeholder="Briefly summarize your cross-border trade operations or legal/logistics services..."></textarea>
+                </label>
+
+                <!-- CRITICAL ASSIGNMENT REQUIREMENT: Hidden Form Submission Timestamp -->
+                <input type="hidden" id="form-timestamp" name="timestamp" value="">
+
+                <input type="submit" value="Submit Corporate Application" class="submit-btn">
+            </form>
+        </section>
+
+        <!-- Section 2: Membership Tiers Side-Panel Benefits Info -->
+        <section class="benefits-sidebar">
+            <div class="tier-benefit-card bronze-info">
+                <h3>🥉 Bronze Membership</h3>
+                <p>Includes standard listing markers inside our registered trade database directory.</p>
+            </div>
+            <div class="tier-benefit-card silver-info">
+                <h3>🥈 Silver Membership</h3>
+                <p>Unlocks homepage training module features, spotlight rotation loops, and discounted forum passes.</p>
+            </div>
+            <div class="tier-benefit-card gold-info">
+                <h3>🥇 Gold Membership</h3>
+                <p>Full premium access. Dominant priority spotlighting cards, free summit vendor spaces, and strategic
+                    governmental matchmaking sessions.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer UI Module Layout (Synchronized across all pages) -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-contact">
+                <h3>MVCC Administrative Headquarters</h3>
+                <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
+                <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
+            </div>
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <p>WDD 231 Web Frontend Development I</p>
+                <p>Chamber Group Project Portfolio Hub</p>
+                <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
+            <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
+        </div>
+    </footer>
+
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</body>
+
+</html>

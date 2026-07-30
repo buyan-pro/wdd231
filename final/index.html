@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Morning Bliss - Developer Portfolio and Client Web Services Portal by Buyannemekh Chimeddorj. Custom web development, API integration, and performance optimization.">
+    <meta name="author" content="Buyannemekh Chimeddorj">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Morning Bliss | Web Development &amp; Portfolio">
+    <meta property="og:description"
+        content="Custom web solutions, dynamic web applications, and developer portfolio by Buyannemekh Chimeddorj.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/final/">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/final/images/og-preview.jpg">
+
+    <title>Morning Bliss | Home &amp; Developer Portal</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 1024px)">
+
+    <!-- JS Module -->
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand">
+                <a href="index.html" class="logo-link">
+                    <span class="brand-title">Morning Bliss</span>
+                    <span class="brand-subtitle">Web Solutions</span>
+                </a>
+            </div>
+
+            <!-- Mobile Navigation Hamburger Button -->
+            <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Primary Navigation -->
+            <nav id="primary-nav" class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services &amp; Estimator</a></li>
+                    <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
+                    <li><button type="button" class="btn btn-secondary open-contact-modal">Contact</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Crafting Dynamic, Accessible &amp; Performant Web Solutions</h1>
+                <p>I build custom web applications, integrate REST APIs, and optimize performance for small businesses
+                    and modern digital platforms.</p>
+                <div class="hero-cta-group">
+                    <a href="services.html" class="btn btn-primary">Estimate Project Scope</a>
+                    <button type="button" class="btn btn-outline open-contact-modal">Get In Touch</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Summary Overview -->
+        <section class="services-summary section-container">
+            <h2>Core Expertise &amp; Services</h2>
+            <p class="section-intro">Focused on practical web development solutions that solve real business problems
+                and deliver exceptional user experiences.</p>
+
+            <div class="card-grid">
+                <article class="service-card">
+                    <div class="card-icon">💻</div>
+                    <h3>Custom Web Development</h3>
+                    <p>Responsive, mobile-first websites crafted with semantic HTML5, modern CSS Grid/Flexbox, and clean
+                        modular JavaScript.</p>
+                    <a href="services.html" class="card-link">Learn More &rarr;</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>REST API &amp; Data Integration</h3>
+                    <p>Connecting web apps to live external data feeds, third-party services, and asynchronous JSON data
+                        pipelines.</p>
+                    <a href="services.html" class="card-link">Learn More &rarr;</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">♿</div>
+                    <h3>Accessibility &amp; SEO Audits</h3>
+                    <p>Optimizing web properties to meet WCAG AA contrast standards, keyboard navigation requirements,
+                        and search engine guidelines.</p>
+                    <a href="services.html" class="card-link">Learn More &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Work Philosophy & Featured Highlights -->
+        <section class="philosophy-section section-container">
+            <div class="philosophy-grid">
+                <div class="philosophy-text">
+                    <h2>Development Philosophy</h2>
+                    <p>Great web development sits at the intersection of performance, accessibility, and business
+                        outcomes. Every line of code should contribute to a fast, reliable, and smooth user journey
+                        across all device screen sizes.</p>
+                    <ul class="check-list">
+                        <li><strong>Mobile-First Responsive Design:</strong> Flawless rendering from 320px mobile
+                            viewports up to desktop displays.</li>
+                        <li><strong>Zero Unnecessary Overhead:</strong> Lightweight, native web technologies without
+                            heavy third-party CSS frameworks.</li>
+                        <li><strong>Data-Driven Functionality:</strong> Dynamic state management using ES6 modules and
+                            modern Async/Await APIs.</li>
+                    </ul>
+                </div>
+                <div class="philosophy-callout">
+                    <h3>Ready to build something unique?</h3>
+                    <p>Explore my interactive scope estimator to get real-time price and timeline projections for your
+                        next web project.</p>
+                    <a href="services.html" class="btn btn-primary">Try Scope Estimator</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Form Accessible Modal Dialog -->
+    <dialog id="contact-modal" class="modal-dialog">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn" aria-label="Close modal dialog">&times;</button>
+            <h2>Start a Project Consultation</h2>
+            <p>Fill out the form below to get in touch regarding custom development, API integration, or web audits.</p>
+
+            <form action="thankyou.html" method="get" class="contact-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceType">Service Needed <span class="required">*</span></label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="" disabled selected>Select a service...</option>
+                        <option value="custom-web">Custom Web Development</option>
+                        <option value="api-integration">API &amp; Data Integration</option>
+                        <option value="a11y-audit">Accessibility &amp; SEO Audit</option>
+                        <option value="other">General Inquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Details / Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="4" required
+                        placeholder="Briefly describe your goals or project timeline..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Shared Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; <span id="current-year"></span> Morning Bliss | Buyannemekh Chimeddorj</p>
+            <p class="footer-links">
+                <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">Project Demonstration Video</a>
+                |
+                <a href="attributions.html">Attributions</a>
+            </p>
+            <p class="last-modified">Last Modified: <span id="last-modified-date"></span></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+
 </head>
 
 <body>
@@ -52,7 +53,7 @@
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="#">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
-                <li><a href="#">Join Us</a></li>
+                <li><a href="join.html">Join Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -79,20 +80,23 @@
         <section class="events-section card">
             <h2>Upcoming Bilateral Events</h2>
             <div class="events-split-container">
-                <!-- Column 1: Graphic/Image Placement Container -->
+                <!-- Column 1: Replaced placeholder with live meeting graphic -->
                 <div class="events-image-placeholder">
-                    <span class="meeting-icon">🤝</span>
-                    <p>Bilateral Business Forum Image</p>
+                    <img src="images/vietnam-mongolia-meeting.webp"
+                        alt="Official bilateral signing ceremony between Vietnamese and Mongolian delegates"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
                 </div>
 
-                <!-- Column 2: Event Text Details -->
-                <div class="events-details-list">
-                    <ul>
-                        <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
-                        <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
-                        <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
-                    </ul>
-                </div>
+            </div>
+
+            <!-- Column 2: Event Text Details -->
+            <div class="events-details-list">
+                <ul>
+                    <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
+                    <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
+                    <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
+                </ul>
+            </div>
             </div>
 
 
@@ -160,8 +164,10 @@
     </footer>
 
     <!-- APP CORE ENGINE SCRIPTS HOOK -->
+    <script src="scripts/main.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlights.js" defer></script>
+
 </body>
 
 </html>
