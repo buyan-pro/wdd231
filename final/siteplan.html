@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Individual Website Project Site Plan for Morning Bliss - WDD 231 Web Frontend Development.">
+    <meta name="author" content="Buyannemekh Chimeddorj">
+
+    <title>Morning Bliss | Site Plan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+       Site Plan CSS - Styled using the project's official palette & typography
+       ========================================================================== */
+        :root {
+            --primary-navy: #1E293B;
+            --accent-gold: #F59E0B;
+            --bg-cream: #FAFAF9;
+            --bg-white: #FFFFFF;
+            --text-main: #334155;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-cream);
+            padding: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-navy);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-navy);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        ul,
+        ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Color Swatches Demonstration */
+        .color-swatch-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .color-swatch {
+            flex: 1;
+            min-width: 150px;
+            padding: 1rem;
+            border-radius: 6px;
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .swatch-navy {
+            background-color: #1E293B;
+        }
+
+        .swatch-gold {
+            background-color: #F59E0B;
+            color: #1E293B;
+        }
+
+        .swatch-cream {
+            background-color: #FAFAF9;
+            color: #1E293B;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Wireframe Containers */
+        .wireframe-box {
+            background: #F1F5F9;
+            border: 2px dashed var(--border-color);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748B;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Morning Bliss Site Plan</h1>
+        <p>WDD 231: Web Frontend Development I — Final Project Plan</p>
+    </header>
+
+    <main>
+        <!-- Step 2.1: Site Name -->
+        <section>
+            <h2>1. Site Name</h2>
+            <p><strong>Name:</strong> Morning Bliss</p>
+            <p><strong>Reasoning:</strong> "Morning Bliss" represents a fresh, vibrant, and reliable start for small
+                business owners looking to bring their digital presence to life. It serves as both a developer portfolio
+                and a client web application portal.</p>
+            <p><strong>Optional domain availability:</strong> <code>morningblissweb.com</code></p>
+        </section>
+
+        <!-- Step 2.2: Site Purpose -->
+        <section>
+            <h2>2. Site Purpose</h2>
+            <p>The site serves a dual purpose: it acts as my professional web developer portfolio showcasing projects to
+                recruiters and hiring managers, while operating as an interactive portal for potential business clients
+                to explore services (custom web development, REST API integration, and WCAG AA accessibility audits) and
+                compute instant cost and timeline projections using an interactive scope estimator tool.</p>
+        </section>
+
+        <!-- Step 2.3: Target Audience Scenarios -->
+        <section>
+            <h2>3. Target Audience Scenarios</h2>
+            <ul>
+                <li><strong>Scenario 1 (Potential Client):</strong> "How much will it cost and how many days will it
+                    take to build a 3-page custom web application with API integration for my small business?"</li>
+                <li><strong>Scenario 2 (Tech Recruiter / Hiring Manager):</strong> "Where can I view Buyannemekh's
+                    recent JavaScript projects, live public GitHub repository statistics, and code repositories?"</li>
+            </ul>
+        </section>
+
+        <!-- Step 2.4: Color Scheme -->
+        <section>
+            <h2>4. Color Scheme</h2>
+            <p>This HTML site plan document exclusively applies the selected palette for demonstration:</p>
+
+            <div class="color-swatch-container">
+                <div class="color-swatch swatch-navy">
+                    Slate Navy<br>#1E293B<br>(Headings &amp; Text)
+                </div>
+                <div class="color-swatch swatch-gold">
+                    Sunshine Gold<br>#F59E0B<br>(Accents &amp; CTAs)
+                </div>
+                <div class="color-swatch swatch-cream">
+                    Warm Cream<br>#FAFAF9<br>(Canvas Background)
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Primary Color (#1E293B - Slate Navy):</strong> Used for primary headings, body text, header
+                    backgrounds, and structural section boundaries.</li>
+                <li><strong>Accent Color (#F59E0B - Sunshine Gold):</strong> Used for call-to-action buttons,
+                    interactive highlights, focus rings, borders, and active links.</li>
+                <li><strong>Background Canvas (#FAFAF9 - Warm Cream):</strong> Light, modern, accessible background
+                    canvas to maintain readable contrast.</li>
+            </ul>
+        </section>
+
+        <!-- Step 2.5: Typography -->
+        <section>
+            <h2>5. Typography</h2>
+            <ul>
+                <li><strong>Heading Font (Poppins):</strong> Applied to all major headings (<code>&lt;h1&gt;</code>,
+                    <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>) for a structured, geometric appearance.</li>
+                <li><strong>Body Font (Inter):</strong> Applied to all paragraph text, list items, forms, and technical
+                    project details for clean legibility across devices.</li>
+            </ul>
+        </section>
+
+        <!-- Step 2.6: Wireframes -->
+        <section>
+            <h2>6. Responsive Wireframe Sketches</h2>
+            <p>Simplified structural wireframe representation for small (mobile) and larger (desktop) viewports:</p>
+
+            <div class="wireframe-box">
+                <h3>Small Viewport (Mobile View - 320px to 640px)</h3>
+                <p>Single column stacked layout with collapsible hamburger navigation menu, full-width card list, and
+                    stacked call-to-action buttons.</p>
+            </div>
+
+            <div class="wireframe-box">
+                <h3>Larger Viewport (Desktop View - 1024px+)</h3>
+                <p>Horizontal header navigation bar, split-screen hero section, multi-column CSS Grid card arrangements,
+                    and side-by-side scope estimator display.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Morning Bliss Site Plan | Buyannemekh Chimeddorj | WDD 231</p>
+    </footer>
+
+</body>
+
+</html>
