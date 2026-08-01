@@ -11,21 +11,17 @@
 
     <!-- STANDARD FAVICON MAPPING LINK -->
     <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
-
-    <!-- OPEN GRAPH SOCIAL PLATFORM PROPERTIES -->
-    <meta property="og:title" content="Membership Application - Mongolia Vietnam Chamber of Commerce">
-    <meta property="og:description"
-        content="Submit your business registration profile and lock in your premium corporate networking level.">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico">
+    <!-- OPEN GRAPH SOCIAL PLATFORM PROPERTIES - FIXED LOGIC PATHS -->
+    <meta property="og:image" content="https://github.io">
     <meta property="og:url" content="https://github.io">
     <meta property="og:type" content="website">
 
     <!-- GOOGLE FONTS API INTEGRATION BLOCKS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- LOCAL APP STYLESHEETS LINK MATRIX HIERARCHY -->
+    <!-- LOCAL APP STYLESHEETS LINK MATRIX HIERARCHY - FIXED CDN LIBRARY LINK -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
@@ -57,94 +53,99 @@
         </nav>
     </header>
 
-    <form method="get" action="thankyou.html" class="application-form">
+    <main class="join-main-layout">
+        <section class="form-section card">
+            <h2>Chamber Membership Application</h2>
 
-        <label class="form-label">
-            <span>First Name *</span>
-            <!-- FIXED: Added title attribute -->
-            <input type="text" name="fname" required autocomplete="given-name"
-                title="Please enter your first name. Only alphabetic characters are allowed.">
-        </label>
+            <form method="get" action="thankyou.html" class="application-form">
 
-        <label class="form-label">
-            <span>Last Name *</span>
-            <!-- FIXED: Added title attribute -->
-            <input type="text" name="lname" required autocomplete="family-name"
-                title="Please enter your last name. Only alphabetic characters are allowed.">
-        </label>
+                <label class="form-label">
+                    <span>First Name *</span>
+                    <!-- FIXED: Added title attribute -->
+                    <input type="text" name="fname" required autocomplete="given-name"
+                        title="Please enter your first name. Only alphabetic characters are allowed.">
+                </label>
 
-        <label class="form-label">
-            <span>Your Organizational Title *</span>
-            <!-- FIXED: Added autocomplete="organization-title" -->
-            <input type="text" name="title" required pattern="[A-Za-z\s\-]{4,}" autocomplete="organization-title"
-                title="Please enter your official corporate title (at least 4 characters long, letters and spaces only).">
-        </label>
+                <label class="form-label">
+                    <span>Last Name *</span>
+                    <!-- FIXED: Added title attribute -->
+                    <input type="text" name="lname" required autocomplete="family-name"
+                        title="Please enter your last name. Only alphabetic characters are allowed.">
+                </label>
 
-        <label class="form-label">
-            <span>Email Address *</span>
-            <!-- FIXED: Added title attribute -->
-            <input type="email" name="email" required placeholder="example@company.com" autocomplete="email"
-                title="Please enter a valid corporate email address (e.g., name@company.com).">
-        </label>
+                <label class="form-label">
+                    <span>Your Organizational Title *</span>
+                    <!-- FIXED: Added autocomplete="organization-title" -->
+                    <input type="text" name="title" required pattern="[A-Za-z\s\-]{4,}"
+                        autocomplete="organization-title"
+                        title="Please enter your official corporate title (at least 4 characters long, letters and spaces only).">
+                </label>
 
-        <label class="form-label">
-            <span>Mobile Phone Number *</span>
-            <!-- FIXED: Added title attribute -->
-            <input type="tel" name="phone" required placeholder="+976..." autocomplete="tel"
-                title="Please enter your mobile phone number including international country code.">
-        </label>
+                <label class="form-label">
+                    <span>Email Address *</span>
+                    <!-- FIXED: Added title attribute -->
+                    <input type="email" name="email" required placeholder="example@company.com" autocomplete="email"
+                        title="Please enter a valid corporate email address (e.g., name@company.com).">
+                </label>
 
-        <label class="form-label">
-            <span>Business / Organization Name *</span>
-            <!-- FIXED: Added title attribute -->
-            <input type="text" name="organization" required autocomplete="organization"
-                title="Please enter the official legal name of your business or non-profit organization.">
-        </label>
+                <label class="form-label">
+                    <span>Mobile Phone Number *</span>
+                    <!-- FIXED: Added title attribute -->
+                    <input type="tel" name="phone" required placeholder="+976..." autocomplete="tel"
+                        title="Please enter your mobile phone number including international country code.">
+                </label>
 
-        <label class="form-label">
-            <span>Select Membership Level *</span>
-            <!-- FIXED: Added title attribute -->
-            <select name="membership-level" required
-                title="Please select a membership level tier from the dropdown options.">
-                <option value="" disabled selected>-- Choose Level --</option>
-                <option value="np">Non-Profit Tier (Free)</option>
-                <option value="bronze">Bronze Membership Tier</option>
-                <option value="silver">Silver Membership Tier</option>
-                <option value="gold">Gold Membership Tier</option>
-            </select>
-        </label>
+                <label class="form-label">
+                    <span>Business / Organization Name *</span>
+                    <!-- FIXED: Added title attribute -->
+                    <input type="text" name="organization" required autocomplete="organization"
+                        title="Please enter the official legal name of your business or non-profit organization.">
+                </label>
 
-        <label class="form-label">
-            <span>Business Entity Description</span>
-            <!-- FIXED: Added title attribute -->
-            <textarea name="description" rows="4"
-                placeholder="Briefly summarize your cross-border trade operations or legal/logistics services..."
-                title="Optional description of your business operations or trade activities."></textarea>
-        </label>
+                <label class="form-label">
+                    <span>Select Membership Level *</span>
+                    <!-- FIXED: Added title attribute -->
+                    <select name="membership-level" required
+                        title="Please select a membership level tier from the dropdown options.">
+                        <option value="" disabled selected>-- Choose Level --</option>
+                        <option value="np">Non-Profit Tier (Free)</option>
+                        <option value="bronze">Bronze Membership Tier</option>
+                        <option value="silver">Silver Membership Tier</option>
+                        <option value="gold">Gold Membership Tier</option>
+                    </select>
+                </label>
 
-        <!-- CRITICAL ASSIGNMENT REQUIREMENT: Hidden Form Submission Timestamp -->
-        <input type="hidden" id="form-timestamp" name="timestamp" value="">
+                <label class="form-label">
+                    <span>Business Entity Description</span>
+                    <!-- FIXED: Added title attribute -->
+                    <textarea name="description" rows="4"
+                        placeholder="Briefly summarize your cross-border trade operations or legal/logistics services..."
+                        title="Optional description of your business operations or trade activities."></textarea>
+                </label>
 
-        <input type="submit" value="Submit Corporate Application" class="submit-btn">
-    </form>
-    </section>
+                <!-- CRITICAL ASSIGNMENT REQUIREMENT: Hidden Form Submission Timestamp -->
+                <input type="hidden" id="form-timestamp" name="timestamp" value="">
 
-    <!-- Section 2: Membership Tiers Side-Panel Benefits Info -->
-    <section class="benefits-sidebar">
-        <div class="tier-benefit-card bronze-info">
-            <h3>🥉 Bronze Membership</h3>
-            <p>Includes standard listing markers inside our registered trade database directory.</p>
-        </div>
-        <div class="tier-benefit-card silver-info">
-            <h3>🥈 Silver Membership</h3>
-            <p>Unlocks homepage training module features, spotlight rotation loops, and discounted forum passes.</p>
-        </div>
-        <div class="tier-benefit-card gold-info">
-            <h3>🥇 Gold Membership</h3>
-            <p>Full premium access. Dominant priority spotlighting cards, free summit vendor spaces, and strategic
-                governmental matchmaking sessions.</p>
-        </div>
-    </section>
+                <input type="submit" value="Submit Corporate Application" class="submit-btn">
+            </form>
+        </section>
+
+        <!-- Section 2: Membership Tiers Side-Panel Benefits Info -->
+        <section class="benefits-sidebar">
+            <div class="tier-benefit-card bronze-info">
+                <h3>🥉 Bronze Membership</h3>
+                <p>Includes standard listing markers inside our registered trade database directory.</p>
+            </div>
+            <div class="tier-benefit-card silver-info">
+                <h3>🥈 Silver Membership</h3>
+                <p>Unlocks homepage training module features, spotlight rotation loops, and discounted forum passes.</p>
+            </div>
+            <div class="tier-benefit-card gold-info">
+                <h3>🥇 Gold Membership</h3>
+                <p>Full premium access. Dominant priority spotlighting cards, free summit vendor spaces, and strategic
+                    governmental matchmaking sessions.</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer UI Module Layout (Synchronized across all pages) -->
