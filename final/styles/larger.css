@@ -1,0 +1,141 @@
+/* ==========================================================================
+   Morning Bliss - Larger Screens CSS (Desktop Enhancements)
+   WDD 231 Final Project - Triggered at min-width: 1024px
+   ========================================================================== */
+
+@media screen and (min-width: 1024px) {
+
+    /* --------------------------------------------------------------------------
+     1. Navigation & Header Layout
+     -------------------------------------------------------------------------- */
+
+    /* Hide the hamburger button on desktop viewports */
+    .hamburger-btn {
+        display: none;
+    }
+
+    /* Reset mobile drawer into horizontal desktop header navigation */
+    .nav-menu {
+        display: block !important;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        border-bottom: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+        position: relative;
+    }
+
+    /* Subtle indicator bar for active navigation links */
+    .nav-menu a.active::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--accent-gold);
+        border-radius: 2px;
+    }
+
+    /* --------------------------------------------------------------------------
+     2. Hero & Banner Layouts
+     -------------------------------------------------------------------------- */
+    .hero-section {
+        padding: 5rem 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.75rem;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta-group {
+        flex-direction: row;
+        gap: 1.25rem;
+    }
+
+    /* --------------------------------------------------------------------------
+     3. Multi-Column CSS Grid Structures
+     -------------------------------------------------------------------------- */
+    .section-container {
+        padding: 4rem 2rem;
+    }
+
+    /* 3-Column Grid for Services & Portfolio Cards */
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* Split 2-Column Grid for Development Philosophy & Callout */
+    .philosophy-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    /* --------------------------------------------------------------------------
+     4. Interactive Estimator Split-Screen Layout (services.html)
+     -------------------------------------------------------------------------- */
+    .estimator-container {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 2.5rem;
+        align-items: start;
+    }
+
+    .sticky-quote-summary {
+        position: sticky;
+        top: 90px;
+        /* Sticks neatly below header during scrolling */
+    }
+
+    /* --------------------------------------------------------------------------
+     5. Portfolio Showcase & Filter Header (portfolio.html)
+     -------------------------------------------------------------------------- */
+    .portfolio-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .filter-buttons {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    /* --------------------------------------------------------------------------
+     6. Footer Layout Adjustment
+     -------------------------------------------------------------------------- */
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-links {
+        margin-bottom: 0;
+    }
+}
