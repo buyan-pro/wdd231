@@ -78,13 +78,6 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
-    /* Interior content layouts: Splits events and weather columns cleanly */
-    .events-section {
-        grid-column: span 1;
-        margin-left: 40px;
-        margin-right: 0;
-    }
-
     .weather-section {
         grid-column: span 2;
         margin-left: 0;
