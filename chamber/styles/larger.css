@@ -97,15 +97,13 @@
         gap: 25px;
     }
 
-
     /* ==========================================================================
-       W03 UI Improvements: 2-Column Split Framework for Events & Weather Modules
-       ========================================================================== */
-
+    W03 UI Improvements: 2-Column Split Framework for Events & Weather Modules
+    ========================================================================== 
+    */
     .events-split-container {
         display: flex !important;
         flex-direction: row !important;
-        /* Forces left-to-right alignment explicitly on monitor screens */
         justify-content: center !important;
         align-items: center !important;
         gap: 40px !important;
@@ -116,24 +114,29 @@
     .events-image-placeholder {
         flex: 1 !important;
         max-width: 45% !important;
-        /* Restricts the signing photo to the left half */
         height: auto !important;
     }
 
     .events-details-list {
         flex: 1 !important;
         max-width: 45% !important;
-        /* Restricts your text lists to the right half */
         text-align: left !important;
-        /* Guarantees clean left baseline text formatting */
         padding-left: 0 !important;
     }
 
-    .weather-city-block {
-        flex: 1;
-        margin: 0 10px;
+    /* FIXED: Unified weather column rules safely stored INSIDE the active media query */
+    .dual-weather-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 30px !important;
+        width: 100% !important;
     }
 
+    .weather-city-block {
+        flex: 1 !important;
+        margin: 0 !important;
+    }
 
     /* ==========================================================================
        W04: Join Us Desktop Multi-Column Split Framework (Form vs. Sidebar)
@@ -226,22 +229,4 @@
     .footer-meta {
         text-align: right;
     }
-}
-
-/* ==========================================================================
-       Home Page Weather Profile Side-by-Side (L/R) Columns Overrides
-       ========================================================================== */
-.dual-weather-grid {
-    display: flex !important;
-    flex-direction: row !important;
-    /* Forces left-to-right split layout on desktops */
-    justify-content: space-between !important;
-    gap: 30px !important;
-    width: 100% !important;
-}
-
-.weather-city-block {
-    flex: 1 !important;
-    /* Distributes uniform layout weight to both columns */
-    margin: 0 !important;
 }
