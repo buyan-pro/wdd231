@@ -75,46 +75,46 @@
                 <a href="#" class="cta-btn">Join the Chamber</a>
             </div>
         </div> <!-- FIXED: Added the required matching closing div tag right here -->
-
-        <!-- Current Events Component Section - FIXED: Structured for 2-column layout -->
+        <!-- Upcoming Bilateral Events Section - FIXED WITH ALL WRAPPER CLASSES -->
         <section class="events-section card">
             <h2>Upcoming Bilateral Events</h2>
             <div class="events-split-container">
-                <!-- Column 1: Replaced placeholder with live meeting graphic -->
+
+                <!-- Left Column Wrapper: Holds the Photo -->
                 <div class="events-image-placeholder">
                     <img src="images/vietnam-mongolia-meeting.webp"
-                        alt="Official bilateral signing ceremony between Vietnamese and Mongolian delegates"
-                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
+                        alt="Official bilateral signing ceremony between Vietnamese and Mongolian delegates featuring national desk flags">
                 </div>
 
-            </div>
+                <!-- Right Column Wrapper: Holds the Event List Text -->
+                <div class="events-details-list">
+                    <ul>
+                        <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
+                        <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
+                        <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
+                    </ul>
+                </div>
 
-            <!-- Column 2: Event Text Details -->
-            <div class="events-details-list">
-                <ul>
-                    <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
-                    <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
-                    <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
-                </ul>
-            </div>
-            </div>
+            </div> <!-- Closes .events-split-container -->
+            <!-- Closes .events-section -->
 
-
-            <!-- Weather Component Section - FIXED: Prepared for Ulaanbaatar & Hanoi Dual rendering -->
+            <!-- Weather Component Section -->
             <section class="weather-section card">
                 <h2>Chamber Regional Weather Profiles</h2>
                 <div class="dual-weather-grid">
-                    <!-- City 1: Ulaanbaatar -->
+                    <!-- Left Weather Column: Ulaanbaatar -->
                     <div class="weather-city-block">
                         <h3>Mongolia Head Office</h3>
+                        <!-- Ensure this ID is exactly 'ub-weather' -->
                         <div id="ub-weather">
                             <p>Loading Ulaanbaatar climate profile...</p>
                         </div>
                     </div>
 
-                    <!-- City 2: Hanoi -->
+                    <!-- Right Weather Column: Hanoi -->
                     <div class="weather-city-block">
                         <h3>Vietnam Trade Hub</h3>
+                        <!-- Ensure this ID is exactly 'hanoi-weather' -->
                         <div id="hanoi-weather">
                             <p>Loading Hanoi climate profile...</p>
                         </div>
@@ -122,9 +122,11 @@
                 </div>
                 <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 20px 0;">
                 <h3 style="text-align: center; margin-bottom: 15px;">3-Day Regional Outlook</h3>
+                <!-- Ensure this ID is exactly 'forecast-info' -->
                 <div id="forecast-info" class="forecast-grid">
-                    <!-- Combined forecast data hooks drop here dynamically -->
+                    <p>Loading 3-day forecast outlook...</p>
                 </div>
+
 
                 <!-- Premium Corporate Member Spotlights Component Section (Populated via scripts/spotlights.js) -->
                 <section class="spotlights-section">

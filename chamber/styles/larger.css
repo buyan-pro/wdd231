@@ -108,6 +108,7 @@
     /* ==========================================================================
        W03 UI Improvements: 2-Column Split Framework for Events & Weather Modules
        ========================================================================== */
+
     .events-split-container {
         display: flex !important;
         flex-direction: row !important;
@@ -234,4 +235,20 @@
     }
 }
 
-/* FIXED: Media query curly bracket now correctly encapsulates the entire file */
+/* ==========================================================================
+       Home Page Weather Profile Side-by-Side (L/R) Columns Overrides
+       ========================================================================== */
+.dual-weather-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Forces left-to-right split layout on desktops */
+    justify-content: space-between !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+.weather-city-block {
+    flex: 1 !important;
+    /* Distributes uniform layout weight to both columns */
+    margin: 0 !important;
+}
