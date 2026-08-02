@@ -1,18 +1,14 @@
-// OpenWeatherMap API Configuration - REPAIRED ABSOLUTE PATHWAYS
 const apiKey = '0b9a766d096a5bfd07d306f691e6717b';
 
-// Fixed Coordinates mapping targets for dual-city regional trackers
 const coords = {
     ub: { lat: '47.92', lon: '106.92', containerId: '#ub-weather' },
     hanoi: { lat: '21.03', lon: '105.85', containerId: '#hanoi-weather' }
 };
 
-// Target DOM Forecast Anchor Point
 const forecastInfo = document.querySelector('#forecast-info');
 
 async function fetchChamberWeather() {
     try {
-        // FIXED paths: Added the mandatory "/data/2.5/" directory mapping string markers
         const [ubRes, hanoiRes, forecastRes] = await Promise.all([
             fetch(`https://openweathermap.org{coords.ub.lat}&lon=${coords.ub.lon}&units=imperial&appid=${apiKey}`),
             fetch(`https://openweathermap.org{coords.hanoi.lat}&lon=${coords.hanoi.lon}&units=imperial&appid=${apiKey}`),
@@ -37,7 +33,6 @@ function displayCurrentCity(data, containerId) {
 
     const temp = Math.round(data.main.temp);
 
-    // FIXED: Correctly tracking weather index array zero to extract climate conditions safely
     if (data.weather && data.weather.length > 0) {
         const desc = data.weather[0].description;
         const iconCode = data.weather[0].icon;
@@ -60,7 +55,6 @@ function displayForecast(data) {
     forecastInfo.innerHTML = '';
 
     if (data.list) {
-        // Filter elements down to consecutive mid-day timeline intervals over the next 3 days
         const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
 
         dailyData.forEach(day => {
@@ -68,7 +62,6 @@ function displayForecast(data) {
             const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
             const temp = Math.round(day.main.temp);
 
-            // FIXED: Added missing array bracket pointers inside loop parameters
             if (day.weather && day.weather.length > 0) {
                 const iconCode = day.weather[0].icon;
                 const iconUrl = `https://openweathermap.org{iconCode}.png`;
