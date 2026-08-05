@@ -1,0 +1,230 @@
+[
+    {
+        "id": "proj-01",
+        "title": "Morning Bliss Scope Estimator",
+        "category": "js",
+        "techStack": [
+            "JavaScript ES6",
+            "Array.reduce()",
+            "LocalStorage",
+            "HTML5 Dialog"
+        ],
+        "description": "An interactive real-time calculator that computes project timeline and price quotes dynamically using array reduction.",
+        "featured": true,
+        "image": "images/project-estimator.webp",
+        "demoUrl": "services.html",
+        "githubUrl": "https://github.com/buyan-pro/wdd231/tree/main/final"
+    },
+    {
+        "id": "proj-02",
+        "title": "GitHub Repositories Live Dashboard",
+        "category": "api",
+        "techStack": [
+            "REST API",
+            "Fetch API",
+            "Async/Await",
+            "JSON"
+        ],
+        "description": "Asynchronously fetches public GitHub repository statistics, star counts, and last updated timestamps in real time.",
+        "featured": true,
+        "image": "images/project-github.webp",
+        "demoUrl": "portfolio.html",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-03",
+        "title": "Chamber of Commerce Portal",
+        "category": "js",
+        "techStack": [
+            "JavaScript",
+            "JSON Data",
+            "CSS Grid",
+            "Weather API"
+        ],
+        "description": "A responsive community web portal featuring dynamic member directories, grid/list view toggles, and live weather integration.",
+        "featured": true,
+        "image": "images/project-chamber.webp",
+        "demoUrl": "https://buyan-pro.github.io/wdd231/chamber/index.html",
+        "githubUrl": "https://github.com/buyan-pro/wdd231/tree/main/chamber"
+    },
+    {
+        "id": "proj-04",
+        "title": "WCAG AA Accessibility Inspector",
+        "category": "a11y",
+        "techStack": [
+            "HTML5",
+            "WAVE Tool",
+            "Lighthouse",
+            "CSS Variables"
+        ],
+        "description": "Comprehensive web accessibility audit project enforcing high-contrast color tokens, screen reader landmarks, and keyboard navigation.",
+        "featured": false,
+        "image": "images/project-a11y.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-05",
+        "title": "Weather & Forecast Integration",
+        "category": "api",
+        "techStack": [
+            "OpenWeatherMap API",
+            "Fetch",
+            "JSON Parsing"
+        ],
+        "description": "Fetches current temperature, humidity, and 3-day forecast details with error handling and fallback UI states.",
+        "featured": false,
+        "image": "images/project-weather.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-06",
+        "title": "Mobile First Responsive Layouts",
+        "category": "a11y",
+        "techStack": [
+            "CSS Grid",
+            "Flexbox",
+            "Media Queries"
+        ],
+        "description": "Clean mobile-first design architecture using custom properties, fluid typography, and breakpoint optimizations.",
+        "featured": false,
+        "image": "images/project-responsive.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-07",
+        "title": "Modular ES6 Component Library",
+        "category": "js",
+        "techStack": [
+            "ES Modules",
+            "DOM Manipulation",
+            "JavaScript"
+        ],
+        "description": "A reusable set of client-side JavaScript modules for modal overlays, dynamic date stamps, and navigation drawers.",
+        "featured": false,
+        "image": "images/project-modules.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-08",
+        "title": "Restful JSON Member Directory",
+        "category": "api",
+        "techStack": [
+            "JSON",
+            "Fetch API",
+            "Dynamic Cards"
+        ],
+        "description": "Asynchronous data loader fetching structured business directory data with search and category filtering.",
+        "featured": false,
+        "image": "images/project-directory.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-09",
+        "title": "Interactive Client Consultation Form",
+        "category": "js",
+        "techStack": [
+            "HTML5 Dialog",
+            "URLSearchParams",
+            "Form Validation"
+        ],
+        "description": "Accessible dialog window form capturing user inputs and rendering confirmation summaries on redirect.",
+        "featured": false,
+        "image": "images/project-form.webp",
+        "demoUrl": "thankyou.html",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-10",
+        "title": "Performance Optimization & SEO Audit",
+        "category": "a11y",
+        "techStack": [
+            "Google Lighthouse",
+            "WebP",
+            "Meta Tags"
+        ],
+        "description": "Optimized asset loading, SEO metadata, Open Graph sharing cards, and high PageSpeed rating execution.",
+        "featured": false,
+        "image": "images/project-seo.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-11",
+        "title": "LocalStorage State Manager",
+        "category": "js",
+        "techStack": [
+            "JavaScript",
+            "Web Storage API",
+            "JSON"
+        ],
+        "description": "Persists client selected services, total estimated costs, and theme preferences across page reloads.",
+        "featured": false,
+        "image": "images/project-storage.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-12",
+        "title": "Public API News & Feed Aggregator",
+        "category": "api",
+        "techStack": [
+            "REST API",
+            "Async/Await",
+            "Promises"
+        ],
+        "description": "Retrieves external API content streams asynchronously with user-driven search queries and state management.",
+        "featured": false,
+        "image": "images/project-news.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-13",
+        "title": "CSS Theme Token Architecture",
+        "category": "a11y",
+        "techStack": [
+            "CSS Custom Properties",
+            "Semantic HTML5"
+        ],
+        "description": "Systematized CSS custom properties for uniform color palettes, typographic hierarchies, and border elevations.",
+        "featured": false,
+        "image": "images/project-theme.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-14",
+        "title": "Dynamic Grid / List View Toggle",
+        "category": "js",
+        "techStack": [
+            "JavaScript",
+            "DOM Manipulation",
+            "CSS Grid"
+        ],
+        "description": "Allows users to switch layout presentations dynamically between a multi-column card grid and a compact list table.",
+        "featured": false,
+        "image": "images/project-toggle.webp",
+        "demoUrl": "#",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    },
+    {
+        "id": "proj-15",
+        "title": "Attributions & License Documentation Portal",
+        "category": "a11y",
+        "techStack": [
+            "Semantic HTML",
+            "Markdown",
+            "Open Source"
+        ],
+        "description": "Dedicated attributions page citing open-source libraries, icon assets, fonts, and API services used.",
+        "featured": false,
+        "image": "images/project-attributions.webp",
+        "demoUrl": "attributions.html",
+        "githubUrl": "https://github.com/buyan-pro/wdd231"
+    }
+]

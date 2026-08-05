@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Navigation & Dialog Modal Module
+   ========================================================================== */
+
+export function initNavigation() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+
+    if (menuToggle && primaryNav) {
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            menuToggle.classList.toggle('active');
+            primaryNav.classList.toggle('show');
+        });
+    }
+}
+
+export function initContactModal() {
+    const contactModal = document.getElementById('contact-modal');
+    const openButtons = document.querySelectorAll('.open-contact-modal');
+    const closeButton = document.getElementById('close-modal');
+
+    if (!contactModal) return;
+
+    openButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            contactModal.showModal();
+        });
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            contactModal.close();
+        });
+    }
+
+    // Close when clicking backdrop
+    contactModal.addEventListener('click', (e) => {
+        const dialogBounds = contactModal.getBoundingClientRect();
+        if (
+            e.clientX < dialogBounds.left ||
+            e.clientX > dialogBounds.right ||
+            e.clientY < dialogBounds.top ||
+            e.clientY > dialogBounds.bottom
+        ) {
+            contactModal.close();
+        }
+    });
+}
+
+export function updateFooterDates() {
+    const yearSpan = document.getElementById('current-year');
+    const modifiedSpan = document.getElementById('last-modified-date');
+
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    if (modifiedSpan) {
+        modifiedSpan.textContent = document.lastModified;
+    }
+}

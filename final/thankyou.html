@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Thank you for contacting Morning Bliss Web Solutions. Your message has been received.">
+    <meta name="author" content="Buyannemekh Chimeddorj">
+
+    <title>Morning Bliss | Thank You</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Stylesheets (BYU-I Standard) -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 1024px)">
+
+    <!-- JS Entry Module -->
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="brand">
+                <a href="index.html" class="logo-link">
+                    <span class="brand-title">Morning Bliss</span>
+                    <span class="brand-subtitle">Web Solutions</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Bar -->
+            <nav id="primary-nav" class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services &amp; Estimator</a></li>
+                    <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
+                    <li><a href="index.html" class="btn btn-secondary">Return Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="section-container">
+        <div class="thank-you-card"
+            style="background: var(--bg-white); padding: 3rem 2rem; border-radius: var(--radius-lg); text-align: center; max-width: 650px; margin: 2rem auto; border: 1px solid var(--border-light); box-shadow: var(--shadow-md);">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎉</div>
+            <h1>Thank You for Reaching Out!</h1>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                Your submission has been received. I'll review your project details and respond within 24–48 hours.
+            </p>
+
+            <!-- Submission Summary Box (Populated via JS URLSearchParams) -->
+            <div id="form-summary"
+                style="background: var(--bg-cream); padding: 1.25rem; border-radius: var(--radius-md); text-align: left; margin-bottom: 2rem; border-left: 4px solid var(--accent-gold);">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Submitted Details:</h3>
+                <p style="margin-bottom: 0.25rem;"><strong>Name:</strong> <span id="summary-name">Loading...</span></p>
+                <p style="margin-bottom: 0.25rem;"><strong>Email:</strong> <span id="summary-email">Loading...</span>
+                </p>
+                <p style="margin-bottom: 0.25rem;"><strong>Inquiry Type:</strong> <span
+                        id="summary-service">Loading...</span></p>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <a href="portfolio.html" class="btn btn-outline">Explore Portfolio</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shared Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; <span id="current-year"></span> Morning Bliss | Buyannemekh Chimeddorj</p>
+            <p class="footer-links">
+                <a href="https://youtu.be/YOUR_VIDEO_ID" target="_blank" rel="noopener">Project Demonstration Video</a>
+                |
+                <a href="attributions.html">Attributions</a>
+            </p>
+            <p class="last-modified">Last Modified: <span id="last-modified-date"></span></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
