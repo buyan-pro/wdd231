@@ -3,7 +3,7 @@
    WDD 231 Final Project - Triggered at min-width: 1024px
    ========================================================================== */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
 
     /* --------------------------------------------------------------------------
      1. Navigation & Header Layout
@@ -72,7 +72,6 @@
 
     .hero-cta-group {
         flex-direction: row;
-        gap: 1.25rem;
     }
 
     /* --------------------------------------------------------------------------
@@ -85,7 +84,6 @@
     /* 3-Column Grid for Services & Portfolio Cards */
     .card-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
     }
 
     /* Split 2-Column Grid for Development Philosophy & Callout */
