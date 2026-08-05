@@ -4,31 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services &amp; Scope Estimator | Morning Bliss</title>
     <meta name="description"
-        content="Morning Bliss Services &amp; Interactive Project Scope Estimator. Calculate custom web development costs and delivery timelines in real-time by Buyannemekh Chimeddorj.">
+        content="Explore web engineering services and calculate custom project costs, timelines, and tech stack options using our interactive Scope Estimator.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Services &amp; Scope Estimator | Morning Bliss">
-    <meta property="og:description"
-        content="Explore custom web solutions and calculate instant price/timeline quotes for your project.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/final/services.html">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/final/images/og-preview.jpg">
-
-    <title>Morning Bliss | Services &amp; Estimator</title>
-
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico">
 
-    <!-- Google Fonts Optimization -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Services &amp; Scope Estimator | Morning Bliss">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/services.html">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS Stylesheets -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
 
@@ -61,144 +59,172 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html" class="active">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
-                    <li><button id="open-modal-btn" class="mb-btn mb-btn-secondary open-contact-modal">Contact
-                            Us</button></li>
+                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Get Started</button>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="section-container">
-
-        <section class="services-hero">
-            <h1>Services &amp; Project Scope Estimator</h1>
-            <p class="section-intro">
-                Tailored web development, custom UI/UX design, and seamless API integrations. Use the interactive
-                estimator below to calculate estimated pricing and completion timelines instantly.
-            </p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Web Solutions &amp; Scope Estimator</h1>
+                <p>Plan your digital web project with full transparency. Explore our engineering services or calculate
+                    estimated costs and timelines in real time below.</p>
+            </div>
         </section>
 
-        <!-- Interactive Estimator Form -->
-        <section class="estimator-section">
-            <form id="estimator-form" class="estimator-card">
-                <h2>Project Scope Estimator</h2>
+        <!-- Services Section -->
+        <section class="section-container">
+            <h2>Our Web Development Services</h2>
+            <p class="section-intro">Custom-built web engineering solutions focused on performance, accessibility, and
+                modern aesthetics.</p>
 
-                <fieldset class="form-section">
-                    <legend>1. Select Base Project Type</legend>
+            <div class="card-grid">
+                <article class="service-card">
+                    <div class="card-icon">💻</div>
+                    <h3>Custom Frontend Build</h3>
+                    <p>Clean, semantic HTML5/CSS3 and modular ES6 JavaScript architecture tailored specifically to your
+                        brand requirements.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>API &amp; REST Integration</h3>
+                    <p>Connecting web interfaces to dynamic REST APIs, asynchronous fetching pipelines, and real-time
+                        data storage.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="card-icon">♿</div>
+                    <h3>WCAG &amp; Audit Remediation</h3>
+                    <p>Comprehensive accessibility and SEO performance audits to ensure your web application meets WCAG
+                        AA standards.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Interactive Scope Estimator Section -->
+        <section class="section-container estimator-wrapper">
+            <h2>Interactive Project Estimator</h2>
+            <p class="section-intro">Adjust project parameters to receive instant timeline and cost estimates:</p>
+
+            <div class="estimator-grid">
+                <!-- Estimator Inputs Form -->
+                <form id="estimator-form" class="estimator-form">
                     <div class="form-group">
-                        <label for="project-type">Project Architecture</label>
-                        <select id="project-type" name="projectType" required>
-                            <option value="" disabled selected>Select a project tier...</option>
-                            <option value="landing">Landing Page / Single Page App ($350)</option>
-                            <option value="multi">Standard Multi-Page Site ($750)</option>
-                            <option value="custom">Full Custom Web Application ($1,400)</option>
+                        <label for="pageCount">Estimated Page Count: <span id="pageCountValue"
+                                class="badge-count">3</span></label>
+                        <input type="range" id="pageCount" name="pageCount" min="1" max="15" value="3" step="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complexity">Project Complexity Level:</label>
+                        <select id="complexity" name="complexity">
+                            <option value="basic">Standard Responsive Site (Basic)</option>
+                            <option value="intermediate" selected>Dynamic &amp; Interactive (Intermediate)</option>
+                            <option value="advanced">Custom Web App &amp; API Integration (Advanced)</option>
                         </select>
                     </div>
-                </fieldset>
 
-                <fieldset class="form-section">
-                    <legend>2. Add Functional Modules</legend>
-                    <div class="checkbox-grid">
+                    <fieldset class="form-fieldset">
+                        <legend>Add-On Features &amp; Integrations</legend>
                         <label class="checkbox-label">
-                            <input type="checkbox" name="addons" value="cms">
-                            <span class="service-info">
-                                <strong>Content Management System (CMS)</strong>
-                                <small>Easily edit site content without touching code (+$250)</small>
-                            </span>
+                            <input type="checkbox" name="addons" value="api" checked>
+                            <span>Third-Party REST API Integration (+$250)</span>
                         </label>
-
                         <label class="checkbox-label">
-                            <input type="checkbox" name="addons" value="api">
-                            <span class="service-info">
-                                <strong>REST / GraphQL API Integration</strong>
-                                <small>Connect third-party databases, webhooks, or dynamic data (+$300)</small>
-                            </span>
+                            <input type="checkbox" name="addons" value="accessibility">
+                            <span>WCAG AA Accessibility Compliance (+$150)</span>
                         </label>
-
                         <label class="checkbox-label">
                             <input type="checkbox" name="addons" value="seo">
-                            <span class="service-info">
-                                <strong>Advanced Accessibility &amp; SEO Package</strong>
-                                <small>WCAG AA audit compliance, structured schema, performance tuning (+$200)</small>
-                            </span>
+                            <span>Advanced Performance &amp; SEO Audit (+$100)</span>
                         </label>
+                    </fieldset>
+                </form>
 
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="addons" value="analytics">
-                            <span class="service-info">
-                                <strong>Custom Analytics &amp; Reporting Dashboard</strong>
-                                <small>Track traffic metrics, events, and conversion rates (+$150)</small>
-                            </span>
-                        </label>
+                <!-- Dynamic Calculation Output Box -->
+                <div class="estimator-output-card">
+                    <h3>Estimate Summary</h3>
+                    <div class="output-metric">
+                        <span class="metric-label">Estimated Total:</span>
+                        <span id="total-cost" class="metric-value">$600</span>
                     </div>
-                </fieldset>
+                    <div class="output-metric">
+                        <span class="metric-label">Estimated Delivery:</span>
+                        <span id="total-timeline" class="metric-value">6 Business Days</span>
+                    </div>
 
-                <!-- Dynamic Output Box -->
-                <div class="estimate-summary">
-                    <h3>Estimated Project Details</h3>
-                    <div class="summary-details">
-                        <p><strong>Total Estimated Cost:</strong> <span id="estimated-cost">$0</span></p>
-                        <p><strong>Estimated Delivery:</strong> <span id="estimated-timeline">N/A</span></p>
+                    <div class="output-details">
+                        <h4>Included Features:</h4>
+                        <ul id="feature-list" class="feature-list">
+                            <li>3 Responsive Web Pages</li>
+                            <li>Intermediate Complexity Build</li>
+                            <li>Third-Party REST API Integration</li>
+                        </ul>
                     </div>
-                    <button type="button" id="trigger-consultation-btn" class="mb-btn mb-btn-primary mb-btn-full">Lock
-                        In
-                        Estimate &amp; Request Consultation</button>
+
+                    <button type="button" class="mb-btn mb-btn-primary mb-btn-full open-contact-modal">Lock In Estimate
+                        &amp; Contact</button>
                 </div>
-            </form>
+            </div>
         </section>
 
+        <!-- Contact Dialog Modal -->
+        <dialog id="contact-modal" class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
+                <h3>Get in Touch</h3>
+                <p>Fill out the form below to request a quote or project consultation.</p>
+
+                <form action="thankyou.html" method="get" class="contact-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Service Required <span class="required">*</span></label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="Frontend Web Development">Frontend Web Development</option>
+                            <option value="API Integration">API Integration</option>
+                            <option value="Full Project Build">Full Project Build</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Overview</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Tell us about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Submit Request</button>
+                </form>
+            </div>
+        </dialog>
     </main>
-
-    <!-- Accessible Modal Contact Dialog -->
-    <dialog id="contact-modal" class="modal-dialog">
-        <div class="modal-content">
-            <button id="close-modal-btn" class="close-btn" aria-label="Close modal">&times;</button>
-            <h2>Get in Touch</h2>
-            <p>Ready to start your project or have questions? Send a message below.</p>
-
-            <form action="thankyou.html" method="get" class="contact-form">
-                <div class="form-group">
-                    <label for="user-name">Full Name <span class="required">*</span></label>
-                    <input type="text" id="user-name" name="name" required placeholder="John Doe">
-                </div>
-
-                <div class="form-group">
-                    <label for="user-email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="user-email" name="email" required placeholder="john@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="user-service">Inquiry Focus <span class="required">*</span></label>
-                    <select id="user-service" name="service" required>
-                        <option value="" disabled selected>Select inquiry type...</option>
-                        <option value="Web Design">Web Design &amp; Development</option>
-                        <option value="API Integration">API &amp; Backend Integration</option>
-                        <option value="Performance Audit">Performance &amp; Accessibility Audit</option>
-                        <option value="General Inquiry">General Question</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="user-message">Project Notes / Questions</label>
-                    <textarea id="user-message" name="message" rows="4"
-                        placeholder="Tell me about your project..."></textarea>
-                </div>
-
-                <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Submit Request</button>
-            </form>
-        </div>
-    </dialog>
 
     <!-- Shared Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <p>&copy; <span id="current-year"></span> Morning Bliss | Buyannemekh Chimeddorj</p>
             <p class="footer-links">
-                <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
-                    Demonstration Video</a>
+                <a href="siteplan.html">Site Plan</a>
                 |
                 <a href="attributions.html">Attributions</a>
+                |
+                <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
+                    Demonstration Video</a>
             </p>
             <p class="last-modified">Last Modified: <span id="last-modified-date"></span></p>
         </div>

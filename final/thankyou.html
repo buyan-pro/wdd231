@@ -4,16 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Received | Morning Bliss</title>
     <meta name="description"
-        content="Thank you for contacting Morning Bliss Web Solutions. Your message has been received.">
+        content="Thank you for submitting your project request to Morning Bliss Web Solutions. We have received your submission details.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
-    <title>Morning Bliss | Thank You</title>
-
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico">
 
-    <!-- CSS Stylesheets -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Submission Received | Morning Bliss">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/thankyou.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
@@ -47,34 +59,92 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
-                    <li><a href="index.html" class="btn btn-secondary">Return Home</a></li>
+                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Get Started</button>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="section-container">
-        <div class="thank-you-card">
-            <div class="thank-you-icon">🎉</div>
-            <h1>Thank You for Reaching Out!</h1>
-            <p class="thank-you-intro">
-                Your submission has been received. I'll review your project details and respond within 24–48 hours.
-            </p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Thank You for Reaching Out!</h1>
+                <p>Your project request has been submitted successfully. We will review your details and respond within
+                    24–48 business hours.</p>
+            </div>
+        </section>
 
-            <!-- Submission Summary Box (Populated via JS URLSearchParams) -->
-            <div id="form-summary" class="form-summary-box">
-                <h3>Submitted Details:</h3>
-                <p><strong>Name:</strong> <span id="summary-name">Loading...</span></p>
-                <p><strong>Email:</strong> <span id="summary-email">Loading...</span></p>
-                <p><strong>Inquiry Type:</strong> <span id="summary-service">Loading...</span></p>
+        <!-- Submitted Form Data Display Section -->
+        <section class="section-container">
+            <h2>Submission Details Summary</h2>
+            <p class="section-intro">Here is a record of the request information sent via form parameters:</p>
+
+            <div id="submission-summary" class="estimator-output-card">
+                <div class="output-metric">
+                    <span class="metric-label">Full Name:</span>
+                    <span id="display-name" class="metric-value">Processing...</span>
+                </div>
+                <div class="output-metric">
+                    <span class="metric-label">Email Address:</span>
+                    <span id="display-email" class="metric-value">Processing...</span>
+                </div>
+                <div class="output-metric">
+                    <span class="metric-label">Service Requested:</span>
+                    <span id="display-service" class="metric-value">Processing...</span>
+                </div>
+                <div class="output-metric">
+                    <span class="metric-label">Project Overview:</span>
+                    <span id="display-message" class="metric-value">Processing...</span>
+                </div>
             </div>
 
-            <div class="thank-you-actions">
-                <a href="index.html" class="btn btn-primary">Back to Home</a>
-                <a href="portfolio.html" class="btn btn-outline">Explore Portfolio</a>
+            <div class="hero-cta-group">
+                <a href="index.html" class="mb-btn mb-btn-primary">Return to Home</a>
+                <a href="portfolio.html" class="mb-btn mb-btn-outline">Explore Projects</a>
             </div>
-        </div>
+        </section>
+
+        <!-- Contact Dialog Modal -->
+        <dialog id="contact-modal" class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
+                <h3>Get in Touch</h3>
+                <p>Fill out the form below to request a quote or project consultation.</p>
+
+                <form action="thankyou.html" method="get" class="contact-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Service Required <span class="required">*</span></label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="Frontend Web Development">Frontend Web Development</option>
+                            <option value="API Integration">API Integration</option>
+                            <option value="Full Project Build">Full Project Build</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Overview</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Tell us about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Submit Request</button>
+                </form>
+            </div>
+        </dialog>
     </main>
 
     <!-- Shared Footer -->
@@ -82,10 +152,12 @@
         <div class="footer-container">
             <p>&copy; <span id="current-year"></span> Morning Bliss | Buyannemekh Chimeddorj</p>
             <p class="footer-links">
-                <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
-                    Demonstration Video</a>
+                <a href="siteplan.html">Site Plan</a>
                 |
                 <a href="attributions.html">Attributions</a>
+                |
+                <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
+                    Demonstration Video</a>
             </p>
             <p class="last-modified">Last Modified: <span id="last-modified-date"></span></p>
         </div>

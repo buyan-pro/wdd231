@@ -4,31 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio &amp; GitHub Repositories | Morning Bliss</title>
     <meta name="description"
-        content="Explore featured web projects, technical skills, and live GitHub repository metrics by Buyannemekh Chimeddorj at Morning Bliss Web Solutions.">
+        content="Explore live web projects, code repositories, and dynamic GitHub integration built by Buyannemekh Chimeddorj.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Portfolio &amp; GitHub Activity | Morning Bliss">
-    <meta property="og:description"
-        content="Explore filterable software projects and live GitHub repository metrics built by Buyannemekh Chimeddorj.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/final/portfolio.html">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/final/images/og-preview.jpg">
-
-    <title>Morning Bliss | Portfolio &amp; Repositories</title>
-
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico">
 
-    <!-- Google Fonts Optimization -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portfolio &amp; GitHub Repositories | Morning Bliss">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/portfolio.html">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS Stylesheets -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
 
@@ -61,100 +59,93 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html" class="active">Portfolio &amp; Repos</a></li>
-                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Contact</button></li>
+                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Get Started</button>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="section-container">
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Featured Work &amp; Code Repositories</h1>
+                <p>Browse recent frontend projects, JavaScript applications, and dynamic GitHub API data fetch
+                    integrations.</p>
+            </div>
+        </section>
 
-        <!-- Portfolio Header & Category Filters -->
-        <section class="portfolio-header-section">
-            <h1>Featured Projects &amp; Software Work</h1>
-            <p class="section-intro">Explore selected frontend web applications, API integrations, and user experience
-                builds. Filter projects by tech stack below.</p>
+        <!-- Dynamic GitHub Projects Section -->
+        <section class="section-container">
+            <h2>Live GitHub Repositories</h2>
+            <p class="section-intro">Fetched directly from the public GitHub REST API pipeline:</p>
 
+            <!-- Filter Controls -->
             <div class="filter-controls">
                 <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
-                <button type="button" class="filter-btn" data-filter="js">JavaScript</button>
-                <button type="button" class="filter-btn" data-filter="api">API Integration</button>
-                <button type="button" class="filter-btn" data-filter="a11y">CSS / Accessibility</button>
+                <button type="button" class="filter-btn" data-filter="featured">Featured Repos</button>
+                <button type="button" class="filter-btn" data-filter="javascript">JavaScript / Web</button>
+            </div>
+
+            <!-- Repositories Grid Container -->
+            <div id="github-projects" class="card-grid">
+                <p class="loading-text">Fetching latest repository data from GitHub API...</p>
             </div>
         </section>
 
-        <!-- Dynamic Projects Container (Populated via projects.json) -->
-        <section class="projects-showcase">
-            <div id="projects-grid" class="card-grid">
-                <!-- JS injects project cards dynamically here -->
-                <p class="loading-state">Loading portfolio projects...</p>
-            </div>
-        </section>
+        <!-- Contact Dialog Modal -->
+        <dialog id="contact-modal" class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
+                <h3>Get in Touch</h3>
+                <p>Fill out the form below to request a quote or project consultation.</p>
 
-        <!-- GitHub REST API Live Activity Section -->
-        <section class="github-feed-section section-container">
-            <div class="github-header">
-                <h2>Live GitHub Repository Metrics</h2>
-                <p>Fetched asynchronously from the GitHub REST API (<code>api.github.com/users/buyan-pro/repos</code>)
-                </p>
-            </div>
+                <form action="thankyou.html" method="get" class="contact-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
+                    </div>
 
-            <div id="github-repos-container" class="github-repos-grid card-grid">
-                <!-- JS injects live GitHub repository cards dynamically here -->
-                <p class="loading-state">Fetching public GitHub repositories...</p>
-            </div>
-        </section>
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="serviceType">Service Required <span class="required">*</span></label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="Frontend Web Development">Frontend Web Development</option>
+                            <option value="API Integration">API Integration</option>
+                            <option value="Full Project Build">Full Project Build</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Overview</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Tell us about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Submit Request</button>
+                </form>
+            </div>
+        </dialog>
     </main>
-
-    <!-- Contact Modal -->
-    <dialog id="contact-modal" class="modal-dialog">
-        <div class="modal-content">
-            <button id="close-modal" class="close-btn" aria-label="Close modal dialog">&times;</button>
-            <h2>Start a Project Consultation</h2>
-            <p>Fill out the form below to connect regarding custom development or project collaboration.</p>
-
-            <form action="thankyou.html" method="get" class="contact-form">
-                <div class="form-group">
-                    <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="jane@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="serviceType">Inquiry Type <span class="required">*</span></label>
-                    <select id="serviceType" name="serviceType" required>
-                        <option value="portfolio-inquiry" selected>Portfolio Project Question</option>
-                        <option value="custom-web">Custom Web Development</option>
-                        <option value="api-integration">API Integration</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="4" required
-                        placeholder="Briefly describe your question or opportunity..."></textarea>
-                </div>
-
-                <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Send Message</button>
-            </form>
-        </div>
-    </dialog>
 
     <!-- Shared Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <p>&copy; <span id="current-year"></span> Morning Bliss | Buyannemekh Chimeddorj</p>
             <p class="footer-links">
-                <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
-                    Demonstration Video</a>
+                <a href="siteplan.html">Site Plan</a>
                 |
                 <a href="attributions.html">Attributions</a>
+                |
+                <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
+                    Demonstration Video</a>
             </p>
             <p class="last-modified">Last Modified: <span id="last-modified-date"></span></p>
         </div>
