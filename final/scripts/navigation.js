@@ -9,7 +9,7 @@ export function initNavigation() {
     if (menuToggle && primaryNav) {
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            menuToggle.setAttribute('aria-expanded', String(!isExpanded));
             menuToggle.classList.toggle('active');
             primaryNav.classList.toggle('show');
         });
@@ -24,7 +24,8 @@ export function initContactModal() {
     if (!contactModal) return;
 
     openButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
             contactModal.showModal();
         });
     });
@@ -35,15 +36,9 @@ export function initContactModal() {
         });
     }
 
-    // Close when clicking backdrop
+    // Backdrop click detection (triggers only when clicking overlay background)
     contactModal.addEventListener('click', (e) => {
-        const dialogBounds = contactModal.getBoundingClientRect();
-        if (
-            e.clientX < dialogBounds.left ||
-            e.clientX > dialogBounds.right ||
-            e.clientY < dialogBounds.top ||
-            e.clientY > dialogBounds.bottom
-        ) {
+        if (e.target === contactModal) {
             contactModal.close();
         }
     });

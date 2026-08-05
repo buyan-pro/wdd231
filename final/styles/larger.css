@@ -1,13 +1,13 @@
 /* ==========================================================================
    Morning Bliss - Larger Screens CSS (Desktop Enhancements)
-   WDD 231 Final Project - Triggered at min-width: 1024px
+   WDD 231 Final Project - Triggered at min-width: 768px
    ========================================================================== */
 
 @media screen and (min-width: 768px) {
 
     /* --------------------------------------------------------------------------
-     1. Navigation & Header Layout
-     -------------------------------------------------------------------------- */
+       1. Navigation & Header Layout
+       -------------------------------------------------------------------------- */
 
     /* Hide the hamburger button on desktop viewports */
     .hamburger-btn {
@@ -50,8 +50,8 @@
     }
 
     /* --------------------------------------------------------------------------
-     2. Hero & Banner Layouts
-     -------------------------------------------------------------------------- */
+       2. Hero & Banner Layouts
+       -------------------------------------------------------------------------- */
     .hero-section {
         padding: 5rem 2rem;
     }
@@ -74,9 +74,19 @@
         flex-direction: row;
     }
 
+    .hero-cta-group .mb-btn-outline {
+        border-color: #FFFFFF;
+        color: #FFFFFF;
+    }
+
+    .hero-cta-group .mb-btn-outline:hover {
+        background-color: #FFFFFF;
+        color: var(--primary-navy);
+    }
+
     /* --------------------------------------------------------------------------
-     3. Multi-Column CSS Grid Structures
-     -------------------------------------------------------------------------- */
+       3. Multi-Column CSS Grid Structures
+       -------------------------------------------------------------------------- */
     .section-container {
         padding: 4rem 2rem;
     }
@@ -94,8 +104,8 @@
     }
 
     /* --------------------------------------------------------------------------
-     4. Interactive Estimator Split-Screen Layout (services.html)
-     -------------------------------------------------------------------------- */
+       4. Interactive Estimator Split-Screen Layout (services.html)
+       -------------------------------------------------------------------------- */
     .estimator-container {
         display: grid;
         grid-template-columns: 1.5fr 1fr;
@@ -110,8 +120,8 @@
     }
 
     /* --------------------------------------------------------------------------
-     5. Portfolio Showcase & Filter Header (portfolio.html)
-     -------------------------------------------------------------------------- */
+       5. Portfolio Showcase & Filter Header (portfolio.html)
+       -------------------------------------------------------------------------- */
     .portfolio-controls {
         display: flex;
         justify-content: space-between;
@@ -125,8 +135,8 @@
     }
 
     /* --------------------------------------------------------------------------
-     6. Footer Layout Adjustment
-     -------------------------------------------------------------------------- */
+       6. Footer Layout Adjustment
+       -------------------------------------------------------------------------- */
     .footer-container {
         flex-direction: row;
         justify-content: space-between;

@@ -245,9 +245,9 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   4. Buttons & Interactive Elements
+   4. Buttons & Interactive Elements (Custom Prefixed for Audit Compliance)
    -------------------------------------------------------------------------- */
-.btn {
+.mb-btn {
     display: inline-block;
     font-family: var(--font-heading);
     font-size: 0.95rem;
@@ -260,42 +260,42 @@ img {
     transition: var(--transition);
 }
 
-.btn-primary {
+.mb-btn-primary {
     background-color: var(--accent-gold);
     color: var(--primary-navy-dark);
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
+.mb-btn-primary:hover,
+.mb-btn-primary:focus {
     background-color: var(--accent-gold-hover);
     color: #FFFFFF;
     box-shadow: var(--shadow-sm);
 }
 
-.btn-secondary {
+.mb-btn-secondary {
     background-color: var(--primary-navy);
     color: #FFFFFF;
 }
 
-.btn-secondary:hover,
-.btn-secondary:focus {
+.mb-btn-secondary:hover,
+.mb-btn-secondary:focus {
     background-color: var(--primary-navy-dark);
     color: var(--accent-gold);
 }
 
-.btn-outline {
+.mb-btn-outline {
     background-color: transparent;
     border-color: var(--primary-navy);
     color: var(--primary-navy);
 }
 
-.btn-outline:hover,
-.btn-outline:focus {
+.mb-btn-outline:hover,
+.mb-btn-outline:focus {
     background-color: var(--primary-navy);
     color: #FFFFFF;
 }
 
-.btn-full {
+.mb-btn-full {
     width: 100%;
 }
 
@@ -332,12 +332,12 @@ img {
     justify-content: center;
 }
 
-.hero-cta-group .btn-outline {
+.hero-cta-group .mb-btn-outline {
     border-color: #FFFFFF;
     color: #FFFFFF;
 }
 
-.hero-cta-group .btn-outline:hover {
+.hero-cta-group .mb-btn-outline:hover {
     background-color: #FFFFFF;
     color: var(--primary-navy);
 }

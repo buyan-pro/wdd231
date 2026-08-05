@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Morning Bliss Services &amp; Interactive Project Scope Estimator. Calculate custom web development costs and delivery timelines in real-time.">
+        content="Morning Bliss Services &amp; Interactive Project Scope Estimator. Calculate custom web development costs and delivery timelines in real-time by Buyannemekh Chimeddorj.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
     <!-- Open Graph / Social Sharing -->
@@ -29,7 +29,6 @@
         rel="stylesheet">
 
     <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
 
@@ -62,7 +61,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html" class="active">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
-                    <li><button type="button" class="btn btn-secondary open-contact-modal">Contact</button></li>
+                    <li><button id="open-modal-btn" class="mb-btn mb-btn-secondary open-contact-modal">Contact
+                            Us</button></li>
                 </ul>
             </nav>
         </div>
@@ -70,157 +70,122 @@
 
     <!-- Main Content -->
     <main class="section-container">
-        <header class="page-header">
-            <h1>Web Development Services &amp; Interactive Estimator</h1>
-            <p class="section-intro">Select the specific features and solutions your project needs below to receive an
-                instant, calculated timeline and cost projection.</p>
-        </header>
 
-        <!-- Split Screen Estimator Layout -->
-        <div class="estimator-container">
+        <section class="services-hero">
+            <h1>Services &amp; Project Scope Estimator</h1>
+            <p class="section-intro">
+                Tailored web development, custom UI/UX design, and seamless API integrations. Use the interactive
+                estimator below to calculate estimated pricing and completion timelines instantly.
+            </p>
+        </section>
 
-            <!-- Interactive Service Checkboxes Form -->
-            <section class="services-selection">
-                <h2>Available Features &amp; Service Options</h2>
+        <!-- Interactive Estimator Form -->
+        <section class="estimator-section">
+            <form id="estimator-form" class="estimator-card">
+                <h2>Project Scope Estimator</h2>
 
-                <form id="estimator-form" class="estimator-form">
-                    <!-- Dynamic JSON container OR static checklist baseline -->
-                    <div id="services-list" class="services-list">
-
-                        <div class="service-option-card">
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="service" value="base-site" data-price="500" data-days="5"
-                                    checked disabled>
-                                <span class="checkmark"></span>
-                                <div class="service-info">
-                                    <h3>Core Responsive Website (3 Pages)</h3>
-                                    <p>Semantic HTML5, mobile-first CSS Grid/Flexbox, and accessible header/footer
-                                        structure.</p>
-                                    <span class="service-meta"><strong>Price:</strong> $500 | <strong>Timeline:</strong>
-                                        5 Days</span>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div class="service-option-card">
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="service" value="api-integration" data-price="300"
-                                    data-days="3">
-                                <span class="checkmark"></span>
-                                <div class="service-info">
-                                    <h3>REST API &amp; Data Integration</h3>
-                                    <p>Connecting your app to third-party endpoints, external JSON data, or live feeds
-                                        with full error handling.</p>
-                                    <span class="service-meta"><strong>Price:</strong> $300 | <strong>Timeline:</strong>
-                                        +3 Days</span>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div class="service-option-card">
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="service" value="a11y-audit" data-price="150" data-days="1">
-                                <span class="checkmark"></span>
-                                <div class="service-info">
-                                    <h3>Accessibility &amp; SEO Audit</h3>
-                                    <p>WCAG AA color contrast verification, screen reader compliance, keyboard
-                                        navigation, and meta optimization.</p>
-                                    <span class="service-meta"><strong>Price:</strong> $150 | <strong>Timeline:</strong>
-                                        +1 Day</span>
-                                </div>
-                            </label>
-                        </div>
-
-                        <div class="service-option-card">
-                            <label class="checkbox-container">
-                                <input type="checkbox" name="service" value="client-modal" data-price="200"
-                                    data-days="2">
-                                <span class="checkmark"></span>
-                                <div class="service-info">
-                                    <h3>Custom Modal &amp; Interactive UI Components</h3>
-                                    <p>Accessible native HTML5 dialog popups, dynamic dropdown filters, and stateful UI
-                                        interactions.</p>
-                                    <span class="service-meta"><strong>Price:</strong> $200 | <strong>Timeline:</strong>
-                                        +2 Days</span>
-                                </div>
-                            </label>
-                        </div>
-
+                <fieldset class="form-section">
+                    <legend>1. Select Base Project Type</legend>
+                    <div class="form-group">
+                        <label for="project-type">Project Architecture</label>
+                        <select id="project-type" name="projectType" required>
+                            <option value="" disabled selected>Select a project tier...</option>
+                            <option value="landing">Landing Page / Single Page App ($350)</option>
+                            <option value="multi">Standard Multi-Page Site ($750)</option>
+                            <option value="custom">Full Custom Web Application ($1,400)</option>
+                        </select>
                     </div>
-                </form>
-            </section>
+                </fieldset>
 
-            <!-- Live Calculated Summary Card (Sticky in Desktop View) -->
-            <aside class="sticky-quote-summary">
-                <div class="summary-card">
-                    <h2>Estimated Project Scope</h2>
-                    <p class="summary-subtitle">Calculated automatically using ES6 <code>Array.reduce()</code></p>
+                <fieldset class="form-section">
+                    <legend>2. Add Functional Modules</legend>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="addons" value="cms">
+                            <span class="service-info">
+                                <strong>Content Management System (CMS)</strong>
+                                <small>Easily edit site content without touching code (+$250)</small>
+                            </span>
+                        </label>
 
-                    <hr>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="addons" value="api">
+                            <span class="service-info">
+                                <strong>REST / GraphQL API Integration</strong>
+                                <small>Connect third-party databases, webhooks, or dynamic data (+$300)</small>
+                            </span>
+                        </label>
 
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="addons" value="seo">
+                            <span class="service-info">
+                                <strong>Advanced Accessibility &amp; SEO Package</strong>
+                                <small>WCAG AA audit compliance, structured schema, performance tuning (+$200)</small>
+                            </span>
+                        </label>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="addons" value="analytics">
+                            <span class="service-info">
+                                <strong>Custom Analytics &amp; Reporting Dashboard</strong>
+                                <small>Track traffic metrics, events, and conversion rates (+$150)</small>
+                            </span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- Dynamic Output Box -->
+                <div class="estimate-summary">
+                    <h3>Estimated Project Details</h3>
                     <div class="summary-details">
-                        <div class="summary-row">
-                            <span>Estimated Cost:</span>
-                            <strong id="total-cost" class="highlight-price">$500</strong>
-                        </div>
-                        <div class="summary-row">
-                            <span>Estimated Timeline:</span>
-                            <strong id="total-days">5 Business Days</strong>
-                        </div>
-                        <div class="summary-row">
-                            <span>Selected Features:</span>
-                            <span id="selected-count">1 Item</span>
-                        </div>
+                        <p><strong>Total Estimated Cost:</strong> <span id="estimated-cost">$0</span></p>
+                        <p><strong>Estimated Delivery:</strong> <span id="estimated-timeline">N/A</span></p>
                     </div>
-
-                    <div class="summary-actions">
-                        <button id="save-estimate-btn" type="button" class="btn btn-primary btn-full">Save Estimate
-                            (LocalStorage)</button>
-                        <button type="button" class="btn btn-outline btn-full open-contact-modal">Submit Quote
-                            Inquiry</button>
-                    </div>
-
-                    <p id="storage-message" class="storage-notice" aria-live="polite"></p>
+                    <button type="button" id="trigger-consultation-btn" class="mb-btn mb-btn-primary mb-btn-full">Lock
+                        In
+                        Estimate &amp; Request Consultation</button>
                 </div>
-            </aside>
+            </form>
+        </section>
 
-        </div>
     </main>
 
-    <!-- Contact Modal -->
+    <!-- Accessible Modal Contact Dialog -->
     <dialog id="contact-modal" class="modal-dialog">
         <div class="modal-content">
-            <button id="close-modal" class="close-btn" aria-label="Close modal dialog">&times;</button>
-            <h2>Start a Project Consultation</h2>
-            <p>Send your scope details to initiate a custom development quote.</p>
+            <button id="close-modal-btn" class="close-btn" aria-label="Close modal">&times;</button>
+            <h2>Get in Touch</h2>
+            <p>Ready to start your project or have questions? Send a message below.</p>
 
             <form action="thankyou.html" method="get" class="contact-form">
                 <div class="form-group">
-                    <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
+                    <label for="user-name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="user-name" name="name" required placeholder="John Doe">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                    <label for="user-email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="user-email" name="email" required placeholder="john@example.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="serviceType">Service Selected <span class="required">*</span></label>
-                    <select id="serviceType" name="serviceType" required>
-                        <option value="estimated-scope" selected>Project Estimator Quote</option>
-                        <option value="custom-web">Custom Web Development</option>
-                        <option value="api-integration">API Integration</option>
+                    <label for="user-service">Inquiry Focus <span class="required">*</span></label>
+                    <select id="user-service" name="service" required>
+                        <option value="" disabled selected>Select inquiry type...</option>
+                        <option value="Web Design">Web Design &amp; Development</option>
+                        <option value="API Integration">API &amp; Backend Integration</option>
+                        <option value="Performance Audit">Performance &amp; Accessibility Audit</option>
+                        <option value="General Inquiry">General Question</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Notes / Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="4" required
-                        placeholder="Include any additional features or timeline preferences..."></textarea>
+                    <label for="user-message">Project Notes / Questions</label>
+                    <textarea id="user-message" name="message" rows="4"
+                        placeholder="Tell me about your project..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
+                <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Submit Request</button>
             </form>
         </div>
     </dialog>

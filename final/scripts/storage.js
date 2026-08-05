@@ -6,7 +6,11 @@ const STORAGE_KEY = 'morning_bliss_estimate';
 
 export function saveEstimateToStorage(estimateData) {
     try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(estimateData));
+        const payload = {
+            ...estimateData,
+            updatedAt: new Date().toISOString()
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
         return true;
     } catch (error) {
         console.error('Error saving to localStorage:', error);
@@ -21,5 +25,15 @@ export function getStoredEstimate() {
     } catch (error) {
         console.error('Error reading from localStorage:', error);
         return null;
+    }
+}
+
+export function clearStoredEstimate() {
+    try {
+        localStorage.removeItem(STORAGE_KEY);
+        return true;
+    } catch (error) {
+        console.error('Error clearing localStorage:', error);
+        return false;
     }
 }

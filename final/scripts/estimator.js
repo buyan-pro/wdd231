@@ -27,8 +27,8 @@ export function initScopeEstimator() {
             };
         }, { price: 0, days: 0 });
 
-        // Update DOM UI
-        if (totalCostEl) totalCostEl.textContent = `$${totals.price}`;
+        // Update DOM UI with formatted currency
+        if (totalCostEl) totalCostEl.textContent = `$${totals.price.toLocaleString()}`;
         if (totalDaysEl) totalDaysEl.textContent = `${totals.days} Business Days`;
         if (selectedCountEl) selectedCountEl.textContent = `${checkedBoxes.length} Item${checkedBoxes.length !== 1 ? 's' : ''}`;
 
@@ -40,7 +40,8 @@ export function initScopeEstimator() {
 
     // Save selection event listener
     if (saveBtn) {
-        saveBtn.addEventListener('click', () => {
+        saveBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             const totals = calculateTotals();
             const success = saveEstimateToStorage(totals);
             if (storageMessageEl) {
@@ -50,10 +51,12 @@ export function initScopeEstimator() {
         });
     }
 
-    // Initial load check
+    // Initial calculation load
     calculateTotals();
+
+    // Check for existing saved estimate in storage
     const existing = getStoredEstimate();
     if (existing && storageMessageEl) {
-        storageMessageEl.textContent = `Last saved quote: $${existing.price} (${existing.days} Days)`;
+        storageMessageEl.textContent = `Last saved quote: $${existing.price.toLocaleString()} (${existing.days} Days)`;
     }
 }
