@@ -2,38 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the Chamber | Mongolia Vietnam Chamber of Commerce</title>
-    <meta name="description"
-        content="Apply for corporate membership with the Mongolia Vietnam Chamber of Commerce. Select from NP, Bronze, Silver, or Gold tiers to expand your network.">
-    <meta name="author" content="Buyannemekh Chimeddorj">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Join Us | Mongolia Vietnam Chamber of Commerce</title>
+    <meta name="description" content="Apply for membership with MVCC and connect with bilateral trade partners." />
 
-    <!-- STANDARD FAVICON MAPPING LINK -->
-    <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
-
-    <!-- OPEN GRAPH SOCIAL PLATFORM PROPERTIES - FULLY AUDIT COMPLIANT -->
-    <meta property="og:title" content="Join Us | Mongolia Vietnam Chamber of Commerce">
-    <meta property="og:description"
-        content="Apply for corporate membership with the Mongolia Vietnam Chamber of Commerce. Select your tier to expand your business network.">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico">
-    <meta property="og:url" content="https://github.io">
+    <meta property="og:title" content="Join MVCC">
+    <meta property="og:description" content="Apply for membership with Mongolia Vietnam Chamber of Commerce.">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/og-join.webp">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/chamber/join.html">
     <meta property="og:type" content="website">
 
-    <!-- GOOGLE FONTS API INTEGRATION BLOCKS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- LOCAL APP STYLESHEETS LINK MATRIX HIERARCHY - FIXED CDN LIBRARY LINK -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
 </head>
 
 <body>
-
-    <!-- Header UI Module Layout (Synchronized across all pages) -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -46,120 +36,39 @@
             </div>
             <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
         </div>
+
         <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Discover</a></li>
+                <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html" class="active">Join Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#footer-contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="join-main-layout">
-        <section class="form-section card">
-            <h1>Chamber Membership Application</h1>
-
-            <form method="get" action="thankyou.html" class="application-form">
-
-                <label class="form-label">
-                    <span>First Name *</span>
-                    <!-- FIXED: Added title attribute -->
-                    <input type="text" name="fname" required autocomplete="given-name"
-                        title="Please enter your first name. Only alphabetic characters are allowed.">
-                </label>
-
-                <label class="form-label">
-                    <span>Last Name *</span>
-                    <!-- FIXED: Added title attribute -->
-                    <input type="text" name="lname" required autocomplete="family-name"
-                        title="Please enter your last name. Only alphabetic characters are allowed.">
-                </label>
-
-                <label class="form-label">
-                    <span>Your Organizational Title *</span>
-                    <!-- FIXED: Added autocomplete="organization-title" -->
-                    <input type="text" name="title" required pattern="[A-Za-z\s\-]{4,}"
-                        autocomplete="organization-title"
-                        title="Please enter your official corporate title (at least 4 characters long, letters and spaces only).">
-                </label>
-
-                <label class="form-label">
-                    <span>Email Address *</span>
-                    <!-- FIXED: Added title attribute -->
-                    <input type="email" name="email" required placeholder="example@company.com" autocomplete="email"
-                        title="Please enter a valid corporate email address (e.g., name@company.com).">
-                </label>
-
-                <label class="form-label">
-                    <span>Mobile Phone Number *</span>
-                    <!-- FIXED: Added title attribute -->
-                    <input type="tel" name="phone" required placeholder="+976..." autocomplete="tel"
-                        title="Please enter your mobile phone number including international country code.">
-                </label>
-
-                <label class="form-label">
-                    <span>Business / Organization Name *</span>
-                    <!-- FIXED: Added title attribute -->
-                    <input type="text" name="organization" required autocomplete="organization"
-                        title="Please enter the official legal name of your business or non-profit organization.">
-                </label>
-
-                <label class="form-label">
-                    <span>Select Membership Level *</span>
-                    <!-- FIXED: Added title attribute -->
-                    <select name="membership-level" required
-                        title="Please select a membership level tier from the dropdown options.">
-                        <option value="" disabled selected>-- Choose Level --</option>
-                        <option value="np">Non-Profit Tier (Free)</option>
-                        <option value="bronze">Bronze Membership Tier</option>
-                        <option value="silver">Silver Membership Tier</option>
-                        <option value="gold">Gold Membership Tier</option>
-                    </select>
-                </label>
-
-                <label class="form-label">
-                    <span>Business Entity Description</span>
-                    <!-- FIXED: Added title attribute -->
-                    <textarea name="description" rows="4"
-                        placeholder="Briefly summarize your cross-border trade operations or legal/logistics services..."
-                        title="Optional description of your business operations or trade activities."></textarea>
-                </label>
-
-                <!-- CRITICAL ASSIGNMENT REQUIREMENT: Hidden Form Submission Timestamp -->
-                <input type="hidden" id="form-timestamp" name="timestamp" value="">
-
-                <input type="submit" value="Submit Corporate Application" class="submit-btn">
+    <main class="home-grid">
+        <section class="join-card card">
+            <h2>Apply for Membership</h2>
+            <form id="membership-form" action="thankyou.html" method="get" class="membership-form">
+                <label>First name <input name="fname" type="text" required></label>
+                <label>Last name <input name="lname" type="text" required></label>
+                <label>Email <input name="email" type="email" required></label>
+                <label>Organization <input name="org" type="text" required></label>
+                <button type="submit" class="cta-btn">Submit Application</button>
             </form>
-        </section>
-
-        <!-- Section 2: Membership Tiers Side-Panel Benefits Info -->
-        <section class="benefits-sidebar">
-            <div class="tier-benefit-card bronze-info">
-                <h3>🥉 Bronze Membership</h3>
-                <p>Includes standard listing markers inside our registered trade database directory.</p>
-            </div>
-            <div class="tier-benefit-card silver-info">
-                <h3>🥈 Silver Membership</h3>
-                <p>Unlocks homepage training module features, spotlight rotation loops, and discounted forum passes.</p>
-            </div>
-            <div class="tier-benefit-card gold-info">
-                <h3>🥇 Gold Membership</h3>
-                <p>Full premium access. Dominant priority spotlighting cards, free summit vendor spaces, and strategic
-                    governmental matchmaking sessions.</p>
-            </div>
         </section>
     </main>
 
-    <!-- Footer UI Module Layout (Synchronized across all pages) -->
     <footer>
         <div class="footer-top">
-            <div class="footer-contact">
+            <div id="footer-contact" class="footer-contact">
                 <h3>MVCC Administrative Headquarters</h3>
                 <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
                 <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
             </div>
+
             <div class="footer-social">
                 <h3>Connect With Us</h3>
                 <div class="social-links">
@@ -168,18 +77,19 @@
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
                 </div>
             </div>
+
             <div class="footer-meta">
                 <p>WDD 231 Web Frontend Development I</p>
                 <p>Chamber Group Project Portfolio Hub</p>
                 <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
             </div>
         </div>
+
         <div class="footer-bottom">
             <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
             <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
         </div>
     </footer>
-
 
     <script src="scripts/main.js" defer></script>
     <script src="scripts/join.js" defer></script>

@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submission Received | Morning Bliss</title>
+    <title>Thank You | Morning Bliss Web Solutions</title>
     <meta name="description"
-        content="Thank you for submitting your project request to Morning Bliss Web Solutions. We have received your submission details.">
+        content="Thank you for your submission. We have received your project inquiry and will be in touch shortly.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Submission Received | Morning Bliss">
+    <meta property="og:title" content="Thank You | Morning Bliss Web Solutions">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
     <meta property="og:url" content="https://buyan-pro.github.io/wdd231/thankyou.html">
@@ -59,8 +59,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
-                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Get Started</button>
-                    </li>
+                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Contact</button></li>
                 </ul>
             </nav>
         </div>
@@ -68,42 +67,22 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Thank You for Reaching Out!</h1>
-                <p>Your project request has been submitted successfully. We will review your details and respond within
-                    24–48 business hours.</p>
-            </div>
-        </section>
+        <section class="section-container thankyou-section">
+            <div class="thankyou-card">
+                <h1>Thank You for Your Inquiry!</h1>
+                <p>We have successfully received your project details and consultation request. Our team will review
+                    your requirements and get back to you within 24 business hours.</p>
 
-        <!-- Submitted Form Data Display Section -->
-        <section class="section-container">
-            <h2>Submission Details Summary</h2>
-            <p class="section-intro">Here is a record of the request information sent via form parameters:</p>
+                <!-- Dynamic Form Submission Details Container (Handled by JS) -->
+                <div id="submission-details" class="submission-details-box">
+                    <h3>Submitted Request Summary</h3>
+                    <p class="loading-text">Loading submitted form parameters...</p>
+                </div>
 
-            <div id="submission-summary" class="estimator-output-card">
-                <div class="output-metric">
-                    <span class="metric-label">Full Name:</span>
-                    <span id="display-name" class="metric-value">Processing...</span>
+                <div class="thankyou-cta-group">
+                    <a href="index.html" class="mb-btn mb-btn-primary">Return to Home</a>
+                    <a href="portfolio.html" class="mb-btn mb-btn-outline">Explore Portfolio</a>
                 </div>
-                <div class="output-metric">
-                    <span class="metric-label">Email Address:</span>
-                    <span id="display-email" class="metric-value">Processing...</span>
-                </div>
-                <div class="output-metric">
-                    <span class="metric-label">Service Requested:</span>
-                    <span id="display-service" class="metric-value">Processing...</span>
-                </div>
-                <div class="output-metric">
-                    <span class="metric-label">Project Overview:</span>
-                    <span id="display-message" class="metric-value">Processing...</span>
-                </div>
-            </div>
-
-            <div class="hero-cta-group">
-                <a href="index.html" class="mb-btn mb-btn-primary">Return to Home</a>
-                <a href="portfolio.html" class="mb-btn mb-btn-outline">Explore Projects</a>
             </div>
         </section>
 

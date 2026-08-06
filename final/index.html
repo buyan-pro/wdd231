@@ -4,19 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morning Bliss Web Solutions | Modern Web Development</title>
+    <title>High-Performance Web Engineering &amp; Custom Solutions | Morning Bliss</title>
     <meta name="description"
-        content="Morning Bliss Web Solutions provides custom frontend web development, performance optimization, and project cost estimation services by Buyannemekh Chimeddorj.">
+        content="Crafting accessible, responsive, and modern web applications tailored to elevate your digital presence.">
     <meta name="author" content="Buyannemekh Chimeddorj">
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Morning Bliss Web Solutions">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,12 +17,11 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
 
     <!-- JS Entry Module -->
-    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/main.js" type="module" defer></script>
 </head>
 
 <body>
@@ -59,8 +49,8 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="services.html">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
-                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Get Started</button>
-                    </li>
+                    <li><a href="services.html" class="mb-btn mb-btn-secondary"
+                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">Get Started</a></li>
                 </ul>
             </nav>
         </div>
@@ -76,120 +66,86 @@
                     presence.</p>
                 <div class="hero-cta-group">
                     <a href="services.html" class="mb-btn mb-btn-primary">Explore Services</a>
-                    <a href="portfolio.html" class="mb-btn mb-btn-outline">View Portfolio</a>
+                    <a href="portfolio.html" class="mb-btn"
+                        style="background: transparent; border: 2px solid rgba(255,255,255,0.6); color: #ffffff;">View
+                        Portfolio</a>
                 </div>
             </div>
         </section>
 
-        <!-- Core Services Section -->
+        <!-- Core Web Solutions Section -->
         <section class="section-container">
             <h2>Our Core Web Solutions</h2>
             <p class="section-intro">From single-page web applications to API integrations, we deliver clean and
                 efficient web solutions.</p>
 
             <div class="card-grid">
-                <article class="service-card">
-                    <div class="card-icon">⚡</div>
+                <div class="feature-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚡</div>
                     <h3>Frontend Engineering</h3>
                     <p>Modern HTML5, CSS3, and JavaScript web architectures designed for fast rendering and high
                         Lighthouse audit performance.</p>
                     <a href="services.html" class="card-link">Learn More &rarr;</a>
-                </article>
+                </div>
 
-                <article class="service-card">
-                    <div class="card-icon">📊</div>
+                <div class="feature-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
                     <h3>Scope &amp; Cost Estimations</h3>
                     <p>Use our interactive scope calculation tool to estimate timelines, tech stack requirements, and
                         project costs.</p>
                     <a href="services.html" class="card-link">Estimate Project &rarr;</a>
-                </article>
+                </div>
 
-                <article class="service-card">
-                    <div class="card-icon">🔗</div>
+                <div class="feature-card">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔗</div>
                     <h3>API &amp; System Integration</h3>
                     <p>Connecting third-party REST APIs, dynamic data stores, and real-time backend updates seamlessly.
                     </p>
                     <a href="portfolio.html" class="card-link">See Examples &rarr;</a>
-                </article>
+                </div>
             </div>
         </section>
 
-        <!-- Philosophy & Bio Section -->
-        <section class="section-container">
-            <div class="philosophy-grid">
-                <div class="philosophy-text">
+        <!-- Bottom Section Grid -->
+        <section class="section-container" style="padding-top: 0;">
+            <div class="philosophy-estimator-grid">
+                <div class="philosophy-pane">
                     <h2>Built with Precision &amp; Standards</h2>
-                    <p>Every line of code is written following mobile-first principles, semantic layout structures, and
-                        strict WCAG accessibility guidelines.</p>
+                    <p class="section-intro" style="margin-bottom: 1.25rem;">Every line of code is written following
+                        mobile-first principles, semantic layout structures, and strict WCAG accessibility guidelines.
+                    </p>
                     <ul class="check-list">
-                        <li>100% Mobile-First Responsive Architecture</li>
-                        <li>Semantic HTML5 &amp; Clean CSS Tokens</li>
-                        <li>Modular ES6 JavaScript Architecture</li>
+                        <li><span style="color: var(--secondary-hover); font-weight: bold;">✓</span> 100% Mobile-First
+                            Responsive Architecture</li>
+                        <li><span style="color: var(--secondary-hover); font-weight: bold;">✓</span> Semantic HTML5
+                            &amp; Clean CSS Tokens</li>
+                        <li><span style="color: var(--secondary-hover); font-weight: bold;">✓</span> Modular ES6
+                            JavaScript Architecture</li>
                     </ul>
                 </div>
 
-                <div class="philosophy-callout">
+                <div class="estimator-promo-card">
                     <h3>Ready to build your next web project?</h3>
-                    <p>Let's collaborate to bring your website ideas into reality with quality code.</p>
-                    <button type="button" class="mb-btn mb-btn-primary mb-btn-full open-contact-modal">Start a
-                        Project</button>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 1rem 0 1.5rem 0;">Let's collaborate
+                        to bring your website ideas into reality with quality code.</p>
+                    <a href="services.html" class="mb-btn mb-btn-primary"
+                        style="display: block; text-align: center;">Start a Project</a>
                 </div>
             </div>
         </section>
-
-        <!-- Contact Dialog Modal -->
-        <dialog id="contact-modal" class="modal-dialog">
-            <div class="modal-content">
-                <button type="button" id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
-                <h3>Get in Touch</h3>
-                <p>Fill out the form below to request a quote or project consultation.</p>
-
-                <form action="thankyou.html" method="get" class="contact-form">
-                    <div class="form-group">
-                        <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="jane@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="serviceType">Service Required <span class="required">*</span></label>
-                        <select id="serviceType" name="serviceType" required>
-                            <option value="" disabled selected>Select a service...</option>
-                            <option value="Frontend Web Development">Frontend Web Development</option>
-                            <option value="API Integration">API Integration</option>
-                            <option value="Full Project Build">Full Project Build</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Project Overview</label>
-                        <textarea id="message" name="message" rows="4"
-                            placeholder="Tell us about your project..."></textarea>
-                    </div>
-
-                    <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Submit Request</button>
-                </form>
-            </div>
-        </dialog>
     </main>
 
     <!-- Shared Footer -->
     <footer class="site-footer">
         <div class="footer-container">
-            <p>&copy; <span id="current-year"></span> Morning Bliss | Buyannemekh Chimeddorj</p>
+            <p>&copy; <span id="current-year">2026</span> Morning Bliss | Buyannemekh Chimeddorj</p>
             <p class="footer-links">
-                <a href="siteplan.html">Site Plan</a>
-                |
-                <a href="attributions.html">Attributions</a>
-                |
+                <a href="siteplan.html">Site Plan</a> |
+                <a href="attributions.html">Attributions</a> |
                 <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
                     Demonstration Video</a>
             </p>
-            <p class="last-modified">Last Modified: <span id="last-modified-date"></span></p>
+            <p class="last-modified">Last Modified: 08/05/2026 18:00:00</p>
         </div>
     </footer>
 

@@ -2,28 +2,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Directory | Mongolia Vietnam Chamber of Commerce</title>
-    <meta name="description" content="Search MVCC members and partners in Mongolia and Vietnam." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover | Mongolia Vietnam Chamber of Commerce</title>
+    <meta name="description"
+        content="Explore regional infrastructure assets, corporate facilities, and transit corridors connecting Mongolia and Vietnam." />
 
-    <meta property="og:title" content="Directory — Mongolia Vietnam Chamber of Commerce">
-    <meta property="og:description" content="Directory of member businesses and service providers." />
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/og-directory.webp">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/chamber/directory.html">
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Discover — Mongolia Vietnam Chamber of Commerce">
+    <meta property="og:description"
+        content="Regional logistics, terminals, and trade hubs linking Ulaanbaatar and Hanoi.">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/og-discover.webp">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/chamber/discover.html">
     <meta property="og:type" content="website">
 
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- FAVICON -->
     <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
 
+    <!-- SITE STYLES -->
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+
 </head>
 
 <body>
+    <!-- Header (mirrors index.html structure and IDs) -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -40,25 +48,37 @@
         <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join Us</a></li>
                 <li><a href="#footer-contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Main: left sidebar + card grid (discover.json will populate) -->
     <main class="home-grid">
-        <section class="directory-section card">
-            <h2>Member Directory</h2>
-            <div id="members-list" class="members-list">
-                <div class="card">
-                    <p>Loading members…</p>
-                </div>
+        <div class="discover-sidebar card">
+            <div id="visit-message" class="visit-message">
+                <p>Analyzing local visitor metrics...</p>
+            </div>
+
+            <div class="sidebar-info">
+                <h3>Cross-Border Trade Corridors</h3>
+                <p>Essential shipping terminals, border gates, and rail hubs that connect operations between Hanoi and
+                    Ulaanbaatar. Corporate logistics managers rely on these locations to coordinate multi-supplier
+                    consolidation, customs inspections, and international transit.</p>
+            </div>
+        </div>
+
+        <section id="discover-items-grid" class="discover-grid">
+            <div class="card">
+                <p>Loading items…</p>
             </div>
         </section>
     </main>
 
+    <!-- Footer (mirrors index.html) -->
     <footer>
         <div class="footer-top">
             <div id="footer-contact" class="footer-contact">
@@ -89,8 +109,9 @@
         </div>
     </footer>
 
+    <!-- Scripts: shared main + page-specific discover renderer (no inline JS) -->
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
 </body>
 
 </html>

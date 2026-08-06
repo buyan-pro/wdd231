@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio &amp; GitHub Repositories | Morning Bliss</title>
     <meta name="description"
-        content="Explore live web projects, code repositories, and dynamic GitHub integration built by Buyannemekh Chimeddorj.">
+        content="Explore selected frontend web applications, API integrations, and code repositories built by Buyannemekh Chimeddorj.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
     <!-- Favicon -->
@@ -59,8 +59,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html" class="active">Portfolio &amp; Repos</a></li>
-                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Get Started</button>
-                    </li>
+                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Contact</button></li>
                 </ul>
             </nav>
         </div>
@@ -68,30 +67,301 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Featured Work &amp; Code Repositories</h1>
-                <p>Browse recent frontend projects, JavaScript applications, and dynamic GitHub API data fetch
-                    integrations.</p>
-            </div>
-        </section>
-
-        <!-- Dynamic GitHub Projects Section -->
+        <!-- Featured Projects & Software Work Section -->
         <section class="section-container">
-            <h2>Live GitHub Repositories</h2>
-            <p class="section-intro">Fetched directly from the public GitHub REST API pipeline:</p>
+            <div class="hero-content" style="text-align: left; max-width: none; margin-bottom: 2rem;">
+                <h1>Featured Projects &amp; Software Work</h1>
+                <p class="section-intro" style="margin-bottom: 0;">Explore selected frontend web applications, API
+                    integrations, and user experience builds. Filter projects by tech stack below.</p>
+            </div>
 
             <!-- Filter Controls -->
             <div class="filter-controls">
                 <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
-                <button type="button" class="filter-btn" data-filter="featured">Featured Repos</button>
-                <button type="button" class="filter-btn" data-filter="javascript">JavaScript / Web</button>
+                <button type="button" class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button type="button" class="filter-btn" data-filter="api">API Integration</button>
+                <button type="button" class="filter-btn" data-filter="accessibility">CSS / Accessibility</button>
             </div>
 
-            <!-- Repositories Grid Container -->
+            <!-- Card Grid: Featured Projects -->
+            <div class="card-grid">
+                <!-- Card 1 -->
+                <div class="feature-card" data-category="javascript">
+                    <h3>Morning Bliss Scope Estimator</h3>
+                    <p>An interactive real-time calculator that computes project timeline and price quotes dynamically
+                        using array reduction.</p>
+                    <p class="project-tags">
+                        <span class="tag">JavaScript ES6</span> <span class="tag">Array.reduce()</span> <span
+                            class="tag">LocalStorage</span> <span class="tag">HTML5 Dialog</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="services.html" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card" data-category="api">
+                    <h3>GitHub Repositories Live Dashboard</h3>
+                    <p>Asynchronously fetches public GitHub repository statistics, star counts, and last updated
+                        timestamps in real time.</p>
+                    <p class="project-tags">
+                        <span class="tag">REST API</span> <span class="tag">Fetch API</span> <span
+                            class="tag">Async/Await</span> <span class="tag">JSON</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="portfolio.html" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card" data-category="accessibility">
+                    <h3>Chamber of Commerce Portal</h3>
+                    <p>A responsive web portal featuring dynamic member directories, grid/list view toggles, and live
+                        weather integration.</p>
+                    <p class="project-tags">
+                        <span class="tag">JavaScript</span> <span class="tag">JSON Data</span> <span class="tag">CSS
+                            Grid</span> <span class="tag">Weather API</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card" data-category="accessibility">
+                    <h3>WCAG AA Accessibility Inspector</h3>
+                    <p>Comprehensive web accessibility audit project enforcing high-contrast color tokens, screen reader
+                        landmarks, and keyboard navigation.</p>
+                    <p class="project-tags">
+                        <span class="tag">HTML5</span> <span class="tag">WAVE Tool</span> <span
+                            class="tag">Lighthouse</span> <span class="tag">CSS Variables</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="feature-card" data-category="api">
+                    <h3>Weather &amp; Forecast Integration</h3>
+                    <p>Fetches current temperature, humidity, and 3-day forecast details with error handling and
+                        fallback UI states.</p>
+                    <p class="project-tags">
+                        <span class="tag">OpenWeatherMap API</span> <span class="tag">Fetch</span> <span
+                            class="tag">JSON Parsing</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="feature-card" data-category="accessibility">
+                    <h3>Mobile First Responsive Layouts</h3>
+                    <p>Clean mobile-first design architecture using custom properties, fluid typography, and breakpoint
+                        optimizations.</p>
+                    <p class="project-tags">
+                        <span class="tag">CSS Grid</span> <span class="tag">Flexbox</span> <span class="tag">Media
+                            Queries</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="index.html" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="feature-card" data-category="javascript">
+                    <h3>Modular ES6 Component Library</h3>
+                    <p>A reusable set of client-side JavaScript modules for modal overlays, dynamic date stamps, and
+                        navigation drawers.</p>
+                    <p class="project-tags">
+                        <span class="tag">ES Modules</span> <span class="tag">DOM Manipulation</span> <span
+                            class="tag">JavaScript</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="feature-card" data-category="api">
+                    <h3>Restful JSON Member Directory</h3>
+                    <p>Asynchronous data loader fetching structured business directory data with search and category
+                        filtering.</p>
+                    <p class="project-tags">
+                        <span class="tag">JSON</span> <span class="tag">Fetch API</span> <span class="tag">Dynamic
+                            Cards</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="feature-card" data-category="javascript">
+                    <h3>Interactive Client Consultation Form</h3>
+                    <p>Accessible dialog window form capturing user inputs and rendering confirmation summaries on
+                        redirect.</p>
+                    <p class="project-tags">
+                        <span class="tag">HTML5 Dialog</span> <span class="tag">URLSearchParams</span> <span
+                            class="tag">Form Validation</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="thankyou.html" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="feature-card" data-category="accessibility">
+                    <h3>Performance Optimization &amp; SEO Audit</h3>
+                    <p>Optimized asset loading, SEO metadata, Open Graph sharing cards, and high PageSpeed rating
+                        execution.</p>
+                    <p class="project-tags">
+                        <span class="tag">Google Lighthouse</span> <span class="tag">WebP</span> <span class="tag">Meta
+                            Tags</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="feature-card" data-category="javascript">
+                    <h3>LocalStorage State Manager</h3>
+                    <p>Persists client selected services, total estimated costs, and theme preferences across page
+                        reloads.</p>
+                    <p class="project-tags">
+                        <span class="tag">JavaScript</span> <span class="tag">Web Storage API</span> <span
+                            class="tag">JSON</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="services.html" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="feature-card" data-category="api">
+                    <h3>Public API News &amp; Feed Aggregator</h3>
+                    <p>Retrieves external API content streams asynchronously with user-driven search queries and state
+                        management.</p>
+                    <p class="project-tags">
+                        <span class="tag">REST API</span> <span class="tag">Async/Await</span> <span
+                            class="tag">Promises</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 13 -->
+                <div class="feature-card" data-category="accessibility">
+                    <h3>CSS Theme Token Architecture</h3>
+                    <p>Systematized CSS custom properties for uniform color palettes, typographic hierarchies, and
+                        border elevations.</p>
+                    <p class="project-tags">
+                        <span class="tag">CSS Custom Properties</span> <span class="tag">Semantic HTML5</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="siteplan.html" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 14 -->
+                <div class="feature-card" data-category="javascript">
+                    <h3>Dynamic Grid / List View Toggle</h3>
+                    <p>Allows users to switch layout presentations dynamically between a multi-column card grid and a
+                        compact list table.</p>
+                    <p class="project-tags">
+                        <span class="tag">JavaScript</span> <span class="tag">DOM Manipulation</span> <span
+                            class="tag">CSS Grid</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="#" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 15 -->
+                <div class="feature-card" data-category="accessibility">
+                    <h3>Attributions &amp; License Documentation Portal</h3>
+                    <p>Dedicated attributions page citing open-source libraries, icon assets, fonts, and API services
+                        used.</p>
+                    <p class="project-tags">
+                        <span class="tag">Semantic HTML</span> <span class="tag">Markdown</span> <span class="tag">Open
+                            Source</span>
+                    </p>
+                    <div class="card-links">
+                        <a href="attributions.html" class="card-link">Live View &rarr;</a>
+                        <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener"
+                            class="card-link">Source &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic GitHub Repository Metrics Section -->
+        <section class="section-container" style="padding-top: 0;">
+            <h2>Live GitHub Repository Metrics</h2>
+            <p class="section-intro">Fetched asynchronously from the GitHub REST API
+                (<code>api.github.com/users/buyan-pro/repos</code>)</p>
+
+            <!-- Repositories Grid Container (Populated via JS or static cards matching layout) -->
             <div id="github-projects" class="card-grid">
-                <p class="loading-text">Fetching latest repository data from GitHub API...</p>
+                <div class="feature-card repo-card">
+                    <h3>wdd231</h3>
+                    <p>Public GitHub development repository.</p>
+                    <p class="repo-stats">⭐ 0 Stars | 🍴 0 Forks | HTML</p>
+                    <a href="https://github.com/buyan-pro/wdd231" target="_blank" rel="noopener" class="card-link">View
+                        Repository &rarr;</a>
+                </div>
+                <div class="feature-card repo-card">
+                    <h3>cse210-hw</h3>
+                    <p>CSE 210 Student Template Repository</p>
+                    <p class="repo-stats">⭐ 0 Stars | 🍴 0 Forks | C#</p>
+                    <a href="https://github.com/buyan-pro/cse210-hw" target="_blank" rel="noopener"
+                        class="card-link">View Repository &rarr;</a>
+                </div>
+                <div class="feature-card repo-card">
+                    <h3>wdd131</h3>
+                    <p>Public GitHub development repository.</p>
+                    <p class="repo-stats">⭐ 0 Stars | 🍴 0 Forks | HTML</p>
+                    <a href="https://github.com/buyan-pro/wdd131" target="_blank" rel="noopener" class="card-link">View
+                        Repository &rarr;</a>
+                </div>
+                <div class="feature-card repo-card">
+                    <h3>wdd130</h3>
+                    <p>Public GitHub development repository.</p>
+                    <p class="repo-stats">⭐ 0 Stars | 🍴 0 Forks | HTML</p>
+                    <a href="https://github.com/buyan-pro/wdd130" target="_blank" rel="noopener" class="card-link">View
+                        Repository &rarr;</a>
+                </div>
             </div>
         </section>
 

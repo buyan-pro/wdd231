@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services &amp; Scope Estimator | Morning Bliss</title>
+    <title>Web Development Services &amp; Interactive Estimator | Morning Bliss</title>
     <meta name="description"
-        content="Explore web engineering services and calculate custom project costs, timelines, and tech stack options using our interactive Scope Estimator.">
+        content="Select the specific features and solutions your project needs below to receive an instant, calculated timeline and cost projection.">
     <meta name="author" content="Buyannemekh Chimeddorj">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Services &amp; Scope Estimator | Morning Bliss">
+    <meta property="og:title" content="Web Development Services &amp; Interactive Estimator | Morning Bliss">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
     <meta property="og:url" content="https://buyan-pro.github.io/wdd231/services.html">
@@ -59,8 +59,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html" class="active">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
-                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Get Started</button>
-                    </li>
+                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Contact</button></li>
                 </ul>
             </nav>
         </div>
@@ -68,108 +67,90 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
+        <!-- Hero / Header Intro Section -->
+        <section class="services-hero-section">
             <div class="hero-content">
-                <h1>Web Solutions &amp; Scope Estimator</h1>
-                <p>Plan your digital web project with full transparency. Explore our engineering services or calculate
-                    estimated costs and timelines in real time below.</p>
+                <h1>Web Development Services &amp; Interactive Estimator</h1>
+                <p>Select the specific features and solutions your project needs below to receive an instant, calculated
+                    timeline and cost projection.</p>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="section-container">
-            <h2>Our Web Development Services</h2>
-            <p class="section-intro">Custom-built web engineering solutions focused on performance, accessibility, and
-                modern aesthetics.</p>
+        <!-- Estimator Workspace Layout -->
+        <section class="section-container estimator-layout">
+            <!-- Left Column: Available Features & Options -->
+            <div class="estimator-options-pane">
+                <h2>Available Features &amp; Service Options</h2>
 
-            <div class="card-grid">
-                <article class="service-card">
-                    <div class="card-icon">💻</div>
-                    <h3>Custom Frontend Build</h3>
-                    <p>Clean, semantic HTML5/CSS3 and modular ES6 JavaScript architecture tailored specifically to your
-                        brand requirements.</p>
-                </article>
-
-                <article class="service-card">
-                    <div class="card-icon">⚡</div>
-                    <h3>API &amp; REST Integration</h3>
-                    <p>Connecting web interfaces to dynamic REST APIs, asynchronous fetching pipelines, and real-time
-                        data storage.</p>
-                </article>
-
-                <article class="service-card">
-                    <div class="card-icon">♿</div>
-                    <h3>WCAG &amp; Audit Remediation</h3>
-                    <p>Comprehensive accessibility and SEO performance audits to ensure your web application meets WCAG
-                        AA standards.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Interactive Scope Estimator Section -->
-        <section class="section-container estimator-wrapper">
-            <h2>Interactive Project Estimator</h2>
-            <p class="section-intro">Adjust project parameters to receive instant timeline and cost estimates:</p>
-
-            <div class="estimator-grid">
-                <!-- Estimator Inputs Form -->
-                <form id="estimator-form" class="estimator-form">
-                    <div class="form-group">
-                        <label for="pageCount">Estimated Page Count: <span id="pageCountValue"
-                                class="badge-count">3</span></label>
-                        <input type="range" id="pageCount" name="pageCount" min="1" max="15" value="3" step="1">
+                <form id="estimator-form" class="service-options-form">
+                    <div class="service-option-card">
+                        <label class="option-label-checkbox">
+                            <input type="checkbox" name="serviceOption" value="core" checked disabled>
+                            <span class="option-title">Core Responsive Website (3 Pages)</span>
+                        </label>
+                        <p class="option-desc">Semantic HTML5, mobile-first CSS Grid/Flexbox, and accessible
+                            header/footer structure.</p>
+                        <p class="option-meta"><strong>Price:</strong> $500 | <strong>Timeline:</strong> 5 Days</p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="complexity">Project Complexity Level:</label>
-                        <select id="complexity" name="complexity">
-                            <option value="basic">Standard Responsive Site (Basic)</option>
-                            <option value="intermediate" selected>Dynamic &amp; Interactive (Intermediate)</option>
-                            <option value="advanced">Custom Web App &amp; API Integration (Advanced)</option>
-                        </select>
+                    <div class="service-option-card">
+                        <label class="option-label-checkbox">
+                            <input type="checkbox" name="serviceOption" value="api" checked>
+                            <span class="option-title">REST API &amp; Data Integration</span>
+                        </label>
+                        <p class="option-desc">Connecting your app to third-party endpoints, external JSON data, or live
+                            feeds with full error handling.</p>
+                        <p class="option-meta"><strong>Price:</strong> $300 | <strong>Timeline:</strong> +3 Days</p>
                     </div>
 
-                    <fieldset class="form-fieldset">
-                        <legend>Add-On Features &amp; Integrations</legend>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="addons" value="api" checked>
-                            <span>Third-Party REST API Integration (+$250)</span>
+                    <div class="service-option-card">
+                        <label class="option-label-checkbox">
+                            <input type="checkbox" name="serviceOption" value="accessibility" checked>
+                            <span class="option-title">Accessibility &amp; SEO Audit</span>
                         </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="addons" value="accessibility">
-                            <span>WCAG AA Accessibility Compliance (+$150)</span>
+                        <p class="option-desc">WCAG AA color contrast verification, screen reader compliance, keyboard
+                            navigation, and meta optimization.</p>
+                        <p class="option-meta"><strong>Price:</strong> $150 | <strong>Timeline:</strong> +1 Day</p>
+                    </div>
+
+                    <div class="service-option-card">
+                        <label class="option-label-checkbox">
+                            <input type="checkbox" name="serviceOption" value="modal" checked>
+                            <span class="option-title">Custom Modal &amp; Interactive UI Components</span>
                         </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="addons" value="seo">
-                            <span>Advanced Performance &amp; SEO Audit (+$100)</span>
-                        </label>
-                    </fieldset>
+                        <p class="option-desc">Accessible native HTML5 dialog popups, dynamic dropdown filters, and
+                            stateful UI interactions.</p>
+                        <p class="option-meta"><strong>Price:</strong> $200 | <strong>Timeline:</strong> +2 Days</p>
+                    </div>
                 </form>
+            </div>
 
-                <!-- Dynamic Calculation Output Box -->
+            <!-- Right Column: Estimated Scope Summary -->
+            <div class="estimator-summary-pane">
                 <div class="estimator-output-card">
-                    <h3>Estimate Summary</h3>
+                    <h2>Estimated Project Scope</h2>
+                    <p class="estimator-method-note">Calculated automatically using ES6 <code>Array.reduce()</code></p>
+                    <hr class="summary-divider">
+
                     <div class="output-metric">
-                        <span class="metric-label">Estimated Total:</span>
-                        <span id="total-cost" class="metric-value">$600</span>
+                        <span class="metric-label">Estimated Cost:</span>
+                        <span id="total-cost" class="metric-value">$1150</span>
                     </div>
                     <div class="output-metric">
-                        <span class="metric-label">Estimated Delivery:</span>
-                        <span id="total-timeline" class="metric-value">6 Business Days</span>
+                        <span class="metric-label">Estimated Timeline:</span>
+                        <span id="total-timeline" class="metric-value">11 Business Days</span>
+                    </div>
+                    <div class="output-metric">
+                        <span class="metric-label">Selected Features:</span>
+                        <span id="selected-count" class="metric-value">4 Items</span>
                     </div>
 
-                    <div class="output-details">
-                        <h4>Included Features:</h4>
-                        <ul id="feature-list" class="feature-list">
-                            <li>3 Responsive Web Pages</li>
-                            <li>Intermediate Complexity Build</li>
-                            <li>Third-Party REST API Integration</li>
-                        </ul>
-                    </div>
+                    <button type="button" id="save-estimate" class="mb-btn mb-btn-primary mb-btn-full">Save Estimate
+                        (LocalStorage)</button>
+                    <button type="button" class="mb-btn mb-btn-outline mb-btn-full open-contact-modal">Submit Quote
+                        Inquiry</button>
 
-                    <button type="button" class="mb-btn mb-btn-primary mb-btn-full open-contact-modal">Lock In Estimate
-                        &amp; Contact</button>
+                    <p id="save-status-msg" class="success-feedback">✓ Estimate saved to browser session!</p>
                 </div>
             </div>
         </section>

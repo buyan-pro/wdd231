@@ -1,232 +1,309 @@
-/* ==========================================================================
-   High-Density Layout Overrides for Wide Screen Viewports Layout (>= 1024px)
-   ========================================================================== */
-@media screen and (min-width: 64rem) {
-    body {
-        background-color: var(--bg-light);
-        color: var(--text-main);
+/* larger.css - Desktop overrides (>= 48rem / ~768px)
+   Replace existing larger.css with this file.
+   Breakpoint chosen: 48rem (≈768px)
+*/
+
+@media (min-width:48rem) {
+    :root {
+        --max-width: 1100px
+    }
+
+    /* Header: full-width bar, horizontal nav */
+    header {
+        position: relative;
+        z-index: 60
     }
 
     .header-container {
-        padding: 20px 40px;
-    }
-
-    #menu-toggle {
-        display: none;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 14px 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem
     }
 
     #nav-menu {
-        display: block !important;
-        background-color: var(--primary-color) !important;
-        padding: 0 40px;
+        display: block
     }
 
     #nav-menu ul {
         display: flex;
-        justify-content: flex-start;
-        gap: 5px;
+        gap: 1rem;
+        align-items: center;
+        margin: 0;
+        padding: 0
     }
 
-    #nav-menu ul li a {
-        border-top: none;
-        padding: 18px 25px;
-        font-size: 1rem;
-        transition: all 0.2s ease;
+    #nav-menu a {
+        color: #f3f7fb;
+        padding: .6rem .8rem;
+        border-radius: 6px
     }
 
-    #nav-menu ul li a.active {
-        background-color: var(--secondary-color);
-        color: var(--card-bg);
-        border-radius: 4px;
+    #menu-toggle {
+        display: none
     }
 
-    #nav-menu ul li a:hover {
-        color: var(--accent-color);
-        background-color: var(--nav-border-line);
-    }
-
-    /* ==========================================================================
-       Home Page Grid System Dashboard Configuration (3-Columns)
-       ========================================================================== */
-    .home-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
-
-    /* Hero section expands completely edge-to-edge across the top row */
+    /* Hero: full height, CTA absolute centered */
     .hero-section {
-        grid-column: 1 / -1;
+        height: 420px;
+        overflow: hidden;
+        position: relative
     }
 
-    .hero-section picture img {
-        min-height: 450px;
+    .hero-section picture,
+    .hero-section img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover
     }
 
-    /* Restores the overlay card ONLY on large monitor viewports */
     .hero-cta {
         position: absolute !important;
-        top: 50% !important;
         left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
+        top: 50% !important;
         transform: translate(-50%, -50%) !important;
-        background-color: rgba(10, 37, 64, 0.85) !important;
-        border-radius: 8px;
-        max-width: 500px;
-        padding: 24px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        max-width: 560px !important;
+        padding: 20px 26px !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        box-shadow: 0 16px 48px rgba(6, 22, 41, 0.18) !important;
     }
 
-    .weather-section {
-        grid-column: span 2;
-        margin-left: 0;
-        margin-right: 40px;
-    }
-
-    /* Spotlight container cards span edge-to-edge on the bottom row */
-    .spotlights-section {
-        grid-column: 1 / -1;
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-
-    .spotlight-grid {
+    /* Page layout: left sidebar + content (discover pages), general content centered for home */
+    .discover-main-layout {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+        grid-template-columns: 260px 1fr;
+        gap: 2rem;
+        max-width: var(--max-width);
+        margin: 2rem auto;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        align-items: start
     }
 
-    /* ==========================================================================
-    W03 UI Improvements: 2-Column Split Framework for Events & Weather Modules
-    ========================================================================== 
-    */
+    main.home-grid {
+        max-width: var(--max-width);
+        margin: 2rem auto;
+        padding: 0 1rem;
+        box-sizing: border-box
+    }
+
+    /* Sidebar sticky */
+    .discover-sidebar {
+        position: sticky;
+        top: 1.5rem;
+        align-self: start;
+        display: block
+    }
+
+    .discover-sidebar .card {
+        padding: 12px;
+        border-radius: 10px
+    }
+
+    /* Events: image left, details right */
+    main.home-grid>.events-section {
+        border-radius: 12px
+    }
+
     .events-split-container {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 40px !important;
-        width: 100% !important;
-        padding: 20px 40px !important;
+        display: flex;
+        gap: 1.75rem;
+        align-items: flex-start
     }
 
     .events-image-placeholder {
-        flex: 1 !important;
-        max-width: 45% !important;
-        height: auto !important;
+        flex: 0 0 45%;
+        max-height: 360px;
+        overflow: hidden;
+        border-radius: 8px
+    }
+
+    .events-image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px
     }
 
     .events-details-list {
-        flex: 1 !important;
-        max-width: 45% !important;
-        text-align: left !important;
-        padding-left: 0 !important;
+        flex: 1 1 55%;
+        padding-top: 4px
     }
 
-    /* FIXED: Unified weather column rules safely stored INSIDE the active media query */
-    .dual-weather-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        gap: 30px !important;
-        width: 100% !important;
+    /* Weather: two panels side-by-side and forecast columns */
+    .weather-row {
+        display: flex;
+        gap: 1rem;
+        align-items: stretch;
+        margin-top: 1rem
     }
 
-    .weather-city-block {
-        flex: 1 !important;
-        margin: 0 !important;
+    .weather-cards {
+        display: flex;
+        gap: 1rem;
+        width: 100%
     }
 
-    /* ==========================================================================
-       W04: Join Us Desktop Multi-Column Split Framework (Form vs. Sidebar)
-       ========================================================================== */
-    .join-main-layout {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        /* Asymmetric grid layout mapping */
-        gap: 40px;
-        align-items: start;
-        padding: 40px;
-    }
-
-    .form-section {
-        padding: 40px;
-    }
-
-    .benefits-sidebar {
-        position: sticky;
-        top: 40px;
-        /* Locks the cards container during scroll actions */
-    }
-
-    .tier-benefit-card {
-        transition: transform 0.2s ease;
-    }
-
-    .tier-benefit-card:hover {
-        transform: scale(1.02);
-    }
-
-    /* ==========================================================================
-       Directory Page View Class System Overrides (Left Intact)
-       ========================================================================== */
-    .grid-layout {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
-
-    .grid-layout .business-card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .grid-layout .business-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 20px var(--shadow-header);
-    }
-
-    .list-layout .business-card {
-        flex-direction: row;
+    .weather-panel {
+        flex: 1 1 48%;
+        display: flex;
+        gap: 12px;
         align-items: center;
+        padding: 14px;
+        border-radius: 8px;
+        background: #fbfdfe;
+        border: 1px solid var(--border)
+    }
+
+    .weather-panel .weather-icon {
+        width: 56px;
+        height: 56px
+    }
+
+    .forecast-section {
+        margin-top: 1rem
+    }
+
+    .forecast-wrap {
+        display: flex;
+        gap: 1rem
+    }
+
+    .forecast-city-block {
+        flex: 1 1 48%
+    }
+
+    .forecast-days {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-start
+    }
+
+    .forecast-day {
+        min-width: 96px;
+        max-width: 120px;
+        padding: 8px;
+        border-radius: 8px;
+        background: #fff;
+        border: 1px solid var(--border)
+    }
+
+    /* Spotlights: 3 equal columns */
+    .spotlight-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        align-items: start
+    }
+
+    .spotlight-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        padding: 15px 30px;
+        padding: 12px
     }
 
-    .list-layout .business-card:nth-child(even) {
-        background-color: var(--bg-light);
+    /* Discover grid for items (2 columns) */
+    #discover-items-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem
     }
 
-    .list-layout .business-card h3 {
-        flex: 2;
-        margin: 0;
-        font-size: 1.1rem;
+    @media (min-width:90rem) {
+        #discover-items-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem
+        }
     }
 
-    .list-layout .business-card .address {
-        flex: 2.5;
-        margin: 0;
-        padding: 0 15px;
-    }
-
-    .list-layout .business-card .phone {
-        flex: 1.5;
-        margin: 0;
-    }
-
-    .list-layout .business-card a {
-        flex: 1.5;
-        margin: 0;
-        text-align: right;
-    }
-
-    /* Split-Panel Dual Layout Footer Columns */
-    .footer-top {
-        flex-direction: row;
+    .resource-card {
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
+        padding: 16px
     }
 
-    .footer-meta {
-        text-align: right;
+    .card-image {
+        height: 160px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 12px
+    }
+
+    .resource-card h3 {
+        font-size: 1.05rem;
+        color: var(--primary);
+        margin-bottom: 8px
+    }
+
+    .resource-card .address {
+        color: #e06a2b;
+        font-weight: 700;
+        margin-bottom: 8px
+    }
+
+    .resource-card .card-excerpt {
+        color: var(--muted);
+        font-size: .95rem;
+        margin-bottom: 12px
+    }
+
+    .resource-card .btn {
+        background: var(--cta);
+        color: #fff;
+        padding: .6rem .9rem;
+        border-radius: 8px;
+        display: block;
+        text-align: center;
+        width: 140px;
+        margin: 0
+    }
+
+    /* Footer layout */
+    footer .footer-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1rem
+    }
+
+    footer .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1rem;
+        color: #e2eef9
+    }
+
+    /* Polishing */
+    .resource-card:hover {
+        transform: translateY(-6px);
+        transition: transform var(--transition);
+        box-shadow: 0 18px 50px rgba(6, 22, 41, 0.08)
+    }
+
+    a.btn:focus,
+    button:focus {
+        outline: 3px solid rgba(11, 37, 64, 0.12);
+        border-radius: 8px
+    }
+
+    /* Hide mobile-only helpers if present */
+    .hide-desktop {
+        display: none
     }
 }
