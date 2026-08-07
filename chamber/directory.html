@@ -4,91 +4,76 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Directory | Mongolia Vietnam Chamber of Commerce</title>
-    <meta name="description" content="Search MVCC members and partners in Mongolia and Vietnam." />
+    <title>Chamber Directory</title>
+    <meta name="description" content="Directory of chamber members" />
+    <meta name="author" content="Buyannemekh Chimeddorj" />
 
-    <meta property="og:title" content="Directory — Mongolia Vietnam Chamber of Commerce">
-    <meta property="og:description" content="Directory of member businesses and service providers." />
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/og-directory.webp">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/chamber/directory.html">
-    <meta property="og:type" content="website">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chamber — Directory" />
+    <meta property="og:description" content="Browse chamber members and service providers." />
+    <meta property="og:image" content="images/chamber-logo.webp" />
+    <meta property="og:url" content="https://username.github.io/wdd231/chamber/directory.html" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="images/chamber-logo.webp" alt="MVCC Official Emblem Logo" width="80" height="80"
-                    loading="eager">
-                <div class="branding-text">
-                    <div class="header-logo-title">MVCC</div>
-                    <p>Mongolia Vietnam Chamber of Commerce</p>
-                </div>
-            </div>
-            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
-        </div>
 
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
-                <li><a href="join.html">Join Us</a></li>
-                <li><a href="#footer-contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="site-header" role="banner">
+        <div class="header-inner container" role="navigation" aria-label="Main">
+            <a class="brand" href="index.html" aria-label="MVCC Home">
+                <img class="brand-logo" src="images/chamber-logo.webp" alt="MVCC logo" width="80" height="80">
+                <div class="brand-text">
+                    <div class="brand-title">MVCC</div>
+                    <div class="brand-subtitle">Mongolia Vietnam Chamber of Commerce</div>
+                </div>
+            </a>
+
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"
+                aria-label="Toggle menu">☰</button>
+
+            <nav id="primary-nav" class="nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="directory.html" class="nav-link">Directory</a></li>
+                    <li><a href="join.html" class="nav-link">Join</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="home-grid">
-        <section class="directory-section card">
-            <h2>Member Directory</h2>
-            <div id="members-list" class="members-list">
-                <div class="card">
-                    <p>Loading members…</p>
-                </div>
-            </div>
+    <main class="container main">
+        <h1>Members Directory</h1>
+        <p class="lead">Explore chamber member organizations. Toggle between grid and list views.</p>
+
+        <div class="directory-controls">
+            <button id="grid-view-btn" class="view-btn active" aria-pressed="true">Grid view</button>
+            <button id="list-view-btn" class="view-btn" aria-pressed="false">List view</button>
+        </div>
+
+        <section id="directory-display-container" class="directory-display grid-layout">
+            <!-- directory.js will populate cards here by fetching data/members.json -->
+            <p class="loading">Loading members…</p>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-top">
-            <div id="footer-contact" class="footer-contact">
-                <h3>MVCC Administrative Headquarters</h3>
-                <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
-                <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <p>Chamber of Commerce — <span class="muted">Regional Business Network</span></p>
+                <p>Contact: info@chamber.example | +976 11 123 456</p>
             </div>
-
-            <div class="footer-social">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
-                </div>
+            <div class="footer-right">
+                <p><span id="current-year"></span> • Your Name • WDD 231</p>
+                <p>Last modified: <span id="last-modified-date"></span></p>
             </div>
-
-            <div class="footer-meta">
-                <p>WDD 231 Web Frontend Development I</p>
-                <p>Chamber Group Project Portfolio Hub</p>
-                <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
-            <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="scripts/main.js" defer></script>
     <script src="scripts/directory.js" defer></script>
 </body>

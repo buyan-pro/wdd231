@@ -1,88 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Thank You | MVCC</title>
-    <meta name="description" content="Thank you for your membership application. We will contact you soon." />
+    <title>Chamber — Thank you</title>
+    <meta name="description" content="Thank you for your application." />
+    <meta name="author" content="Your Name" />
 
-    <meta property="og:title" content="Thank You — MVCC">
-    <meta property="og:description" content="Thank you for contacting the Mongolia Vietnam Chamber of Commerce.">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/og-thankyou.webp">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/chamber/thankyou.html">
-    <meta property="og:type" content="website">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="images/chamber-logo.webp" alt="MVCC Official Emblem Logo" width="80" height="80"
-                    loading="eager">
-                <div class="branding-text">
-                    <div class="header-logo-title">MVCC</div>
-                    <p>Mongolia Vietnam Chamber of Commerce</p>
-                </div>
-            </div>
-            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
-        </div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/chamber-logo.webp" alt="Chamber logo" class="brand-logo" />
+                <span class="brand-title">Chamber</span>
+            </a>
 
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join Us</a></li>
-                <li><a href="#footer-contact">Contact</a></li>
-            </ul>
-        </nav>
+            <button id="menu-toggle" aria-controls="nav-menu" aria-expanded="false" class="menu-toggle">☰</button>
+
+            <nav id="nav-menu" class="nav" role="navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="home-grid">
-        <section class="card thankyou-card">
-            <h2>Thank you</h2>
-            <p>We received your submission and will contact you with membership details shortly.</p>
-            <p><a class="cta-btn" href="index.html">Return to Home</a></p>
+    <main class="container main">
+        <h1>Thank You</h1>
+        <p>Thank you for submitting your membership application. Below is a summary of your submission:</p>
+
+        <section id="submission-summary" class="submission-summary card">
+            <!-- thankyou.js will fill this area from query params -->
+            <p class="loading">Preparing your submission summary…</p>
         </section>
+
+        <p><a href="index.html" class="btn">Return to Home</a></p>
     </main>
 
-    <footer>
-        <div class="footer-top">
-            <div id="footer-contact" class="footer-contact">
-                <h3>MVCC Administrative Headquarters</h3>
-                <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
-                <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <p>Chamber of Commerce — <span class="muted">Regional Business Network</span></p>
+                <p>Contact: info@chamber.example | +976 11 123 456</p>
             </div>
-
-            <div class="footer-social">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
-                </div>
+            <div class="footer-right">
+                <p><span id="current-year"></span> • Your Name • WDD 231</p>
+                <p>Last modified: <span id="last-modified-date"></span></p>
             </div>
-
-            <div class="footer-meta">
-                <p>WDD 231 Web Frontend Development I</p>
-                <p>Chamber Group Project Portfolio Hub</p>
-                <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
-            <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
         </div>
     </footer>
 

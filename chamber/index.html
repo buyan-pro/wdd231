@@ -1,171 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber Home | Mongolia Vietnam Chamber of Commerce</title>
-    <meta name="description"
-        content="Official home page for the Mongolia Vietnam Chamber of Commerce in Ulaanbaatar. Discover bilateral trade events, local weather, and premium member spotlights.">
-    <meta name="author" content="Buyannemekh Chimeddorj">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chamber Home</title>
+    <meta name="description" content="Chamber of Commerce — regional trade, events, weather and member spotlights." />
+    <meta name="author" content="Buyannemekh Chimeddorj" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Bilateral Business Home - Mongolia Vietnam Chamber of Commerce">
+    <!-- Open Graph (Facebook / Social) -->
+    <meta property="og:title" content="Chamber — Home" />
     <meta property="og:description"
-        content="Explore bilateral trade metrics, local economic development updates, and connect with premium corporate networks.">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/og-home.webp">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/chamber/index.html">
-    <meta property="og:type" content="website">
+        content="Regional trade and business hub — events, weather, and member spotlights." />
+    <meta property="og:image" content="images/hero-small.webp" />
+    <meta property="og:url" content="https://username.github.io/wdd231/chamber/index.html" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
 
-    <!-- Local styles (canonical) -->
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+    <!-- Inline API key for weather (dev/client-side). Replace/remove for production proxy. -->
+    <script>
+        window.OPENWEATHER_API_KEY = '0b9a766d096a5bfd07d306f691e6717b';
+    </script>
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <!-- Header UI Module Layout -->
-    <header>
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="images/chamber-logo.webp" alt="MVCC Official Emblem Logo" width="80" height="80"
-                    loading="eager">
-                <div class="branding-text">
-                    <div class="header-logo-title">MVCC</div>
-                    <p>Mongolia Vietnam Chamber of Commerce</p>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-inner container" role="navigation" aria-label="Main">
+            <a class="brand" href="index.html" aria-label="MVCC Home">
+                <img class="brand-logo" src="images/chamber-logo.webp" alt="MVCC logo" width="80" height="80">
+                <div class="brand-text">
+                    <div class="brand-title">MVCC</div>
+                    <div class="brand-subtitle">Mongolia Vietnam Chamber of Commerce</div>
                 </div>
-            </div>
-            <!-- Mobile nav toggle -->
-            <button id="menu-toggle" aria-controls="nav-menu" aria-expanded="false"
-                aria-label="Toggle Navigation Menu">☰</button>
-        </div>
+            </a>
 
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join Us</a></li>
-                <li><a href="#footer-contact">Contact</a></li>
-            </ul>
-        </nav>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav"
+                aria-label="Toggle menu">☰</button>
+
+            <nav id="primary-nav" class="nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="discover.html" class="nav-link">Discover</a></li>
+                    <li><a href="directory.html" class="nav-link">Directory</a></li>
+                    <li><a href="join.html" class="nav-link">Join</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Content Workspace Constraints Grid -->
-    <main id="main" class="home-grid">
-        <!-- Hero Section -->
-        <div class="hero-section">
+    <!-- Hero -->
+    <main class="main">
+        <section class="hero">
             <picture>
-                <source media="(min-width: 64rem)" srcset="images/hero-larger.webp">
-                <img src="images/hero-small.webp"
-                    alt="Beautiful Ulaanbaatar and Hanoi trading hubs layout profile overview" width="1200" height="450"
-                    loading="eager">
+                <source media="(min-width: 48rem)" srcset="images/hero-larger.webp">
+                <img src="images/hero-small.webp" alt="Regional photo hero" class="hero-img" />
             </picture>
+
             <div class="hero-cta">
-                <h2>Welcome to Your Future</h2>
-                <p>Grow your cross-border business network and scale your international trade operations with us.</p>
-                <a href="join.html" class="cta-btn">Join the Chamber</a>
-            </div>
-        </div>
-
-        <!-- Upcoming Bilateral Events Section -->
-        <section class="events-section card">
-            <h2>Upcoming Bilateral Events</h2>
-            <div class="events-split-container">
-                <!-- Left: Photo -->
-                <div class="events-image-placeholder">
-                    <img src="images/vietnam-mongolia-meeting.webp"
-                        alt="Official bilateral signing ceremony between Vietnamese and Mongolian delegates featuring national desk flags">
-                </div>
-
-                <!-- Right: Event List -->
-                <div class="events-details-list">
-                    <ul>
-                        <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
-                        <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
-                        <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
-                    </ul>
-                </div>
+                <h1>Welcome to the Chamber</h1>
+                <p>Connecting businesses across the region for trade, events, and growth.</p>
+                <a href="join.html" class="btn btn-primary">Join the Chamber</a>
             </div>
         </section>
 
-        <!-- Weather Component Section -->
-        <section class="weather-section card">
-            <h2>Chamber Regional Weather Profiles</h2>
-            <div class="dual-weather-grid">
-                <div class="weather-city-block">
-                    <h3>Mongolia Head Office</h3>
-                    <div id="ub-weather">
-                        <p>Loading Ulaanbaatar climate profile...</p>
+        <!-- Overlapping white site-card wrapper (events, weather, spotlights) -->
+        <section class="site-card-wrapper container">
+            <!-- Events block -->
+            <section class="events-block card">
+                <h2>Upcoming Events</h2>
+                <article class="event-item">
+                    <img src="images/vietnam-mongolia-meeting.webp" alt="Meeting photo" class="event-img" />
+                    <div class="event-info">
+                        <h3>Bilateral Trade Summit</h3>
+                        <p class="event-meta">June 18 — Metropole Conference Center, Hanoi</p>
                     </div>
+                </article>
+                <p><a href="discover.html" class="btn">See more events</a></p>
+            </section>
+
+            <!-- Weather block -->
+            <aside class="weather-block card">
+                <h2>Regional Weather</h2>
+                <div class="weather-row">
+                    <div id="ub-weather" class="weather-target"></div>
+                    <div id="hanoi-weather" class="weather-target"></div>
                 </div>
+                <div id="forecast-info" class="forecast-info"></div>
+            </aside>
 
-                <div class="weather-city-block">
-                    <h3>Vietnam Trade Hub</h3>
-                    <div id="hanoi-weather">
-                        <p>Loading Hanoi climate profile...</p>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="divider">
-
-            <h3 style="text-align: center; margin-bottom: 15px;">3-Day Regional Outlook</h3>
-            <div id="forecast-info" class="forecast-grid">
-                <p>Loading 3-day forecast outlook...</p>
-            </div>
-        </section>
-
-        <!-- Premium Corporate Member Spotlights -->
-        <section class="spotlights-section">
-            <h2>Business Spotlights</h2>
-            <div id="spotlight-container" class="spotlight-grid">
-                <!-- Sponsor cards will render here via scripts/spotlights.js -->
-            </div>
+            <!-- Spotlights block -->
+            <section class="spotlights-block card">
+                <h2>Member Spotlights</h2>
+                <div id="spotlight-container" class="spotlight-container"></div>
+            </section>
         </section>
     </main>
 
-    <!-- Footer (standardized structure) -->
-    <footer>
-        <div class="footer-top">
-            <div id="footer-contact" class="footer-contact">
-                <h3>MVCC Administrative Headquarters</h3>
-                <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
-                <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
+    <!-- Footer (consistent across pages) -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <p>Chamber of Commerce — <span class="muted">Regional Business Network</span></p>
+                <p>Contact: info@chamber.example | +976 11 123 456</p>
             </div>
-
-            <div class="footer-social">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://x.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
-                </div>
+            <div class="footer-right">
+                <p><span id="current-year"></span> • Your Name • WDD 231</p>
+                <p>Last modified: <span id="last-modified-date"></span></p>
             </div>
-
-            <div class="footer-meta">
-                <p>WDD 231 Web Frontend Development I</p>
-                <p>Chamber Group Project Portfolio Hub</p>
-                <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
-            <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
         </div>
     </footer>
 
-    <!-- App scripts -->
+    <!-- Scripts (deferred) -->
     <script src="scripts/main.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlights.js" defer></script>

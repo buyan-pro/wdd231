@@ -1,98 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Join Us | Mongolia Vietnam Chamber of Commerce</title>
-    <meta name="description" content="Apply for membership with MVCC and connect with bilateral trade partners." />
+    <title>Chamber — Join</title>
+    <meta name="description" content="Apply to join the Chamber of Commerce." />
+    <meta name="author" content="Your Name" />
 
-    <meta property="og:title" content="Join MVCC">
-    <meta property="og:description" content="Apply for membership with Mongolia Vietnam Chamber of Commerce.">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/chamber/images/og-join.webp">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/chamber/join.html">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chamber — Join" />
+    <meta property="og:description" content="Membership application and benefits." />
+    <meta property="og:image" content="images/chamber-logo.webp" />
+    <meta property="og:url" content="https://username.github.io/wdd231/chamber/join.html" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="icon" href="https://buyan-pro.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css" media="(min-width: 64rem)">
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-area">
-                <img src="images/chamber-logo.webp" alt="MVCC Official Emblem Logo" width="80" height="80"
-                    loading="eager">
-                <div class="branding-text">
-                    <div class="header-logo-title">MVCC</div>
-                    <p>Mongolia Vietnam Chamber of Commerce</p>
-                </div>
-            </div>
-            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
-        </div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="images/chamber-logo.webp" alt="Chamber logo" class="brand-logo" />
+                <span class="brand-title">Chamber</span>
+            </a>
 
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html" class="active">Join Us</a></li>
-                <li><a href="#footer-contact">Contact</a></li>
-            </ul>
-        </nav>
+            <button id="menu-toggle" aria-controls="nav-menu" aria-expanded="false" class="menu-toggle">☰</button>
+
+            <nav id="nav-menu" class="nav" role="navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="home-grid">
-        <section class="join-card card">
-            <h2>Apply for Membership</h2>
-            <form id="membership-form" action="thankyou.html" method="get" class="membership-form">
-                <label>First name <input name="fname" type="text" required></label>
-                <label>Last name <input name="lname" type="text" required></label>
-                <label>Email <input name="email" type="email" required></label>
-                <label>Organization <input name="org" type="text" required></label>
-                <button type="submit" class="cta-btn">Submit Application</button>
-            </form>
-        </section>
-    </main>
+    <main class="container main">
+        <h1>Join the Chamber</h1>
+        <p class="lead">Apply for membership using the form below. Required fields will be shown on the confirmation
+            page.</p>
 
-    <footer>
-        <div class="footer-top">
-            <div id="footer-contact" class="footer-contact">
-                <h3>MVCC Administrative Headquarters</h3>
-                <p>📍 Peace Avenue, Sukhbaatar District, Ulaanbaatar, Mongolia</p>
-                <p>📞 Phone: +976 11 312 456 | ✉️ Contact: info@mvcc.org</p>
-            </div>
+        <div class="join-layout">
+            <section class="join-form card" aria-labelledby="join-form-heading">
+                <h2 id="join-form-heading">Membership Application</h2>
 
-            <div class="footer-social">
-                <h3>Connect With Us</h3>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+                <form id="join-form" method="get" action="thankyou.html" novalidate>
+                    <label>
+                        First name
+                        <input type="text" name="fname" id="fname" title="First name" autocomplete="given-name"
+                            required />
+                    </label>
+
+                    <label>
+                        Last name
+                        <input type="text" name="lname" id="lname" title="Last name" autocomplete="family-name"
+                            required />
+                    </label>
+
+                    <label>
+                        Organizational title
+                        <input type="text" name="title" id="title" title="Organization title"
+                            autocomplete="organization-title" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ\s-]{7,}$"
+                            placeholder="e.g. Senior Program Manager" required />
+                        <small class="hint">Letters, spaces and hyphens only; minimum 7 characters.</small>
+                    </label>
+
+                    <label>
+                        Email address
+                        <input type="email" name="email" id="email" title="Email address" autocomplete="email"
+                            placeholder="you@example.com" required />
+                    </label>
+
+                    <label>
+                        Mobile phone
+                        <input type="tel" name="phone" id="phone" title="Mobile phone" autocomplete="tel" required />
+                    </label>
+
+                    <label>
+                        Business / Organization
+                        <input type="text" name="organization" id="organization" title="Organization name"
+                            autocomplete="organization" required />
+                    </label>
+
+                    <fieldset class="membership-fieldset" aria-labelledby="membership-choice">
+                        <legend id="membership-choice">Membership Level (choose one)</legend>
+                        <label><input type="radio" name="membership-level" value="np" required /> NP Membership
+                            (np)</label>
+                        <label><input type="radio" name="membership-level" value="bronze" /> Bronze Membership
+                            (bronze)</label>
+                        <label><input type="radio" name="membership-level" value="silver" /> Silver Membership
+                            (silver)</label>
+                        <label><input type="radio" name="membership-level" value="gold" /> Gold Membership
+                            (gold)</label>
+                    </fieldset>
+
+                    <label>
+                        Business description
+                        <textarea name="description" id="description" title="Organization description"
+                            rows="5"></textarea>
+                    </label>
+
+                    <input type="hidden" name="timestamp" id="form-timestamp" />
+
+                    <p><input type="submit" value="Submit Application" /></p>
+                </form>
+            </section>
+
+            <aside class="membership-cards" aria-label="Membership options">
+                <div class="cards-grid">
+                    <article class="membership-card card" id="card-np">
+                        <div class="card-badge">NP</div>
+                        <h4>NP Membership</h4>
+                        <p class="small">Non-profit organizations; no fee.</p>
+                        <p><a href="#" class="open-modal" data-modal="modal-np">Benefits &amp; details</a></p>
+                    </article>
+
+                    <article class="membership-card card" id="card-bronze">
+                        <div class="card-badge">Bronze</div>
+                        <h4>Bronze Membership</h4>
+                        <p class="small">Entry-level benefits and listing.</p>
+                        <p><a href="#" class="open-modal" data-modal="modal-bronze">Benefits &amp; details</a></p>
+                    </article>
+
+                    <article class="membership-card card" id="card-silver">
+                        <div class="card-badge">Silver</div>
+                        <h4>Silver Membership</h4>
+                        <p class="small">Featured spotlights and priority registration.</p>
+                        <p><a href="#" class="open-modal" data-modal="modal-silver">Benefits &amp; details</a></p>
+                    </article>
+
+                    <article class="membership-card card" id="card-gold">
+                        <div class="card-badge">Gold</div>
+                        <h4>Gold Membership</h4>
+                        <p class="small">Premium sponsor placement and promotions.</p>
+                        <p><a href="#" class="open-modal" data-modal="modal-gold">Benefits &amp; details</a></p>
+                    </article>
                 </div>
-            </div>
+            </aside>
+        </div>
 
-            <div class="footer-meta">
-                <p>WDD 231 Web Frontend Development I</p>
-                <p>Chamber Group Project Portfolio Hub</p>
-                <p><a href="siteplan.html" class="siteplan-link">📄 Project Site Plan</a></p>
+        <!-- Modals -->
+        <div id="modal-np" class="modal" role="dialog" aria-modal="true" aria-hidden="true"
+            aria-labelledby="modal-np-title">
+            <div class="modal-inner">
+                <button class="modal-close" aria-label="Close modal">✕</button>
+                <h2 id="modal-np-title">NP Membership — Benefits</h2>
+                <ul>
+                    <li>No fee membership</li>
+                    <li>Event inclusion</li>
+                    <li>Directory listing</li>
+                </ul>
             </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> | <strong>Buyannemekh Chimeddorj</strong> | Mongolia</p>
-            <p class="modified-timestamp">Last Structural Modification: <span id="last-modified-date"></span></p>
+        <div id="modal-bronze" class="modal" role="dialog" aria-modal="true" aria-hidden="true"
+            aria-labelledby="modal-bronze-title">
+            <div class="modal-inner">
+                <button class="modal-close" aria-label="Close modal">✕</button>
+                <h2 id="modal-bronze-title">Bronze Membership — Benefits</h2>
+                <ul>
+                    <li>Event discounts</li>
+                    <li>Newsletter mention</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-silver" class="modal" role="dialog" aria-modal="true" aria-hidden="true"
+            aria-labelledby="modal-silver-title">
+            <div class="modal-inner">
+                <button class="modal-close" aria-label="Close modal">✕</button>
+                <h2 id="modal-silver-title">Silver Membership — Benefits</h2>
+                <ul>
+                    <li>Featured spotlights</li>
+                    <li>Priority event registration</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-gold" class="modal" role="dialog" aria-modal="true" aria-hidden="true"
+            aria-labelledby="modal-gold-title">
+            <div class="modal-inner">
+                <button class="modal-close" aria-label="Close modal">✕</button>
+                <h2 id="modal-gold-title">Gold Membership — Benefits</h2>
+                <ul>
+                    <li>Homepage sponsor placement</li>
+                    <li>Custom promotion &amp; event sponsorship</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <p>Chamber of Commerce — <span class="muted">Regional Business Network</span></p>
+                <p>Contact: info@chamber.example | +976 11 123 456</p>
+            </div>
+            <div class="footer-right">
+                <p><span id="current-year"></span> • Your Name • WDD 231</p>
+                <p>Last modified: <span id="last-modified-date"></span></p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="scripts/main.js" defer></script>
     <script src="scripts/join.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
 </body>
 
 </html>
