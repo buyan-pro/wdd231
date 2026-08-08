@@ -1,58 +1,88 @@
 /* ==========================================================================
-   Navigation & Dialog Modal Module
+   Navigation, Modal Dialog, and Footer Date Module
    ========================================================================== */
 
 export function initNavigation() {
     const menuToggle = document.getElementById('menu-toggle');
-    const primaryNav = document.getElementById('primary-nav');
+    const navMenu = document.getElementById('primary-nav');
 
-    if (menuToggle && primaryNav) {
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', String(!isExpanded));
-            menuToggle.classList.toggle('active');
-            primaryNav.classList.toggle('show');
-        });
-    }
-}
+    if (!menuToggle || !navMenu) return;
 
-export function initContactModal() {
-    const contactModal = document.getElementById('contact-modal');
-    const openButtons = document.querySelectorAll('.open-contact-modal');
-    const closeButton = document.getElementById('close-modal');
+    // Toggle mobile menu on hamburger click
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+    });
 
-    if (!contactModal) return;
-
-    openButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            contactModal.showModal();
+    // Close menu when any nav link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
         });
     });
 
-    if (closeButton) {
-        closeButton.addEventListener('click', () => {
-            contactModal.close();
-        });
-    }
-
-    // Backdrop click detection (triggers only when clicking overlay background)
-    contactModal.addEventListener('click', (e) => {
-        if (e.target === contactModal) {
-            contactModal.close();
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            navMenu.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
         }
     });
 }
 
-export function updateFooterDates() {
-    const yearSpan = document.getElementById('current-year');
-    const modifiedSpan = document.getElementById('last-modified-date');
+export function initContactModal() {
+    const modal = document.getElementById('contact-modal');
+    const openButtons = document.querySelectorAll('.open-contact-modal');
+    const closeButton = document.getElementById('close-modal');
 
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+    if (!modal) return;
+
+    // Open modal
+    openButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.showModal();
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal via X button
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            modal.close();
+            document.body.style.overflow = '';
+        });
     }
 
-    if (modifiedSpan) {
-        modifiedSpan.textContent = document.lastModified;
+    // Close modal when clicking backdrop
+    modal.addEventListener('click', (e) => {
+        const rect = modal.getBoundingClientRect();
+        const isInDialog = (
+            rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+            rect.left <= e.clientX && e.clientX <= rect.left + rect.width
+        );
+        if (!isInDialog) {
+            modal.close();
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close on Escape key (native to dialog, but ensure cleanup)
+    modal.addEventListener('close', () => {
+        document.body.style.overflow = '';
+    });
+}
+
+export function updateFooterDates() {
+    const yearEl = document.getElementById('current-year');
+    const modifiedEl = document.getElementById('last-modified-date');
+
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+
+    if (modifiedEl) {
+        modifiedEl.textContent = document.lastModified;
     }
 }
