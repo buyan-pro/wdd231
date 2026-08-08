@@ -17,8 +17,8 @@
     <meta property="og:type" content="website">
     <meta property="og:description"
         content="I build custom web applications, integrate REST APIs, and optimize performance for small businesses and modern digital platforms.">
-    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
-    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/index.html">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/final/images/og-preview.jpg">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/final/index.html">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,8 @@
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
 
     <!-- JS Entry Module -->
-    <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/main.js" type="module"></script>
+    <base target="_blank">
     <base target="_blank">
 </head>
 
@@ -78,13 +79,8 @@
                     and modern digital platforms.</p>
                 <div class="hero-cta-group">
                     <a href="services.html" class="mb-btn mb-btn-primary">Estimate Project Scope</a>
-                    <button type="button" class="mb-btn open-contact-modal"
-                        style="background: transparent; border: 2px solid rgba(255,255,255,0.6); color: #ffffff;">Get In
-                        Touch</button>
+                    <button type="button" class="mb-btn btn-outline-light open-contact-modal">Get In Touch</button>
                 </div>
-                <img src="images/og-preview.jpg" alt="Morning Bliss Web Solutions preview" loading="lazy" width="1200"
-                    height="630"
-                    style="max-width: 100%; height: auto; border-radius: var(--radius-md); margin-top: 2rem;">
             </div>
         </section>
 
@@ -96,7 +92,7 @@
 
             <div class="card-grid">
                 <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#128187;</div>
+                    <div class="feature-icon">&#128187;</div>
                     <h3>Custom Web Development</h3>
                     <p>Responsive, mobile-first websites crafted with semantic HTML5, modern CSS Grid/Flexbox, and clean
                         modular JavaScript.</p>
@@ -104,7 +100,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#9889;</div>
+                    <div class="feature-icon">&#9889;</div>
                     <h3>REST API &amp; Data Integration</h3>
                     <p>Connecting web apps to live external data feeds, third-party services, and asynchronous JSON data
                         pipelines.</p>
@@ -112,7 +108,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#9855;</div>
+                    <div class="feature-icon">&#9855;</div>
                     <h3>Accessibility &amp; SEO Audits</h3>
                     <p>Optimizing web properties to meet WCAG AA contrast standards, keyboard navigation requirements,
                         and search engine guidelines.</p>
@@ -122,33 +118,33 @@
         </section>
 
         <!-- Bottom Section Grid -->
-        <section class="section-container" style="padding-top: 0;">
+        <section class="section-container no-top-padding">
             <div class="philosophy-estimator-grid">
                 <div class="philosophy-pane">
                     <h2>Development Philosophy</h2>
-                    <p class="section-intro" style="margin-bottom: 1.25rem;">Great web development sits at the
+                    <p class="section-intro mb-sm">Great web development sits at the
                         intersection of performance, accessibility, and business outcomes. Every line of code should
                         contribute to a fast, reliable, and smooth user journey across all device screen sizes.</p>
                     <ul class="check-list">
-                        <li><span style="color: var(--secondary-hover); font-weight: bold;">&#10003;</span>
+                        <li><span class="check-mark">&#10003;</span>
                             <strong>Mobile-First Responsive Design:</strong> Flawless rendering from 320px mobile
-                            viewports up to desktop displays.</li>
-                        <li><span style="color: var(--secondary-hover); font-weight: bold;">&#10003;</span> <strong>Zero
-                                Unnecessary Overhead:</strong> Lightweight, native web technologies without heavy
-                            third-party CSS frameworks.</li>
-                        <li><span style="color: var(--secondary-hover); font-weight: bold;">&#10003;</span>
+                            viewports up to desktop displays.
+                        </li>
+                        <li><span class="check-mark">&#10003;</span> <strong>Zero Unnecessary Overhead:</strong>
+                            Lightweight, native web technologies without heavy third-party CSS frameworks.</li>
+                        <li><span class="check-mark">&#10003;</span>
                             <strong>Data-Driven Functionality:</strong> Dynamic state management using ES6 modules and
-                            modern Async/Await APIs.</li>
+                            modern Async/Await APIs.
+                        </li>
                     </ul>
                 </div>
 
                 <div class="estimator-promo-card">
                     <h3>Ready to build something unique?</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 1rem 0 1.5rem 0;">Explore my
+                    <p class="promo-text">Explore my
                         interactive scope estimator to get real-time price and timeline projections for your next web
                         project.</p>
-                    <a href="services.html" class="mb-btn mb-btn-primary"
-                        style="display: block; text-align: center;">Try Scope Estimator</a>
+                    <a href="services.html" class="mb-btn mb-btn-primary btn-block">Try Scope Estimator</a>
                 </div>
             </div>
         </section>
