@@ -32,6 +32,7 @@
 
     <!-- JS Entry Module -->
     <script src="scripts/main.js" type="module"></script>
+    <base target="_blank">
 </head>
 
 <body>
@@ -74,9 +75,11 @@
                     your requirements and get back to you within 24 business hours.</p>
 
                 <!-- Dynamic Form Submission Details Container (Handled by JS) -->
-                <div id="submission-details" class="submission-details-box">
+                <div id="form-summary" class="submission-details-box">
                     <h3>Submitted Request Summary</h3>
-                    <p class="loading-text">Loading submitted form parameters...</p>
+                    <p><strong>Name:</strong> <span id="summary-name">Loading...</span></p>
+                    <p><strong>Email:</strong> <span id="summary-email">Loading...</span></p>
+                    <p><strong>Service:</strong> <span id="summary-service">Loading...</span></p>
                 </div>
 
                 <div class="thankyou-cta-group">

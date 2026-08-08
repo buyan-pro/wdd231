@@ -4,37 +4,444 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Chamber Home</title>
-    <meta name="description" content="Chamber of Commerce — regional trade, events, weather and member spotlights." />
+    <title>MVCC — Home</title>
     <meta name="author" content="Buyannemekh Chimeddorj" />
+    <meta name="description"
+        content="Mongolia Vietnam Chamber of Commerce — connecting businesses, events, and services." />
 
-    <!-- Open Graph (Facebook / Social) -->
-    <meta property="og:title" content="Chamber — Home" />
-    <meta property="og:description"
-        content="Regional trade and business hub — events, weather, and member spotlights." />
-    <meta property="og:image" content="images/hero-small.webp" />
-    <meta property="og:url" content="https://username.github.io/wdd231/chamber/index.html" />
+    <style>
+        /* Basic reset */
+        :root {
+            --accent: #0b5a8a;
+            --accent-dark: #084e74;
+            --muted: #6b7280;
+            --card: #ffffff;
+            --surface: #f6f9fb;
+        }
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/normalize.css" />
-    <link rel="stylesheet" href="styles/small.css" />
-    <link rel="stylesheet" href="styles/larger.css" />
+        * {
+            box-sizing: border-box
+        }
 
-    <!-- Inline API key for weather (dev/client-side). Replace/remove for production proxy. -->
-    <script>
-        window.OPENWEATHER_API_KEY = '0b9a766d096a5bfd07d306f691e6717b';
-    </script>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+            color: #102a43;
+            background: #f4f7f9;
+            line-height: 1.4
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden
+        }
+
+        .skip-link:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: .5rem 1rem;
+            background: #fff;
+            border-radius: 6px;
+            z-index: 999
+        }
+
+        /* Header */
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid #e6eef6;
+            position: sticky;
+            top: 0;
+            z-index: 40
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .6rem 1rem
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            text-decoration: none;
+            color: inherit
+        }
+
+        .brand-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 6px;
+            object-fit: cover
+        }
+
+        .brand-title {
+            font-weight: 700;
+            font-size: 1.05rem
+        }
+
+        .brand-sub {
+            font-size: .82rem;
+            color: var(--muted)
+        }
+
+        /* Nav */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 0;
+            font-size: 1.4rem;
+            cursor: pointer
+        }
+
+        nav.nav {
+            display: block
+        }
+
+        .nav-list {
+            display: flex;
+            gap: .6rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center
+        }
+
+        .nav-link {
+            padding: .45rem .6rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #0e2130;
+            transition: background .12s, color .12s
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            background: #f3f7fb
+        }
+
+        .nav-link.active {
+            background: var(--accent);
+            color: #fff
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 44vh;
+            background-image: linear-gradient(rgba(2, 8, 23, .32), rgba(2, 8, 23, .16)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center
+        }
+
+        .hero-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem
+        }
+
+        .hero-card {
+            background: rgba(3, 37, 65, .8);
+            padding: 1.75rem;
+            border-radius: 10px;
+            max-width: 720px;
+            box-shadow: 0 6px 22px rgba(2, 8, 23, .25)
+        }
+
+        .hero-card h1 {
+            margin: 0 0 .5rem;
+            font-size: clamp(1.6rem, 3.4vw, 2.35rem);
+            color: #ffd24d
+        }
+
+        .hero-card p {
+            margin: 0 0 1rem;
+            color: #e7f1fb
+        }
+
+        .btn {
+            display: inline-block;
+            background: #c62828;
+            color: #fff;
+            padding: .55rem .9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        /* Layout sections */
+        section.card {
+            background: var(--card);
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            box-shadow: 0 2px 10px rgba(10, 30, 40, .04);
+            border: 1px solid #e9f0f6
+        }
+
+        /* Events: large image left, list right (responsive) */
+        .events-row {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 1.25rem;
+            align-items: center
+        }
+
+        .events-row img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+
+        .events-list {
+            padding: 1rem
+        }
+
+        .events-list h2 {
+            text-align: center;
+            margin-top: 0
+        }
+
+        .events-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .events-list li {
+            padding: .55rem 0;
+            border-bottom: 1px solid #f1f6fa;
+            color: #0e2130
+        }
+
+        .events-list li strong {
+            color: #0b5a8a
+        }
+
+        /* Weather section */
+        .weather-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+        .weather-current {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1rem;
+            border: 1px solid #eef6fb;
+            min-height: 120px
+        }
+
+        .current-city {
+            font-weight: 700;
+            margin-bottom: .25rem
+        }
+
+        .temp {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent)
+        }
+
+        .weather-row {
+            margin-top: .9rem;
+            border-top: 1px solid #eef6fb;
+            padding-top: .9rem
+        }
+
+        /* Forecasts: each column contains three small cards in a row */
+        .forecast-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem
+        }
+
+        .forecast-col {
+            display: grid;
+            gap: .6rem
+        }
+
+        .forecast-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .6rem
+        }
+
+        .forecast-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: .6rem;
+            border: 1px solid #eef6fb;
+            text-align: center
+        }
+
+        .forecast-card .day {
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: .4rem
+        }
+
+        .forecast-card .t {
+            font-weight: 600;
+            color: #172b4d
+        }
+
+        /* Business spotlights: 3 columns */
+        .spotlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem
+        }
+
+        .spot {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1rem;
+            border: 1px solid #eef6fb
+        }
+
+        .spot h3 {
+            margin: .25rem 0;
+            color: #0b3a57
+        }
+
+        .badge {
+            display: inline-block;
+            background: #f3f6f8;
+            border-radius: 6px;
+            padding: .25rem .5rem;
+            font-size: .85rem;
+            margin-bottom: .5rem
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: #0b2b3b;
+            color: #e9fbff;
+            padding: 1.25rem 0;
+            margin-top: 1.25rem
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem
+        }
+
+        .footer-grid h4 {
+            margin: 0 0 .5rem
+        }
+
+        .footer-grid a {
+            color: #ffd24d;
+            text-decoration: none
+        }
+
+        .copyright {
+            margin-top: .8rem;
+            text-align: center;
+            color: rgba(255, 255, 255, .85)
+        }
+
+        /* Responsive */
+        @media (max-width:980px) {
+            .events-row {
+                grid-template-columns: 1fr
+            }
+
+            .events-row img {
+                height: 240px
+            }
+
+            .forecast-row {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media (max-width:760px) {
+            .nav-list {
+                display: none
+            }
+
+            .menu-toggle {
+                display: inline-block
+            }
+
+            nav.nav.open {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 64px;
+                background: #fff;
+                padding: .75rem;
+                border: 1px solid #e6eef6;
+                border-radius: 8px
+            }
+
+            .events-row img {
+                height: 180px
+            }
+
+            .hero-inner {
+                padding: 2rem 1rem
+            }
+
+            .spotlights {
+                grid-template-columns: 1fr
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr
+            }
+
+            .forecast-row {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        /* small helpers */
+        .muted {
+            color: var(--muted);
+            font-size: .95rem
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <header class="site-header" role="banner">
-        <div class="header-inner container" role="navigation" aria-label="Main">
-            <a class="brand" href="index.html" aria-label="MVCC Home">
-                <img class="brand-logo" src="images/chamber-logo.webp" alt="MVCC logo" width="80" height="80">
-                <div class="brand-text">
+        <div class="header-inner container">
+            <a class="brand" href="index.html">
+                <img class="brand-logo" src="images/chamber-logo.webp" alt="MVCC logo" />
+                <div>
                     <div class="brand-title">MVCC</div>
-                    <div class="brand-subtitle">Mongolia Vietnam Chamber of Commerce</div>
+                    <div class="brand-sub">Mongolia Vietnam Chamber of Commerce</div>
                 </div>
             </a>
 
@@ -53,71 +460,222 @@
     </header>
 
     <!-- Hero -->
-    <main class="main">
-        <section class="hero">
-            <picture>
-                <source media="(min-width: 48rem)" srcset="images/hero-larger.webp">
-                <img src="images/hero-small.webp" alt="Regional photo hero" class="hero-img" />
-            </picture>
+    <section class="hero" role="region" aria-label="Hero">
+        <div class="hero-inner container">
+            <div class="hero-card" role="article">
+                <h1>Welcome to Your Future</h1>
+                <p>Grow your cross-border business network and scale your international trade operations with us.</p>
+                <a class="btn" href="join.html">Join the Chamber</a>
+            </div>
+        </div>
+    </section>
 
-            <div class="hero-cta">
-                <h1>Welcome to the Chamber</h1>
-                <p>Connecting businesses across the region for trade, events, and growth.</p>
-                <a href="join.html" class="btn btn-primary">Join the Chamber</a>
+    <main id="main-content" role="main" class="container">
+
+        <!-- Upcoming Events -->
+        <section class="card" aria-labelledby="events-title">
+            <h2 id="events-title" style="text-align:center;margin-top:0">Upcoming Bilateral Events</h2>
+            <div class="events-row">
+                <img src="images/event-signing.jpg" alt="Signing ceremony" />
+                <div class="events-list">
+                    <ul>
+                        <li><strong>Ulaanbaatar Trade Summit</strong> - Oct 14th, 9:00 AM</li>
+                        <li><strong>B2B Networking Breakfast</strong> - Oct 22nd, 7:30 AM</li>
+                        <li><strong>Bilateral Investment Forum</strong> - Nov 05th, 12:00 PM</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Overlapping white site-card wrapper (events, weather, spotlights) -->
-        <section class="site-card-wrapper container">
-            <!-- Events block -->
-            <section class="events-block card">
-                <h2>Upcoming Events</h2>
-                <article class="event-item">
-                    <img src="images/vietnam-mongolia-meeting.webp" alt="Meeting photo" class="event-img" />
-                    <div class="event-info">
-                        <h3>Bilateral Trade Summit</h3>
-                        <p class="event-meta">June 18 — Metropole Conference Center, Hanoi</p>
+        <!-- Weather Section -->
+        <section class="card" aria-labelledby="weather-title">
+            <h2 id="weather-title">Chamber Regional Weather Profiles</h2>
+
+            <!-- Current weather two-column row -->
+            <div class="weather-grid" role="region" aria-label="Current weather">
+                <div class="weather-current" id="current-ub">
+                    <div class="current-city">Mongolia Head Office</div>
+                    <div class="muted">Ulaanbaatar, MN</div>
+                    <div class="weather-row">
+                        <div class="temp" id="ub-temp">—</div>
+                        <div id="ub-desc" class="muted">Unavailable</div>
                     </div>
-                </article>
-                <p><a href="discover.html" class="btn">See more events</a></p>
-            </section>
-
-            <!-- Weather block -->
-            <aside class="weather-block card">
-                <h2>Regional Weather</h2>
-                <div class="weather-row">
-                    <div id="ub-weather" class="weather-target"></div>
-                    <div id="hanoi-weather" class="weather-target"></div>
                 </div>
-                <div id="forecast-info" class="forecast-info"></div>
-            </aside>
 
-            <!-- Spotlights block -->
-            <section class="spotlights-block card">
-                <h2>Member Spotlights</h2>
-                <div id="spotlight-container" class="spotlight-container"></div>
-            </section>
+                <div class="weather-current" id="current-hn">
+                    <div class="current-city">Vietnam Trade Hub</div>
+                    <div class="muted">Hanoi, VN</div>
+                    <div class="weather-row">
+                        <div class="temp" id="hn-temp">—</div>
+                        <div id="hn-desc" class="muted">Unavailable</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecasts: two columns, each with a three-column row for 3-day forecast -->
+            <div class="forecast-grid" aria-label="3 day forecast">
+                <div class="forecast-col">
+                    <h3 style="margin:0 0 .6rem">3-Day Regional Outlook — Ulaanbaatar</h3>
+                    <div class="forecast-row" id="forecast-ub" aria-hidden="false">
+                        <!-- forecast cards injected by JS -->
+                    </div>
+                </div>
+
+                <div class="forecast-col">
+                    <h3 style="margin:0 0 .6rem">3-Day Regional Outlook — Hanoi</h3>
+                    <div class="forecast-row" id="forecast-hn" aria-hidden="false">
+                        <!-- forecast cards injected by JS -->
+                    </div>
+                </div>
+            </div>
+
         </section>
+
+        <!-- Business Spotlights -->
+        <section class="card" aria-labelledby="spotlight-title">
+            <h2 id="spotlight-title">Business Spotlights</h2>
+            <div class="spotlights" role="list">
+                <article class="spot" role="listitem">
+                    <div class="badge">Silver Member</div>
+                    <h3>Saigon Textile and Manufacturing Corp</h3>
+                    <p class="muted"><em>"Heavy winter garment and commercial raw materials supplier."</em></p>
+                    <p><strong>📍 Address:</strong> 45 Nguyen Hue Boulevard, District 1, Ho Chi Minh City</p>
+                    <p><strong>📞 Phone:</strong> +84 28 3829 1234</p>
+                    <p><strong>🌐 Web:</strong> <a href="https://saigonsys.example" target="_blank"
+                            rel="noopener">saigontextile.com</a></p>
+                </article>
+
+                <article class="spot" role="listitem">
+                    <div class="badge" style="background:#fff2cc">Gold Sponsor</div>
+                    <h3>Ulaanbaatar Logistics & Freight Co.</h3>
+                    <p class="muted"><em>"Connecting the Steppe to Southeast Asia supply chains."</em></p>
+                    <p><strong>📍 Address:</strong> Peace Avenue 42, Sukhbaatar District, Ulaanbaatar</p>
+                    <p><strong>📞 Phone:</strong> +976 11 312 456</p>
+                    <p><strong>🌐 Web:</strong> <a href="https://ublogistics.example" target="_blank"
+                            rel="noopener">ublogistics.mn</a></p>
+                </article>
+
+                <article class="spot" role="listitem">
+                    <div class="badge" style="background:#fff2cc">Gold Sponsor</div>
+                    <h3>Gobi Cashmere Export Hub</h3>
+                    <p class="muted"><em>"Premium Mongolian knitwear shipping directly to Vietnam outlets."</em></p>
+                    <p><strong>📍 Address:</strong> Industrial Street, Khan-Uul District, Ulaanbaatar</p>
+                    <p><strong>📞 Phone:</strong> +976 11 343 434</p>
+                    <p><strong>🌐 Web:</strong> <a href="https://gobi.example" target="_blank"
+                            rel="noopener">gobi.mn</a></p>
+                </article>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer (consistent across pages) -->
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="footer-left">
-                <p>Chamber of Commerce — <span class="muted">Regional Business Network</span></p>
-                <p>Contact: info@chamber.example | +976 11 123 456</p>
+    <!-- Footer: includes your name and siteplan link as requested -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-grid">
+            <div>
+                <h4>Contact</h4>
+                <p>Mongolia Vietnam Chamber of Commerce</p>
+                <p>Peace Avenue 42, Sukhbaatar District, Ulaanbaatar</p>
+                <p>Phone: +976 11 312 456</p>
             </div>
-            <div class="footer-right">
-                <p><span id="current-year"></span> • Your Name • WDD 231</p>
-                <p>Last modified: <span id="last-modified-date"></span></p>
+
+            <div>
+                <h4>Quick links</h4>
+                <p><a href="index.html">Home</a> · <a href="discover.html">Discover</a> · <a
+                        href="directory.html">Directory</a> · <a href="join.html">Join</a></p>
             </div>
+
+            <div>
+                <h4>Site & Credits</h4>
+                <p>Siteplan: <a href="siteplan.html">Siteplan (view)</a></p>
+                <p>Site design & build: Buyannemekh Chimeddorj</p>
+                <p class="muted" style="font-size:.9rem;margin-top:.5rem">If you reuse this footer, replace contact
+                    details with the official office information.</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; <span id="year"></span> Mongolia Vietnam Chamber of Commerce — All rights reserved.
         </div>
     </footer>
 
-    <!-- Scripts (deferred) -->
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/spotlights.js" defer></script>
+    <!-- Scripts: menu, active link, and sample data renderers -->
+    <script>
+        // Menu toggle
+        (function () {
+            const btn = document.getElementById('menu-toggle');
+            const nav = document.getElementById('primary-nav');
+            btn.addEventListener('click', () => {
+                const open = nav.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        })();
+
+        // Active nav link based on filename
+        (function () {
+            const links = document.querySelectorAll('.nav-link');
+            const path = location.pathname.split('/').pop() || 'index.html';
+            links.forEach(a => {
+                const href = a.getAttribute('href');
+                if (href === path) a.classList.add('active');
+            });
+        })();
+
+        // Set current year
+        document.getElementById('year').textContent = (new Date()).getFullYear();
+
+        // SAMPLE weather data (placeholder) — replace with real fetch later if you want live data.
+        const SAMPLE = {
+            ulaanbaatar: {
+                current: { temp: -4, desc: 'Partly cloudy' },
+                forecast: [
+                    { day: 'Tomorrow', high: -1, low: -8, desc: 'Cloudy' },
+                    { day: 'Day 2', high: 0, low: -6, desc: 'Light snow' },
+                    { day: 'Day 3', high: 2, low: -3, desc: 'Sun & clouds' }
+                ]
+            },
+            hanoi: {
+                current: { temp: 26, desc: 'Humid, light showers' },
+                forecast: [
+                    { day: 'Tomorrow', high: 27, low: 24, desc: 'Showers' },
+                    { day: 'Day 2', high: 29, low: 25, desc: 'Partly sunny' },
+                    { day: 'Day 3', high: 30, low: 26, desc: 'Humid' }
+                ]
+            }
+        };
+
+        // Render sample weather data into the DOM
+        function renderCurrent(idPrefix, data) {
+            document.getElementById(idPrefix + '-temp').textContent = data.current.temp + '°C';
+            document.getElementById(idPrefix + '-desc').textContent = data.current.desc;
+        }
+
+        function renderForecast(containerId, list) {
+            const cont = document.getElementById(containerId);
+            cont.innerHTML = ''; // clear
+            list.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'forecast-card';
+                card.innerHTML = '<div class="day">' + item.day + '</div>' +
+                    '<div class="t">' + item.high + '° / ' + item.low + '°</div>' +
+                    '<div class="muted" style="font-size:.85rem;margin-top:.4rem">' + item.desc + '</div>';
+                cont.appendChild(card);
+            });
+        }
+
+        // Initialize weather UI with sample data
+        (function initWeather() {
+            try {
+                renderCurrent('ub', SAMPLE.ulaanbaatar);
+                renderForecast('forecast-ub', SAMPLE.ulaanbaatar.forecast);
+
+                renderCurrent('hn', SAMPLE.hanoi);
+                renderForecast('forecast-hn', SAMPLE.hanoi.forecast);
+            } catch (e) {
+                console.error('Weather render failed', e);
+            }
+        })();
+    </script>
 </body>
 
 </html>

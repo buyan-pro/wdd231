@@ -32,6 +32,7 @@
 
     <!-- JS Entry Module -->
     <script src="scripts/main.js" type="module"></script>
+    <base target="_blank">
 </head>
 
 <body>
@@ -85,7 +86,8 @@
                 <form id="estimator-form" class="service-options-form">
                     <div class="service-option-card">
                         <label class="option-label-checkbox">
-                            <input type="checkbox" name="serviceOption" value="core" checked disabled>
+                            <input type="checkbox" name="service" value="core" data-price="500" data-days="5" checked
+                                disabled>
                             <span class="option-title">Core Responsive Website (3 Pages)</span>
                         </label>
                         <p class="option-desc">Semantic HTML5, mobile-first CSS Grid/Flexbox, and accessible
@@ -95,7 +97,7 @@
 
                     <div class="service-option-card">
                         <label class="option-label-checkbox">
-                            <input type="checkbox" name="serviceOption" value="api" checked>
+                            <input type="checkbox" name="service" value="api" data-price="300" data-days="3" checked>
                             <span class="option-title">REST API &amp; Data Integration</span>
                         </label>
                         <p class="option-desc">Connecting your app to third-party endpoints, external JSON data, or live
@@ -105,7 +107,8 @@
 
                     <div class="service-option-card">
                         <label class="option-label-checkbox">
-                            <input type="checkbox" name="serviceOption" value="accessibility" checked>
+                            <input type="checkbox" name="service" value="accessibility" data-price="150" data-days="1"
+                                checked>
                             <span class="option-title">Accessibility &amp; SEO Audit</span>
                         </label>
                         <p class="option-desc">WCAG AA color contrast verification, screen reader compliance, keyboard
@@ -115,7 +118,7 @@
 
                     <div class="service-option-card">
                         <label class="option-label-checkbox">
-                            <input type="checkbox" name="serviceOption" value="modal" checked>
+                            <input type="checkbox" name="service" value="modal" data-price="200" data-days="2" checked>
                             <span class="option-title">Custom Modal &amp; Interactive UI Components</span>
                         </label>
                         <p class="option-desc">Accessible native HTML5 dialog popups, dynamic dropdown filters, and
@@ -134,23 +137,23 @@
 
                     <div class="output-metric">
                         <span class="metric-label">Estimated Cost:</span>
-                        <span id="total-cost" class="metric-value">$1150</span>
+                        <span id="total-cost" class="metric-value">$0</span>
                     </div>
                     <div class="output-metric">
                         <span class="metric-label">Estimated Timeline:</span>
-                        <span id="total-timeline" class="metric-value">11 Business Days</span>
+                        <span id="total-days" class="metric-value">0 Business Days</span>
                     </div>
                     <div class="output-metric">
                         <span class="metric-label">Selected Features:</span>
-                        <span id="selected-count" class="metric-value">4 Items</span>
+                        <span id="selected-count" class="metric-value">0 Items</span>
                     </div>
 
-                    <button type="button" id="save-estimate" class="mb-btn mb-btn-primary mb-btn-full">Save Estimate
+                    <button type="button" id="save-estimate-btn" class="mb-btn mb-btn-primary mb-btn-full">Save Estimate
                         (LocalStorage)</button>
                     <button type="button" class="mb-btn mb-btn-outline mb-btn-full open-contact-modal">Submit Quote
                         Inquiry</button>
 
-                    <p id="save-status-msg" class="success-feedback">✓ Estimate saved to browser session!</p>
+                    <p id="storage-message" class="success-feedback"></p>
                 </div>
             </div>
         </section>

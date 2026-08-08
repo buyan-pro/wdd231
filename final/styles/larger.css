@@ -1,6 +1,6 @@
-/* ==========================================================================
-   MORNING BLISS WEB SOLUTIONS - LARGER.CSS (Desktop Enhancements)
-   ========================================================================= */
+/*==========================================================================
+  MORNING BLISS WEB SOLUTIONS - LARGER.CSS (Desktop Enhancements)
+  ==========================================================================*/
 
 @media (min-width: 768px) {
 
@@ -23,10 +23,12 @@
         flex-direction: row;
         align-items: center;
         gap: 2rem;
+        flex-wrap: nowrap;
     }
 
     .nav-menu a {
         font-size: 1rem;
+        white-space: nowrap;
     }
 
     /* Hero Heading Scaling */
@@ -40,6 +42,19 @@
         gap: 2rem;
     }
 
+    /* Two-Column Estimator Layout */
+    .estimator-layout {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 2.5rem;
+        align-items: start;
+    }
+
+    .estimator-summary-pane {
+        position: sticky;
+        top: 2rem;
+    }
+
     /* Side-by-Side Bottom Section */
     .philosophy-estimator-grid {
         display: grid;
@@ -47,4 +62,5 @@
         gap: 2rem;
         align-items: stretch;
     }
+
 }

@@ -4,10 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-Performance Web Engineering &amp; Custom Solutions | Morning Bliss</title>
+    <title>Crafting Dynamic, Accessible &amp; Performant Web Solutions | Morning Bliss</title>
     <meta name="description"
-        content="Crafting accessible, responsive, and modern web applications tailored to elevate your digital presence.">
+        content="I build custom web applications, integrate REST APIs, and optimize performance for small businesses and modern digital platforms.">
     <meta name="author" content="Buyannemekh Chimeddorj">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Crafting Dynamic, Accessible &amp; Performant Web Solutions | Morning Bliss">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://buyan-pro.github.io/wdd231/images/og-preview.jpg">
+    <meta property="og:url" content="https://buyan-pro.github.io/wdd231/index.html">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,11 +26,13 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css" media="(min-width: 768px)">
 
     <!-- JS Entry Module -->
     <script src="scripts/main.js" type="module" defer></script>
+    <base target="_blank">
 </head>
 
 <body>
@@ -49,8 +60,7 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="services.html">Services &amp; Estimator</a></li>
                     <li><a href="portfolio.html">Portfolio &amp; Repos</a></li>
-                    <li><a href="services.html" class="mb-btn mb-btn-secondary"
-                            style="padding: 0.5rem 1rem; font-size: 0.9rem;">Get Started</a></li>
+                    <li><button type="button" class="mb-btn mb-btn-secondary open-contact-modal">Contact</button></li>
                 </ul>
             </nav>
         </div>
@@ -61,47 +71,47 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
-                <h1>High-Performance Web Engineering &amp; Custom Solutions</h1>
-                <p>Crafting accessible, responsive, and modern web applications tailored to elevate your digital
-                    presence.</p>
+                <h1>Crafting Dynamic, Accessible &amp; Performant Web Solutions</h1>
+                <p>I build custom web applications, integrate REST APIs, and optimize performance for small businesses
+                    and modern digital platforms.</p>
                 <div class="hero-cta-group">
-                    <a href="services.html" class="mb-btn mb-btn-primary">Explore Services</a>
-                    <a href="portfolio.html" class="mb-btn"
-                        style="background: transparent; border: 2px solid rgba(255,255,255,0.6); color: #ffffff;">View
-                        Portfolio</a>
+                    <a href="services.html" class="mb-btn mb-btn-primary">Estimate Project Scope</a>
+                    <button type="button" class="mb-btn open-contact-modal"
+                        style="background: transparent; border: 2px solid rgba(255,255,255,0.6); color: #ffffff;">Get In
+                        Touch</button>
                 </div>
             </div>
         </section>
 
-        <!-- Core Web Solutions Section -->
+        <!-- Core Expertise & Services Section -->
         <section class="section-container">
-            <h2>Our Core Web Solutions</h2>
-            <p class="section-intro">From single-page web applications to API integrations, we deliver clean and
-                efficient web solutions.</p>
+            <h2>Core Expertise &amp; Services</h2>
+            <p class="section-intro">Focused on practical web development solutions that solve real business problems
+                and deliver exceptional user experiences.</p>
 
             <div class="card-grid">
                 <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚡</div>
-                    <h3>Frontend Engineering</h3>
-                    <p>Modern HTML5, CSS3, and JavaScript web architectures designed for fast rendering and high
-                        Lighthouse audit performance.</p>
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#128187;</div>
+                    <h3>Custom Web Development</h3>
+                    <p>Responsive, mobile-first websites crafted with semantic HTML5, modern CSS Grid/Flexbox, and clean
+                        modular JavaScript.</p>
                     <a href="services.html" class="card-link">Learn More &rarr;</a>
                 </div>
 
                 <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📊</div>
-                    <h3>Scope &amp; Cost Estimations</h3>
-                    <p>Use our interactive scope calculation tool to estimate timelines, tech stack requirements, and
-                        project costs.</p>
-                    <a href="services.html" class="card-link">Estimate Project &rarr;</a>
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#9889;</div>
+                    <h3>REST API &amp; Data Integration</h3>
+                    <p>Connecting web apps to live external data feeds, third-party services, and asynchronous JSON data
+                        pipelines.</p>
+                    <a href="portfolio.html" class="card-link">Learn More &rarr;</a>
                 </div>
 
                 <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔗</div>
-                    <h3>API &amp; System Integration</h3>
-                    <p>Connecting third-party REST APIs, dynamic data stores, and real-time backend updates seamlessly.
-                    </p>
-                    <a href="portfolio.html" class="card-link">See Examples &rarr;</a>
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#9855;</div>
+                    <h3>Accessibility &amp; SEO Audits</h3>
+                    <p>Optimizing web properties to meet WCAG AA contrast standards, keyboard navigation requirements,
+                        and search engine guidelines.</p>
+                    <a href="services.html" class="card-link">Learn More &rarr;</a>
                 </div>
             </div>
         </section>
@@ -110,29 +120,72 @@
         <section class="section-container" style="padding-top: 0;">
             <div class="philosophy-estimator-grid">
                 <div class="philosophy-pane">
-                    <h2>Built with Precision &amp; Standards</h2>
-                    <p class="section-intro" style="margin-bottom: 1.25rem;">Every line of code is written following
-                        mobile-first principles, semantic layout structures, and strict WCAG accessibility guidelines.
-                    </p>
+                    <h2>Development Philosophy</h2>
+                    <p class="section-intro" style="margin-bottom: 1.25rem;">Great web development sits at the
+                        intersection of performance, accessibility, and business outcomes. Every line of code should
+                        contribute to a fast, reliable, and smooth user journey across all device screen sizes.</p>
                     <ul class="check-list">
-                        <li><span style="color: var(--secondary-hover); font-weight: bold;">✓</span> 100% Mobile-First
-                            Responsive Architecture</li>
-                        <li><span style="color: var(--secondary-hover); font-weight: bold;">✓</span> Semantic HTML5
-                            &amp; Clean CSS Tokens</li>
-                        <li><span style="color: var(--secondary-hover); font-weight: bold;">✓</span> Modular ES6
-                            JavaScript Architecture</li>
+                        <li><span style="color: var(--secondary-hover); font-weight: bold;">&#10003;</span>
+                            <strong>Mobile-First Responsive Design:</strong> Flawless rendering from 320px mobile
+                            viewports up to desktop displays.</li>
+                        <li><span style="color: var(--secondary-hover); font-weight: bold;">&#10003;</span> <strong>Zero
+                                Unnecessary Overhead:</strong> Lightweight, native web technologies without heavy
+                            third-party CSS frameworks.</li>
+                        <li><span style="color: var(--secondary-hover); font-weight: bold;">&#10003;</span>
+                            <strong>Data-Driven Functionality:</strong> Dynamic state management using ES6 modules and
+                            modern Async/Await APIs.</li>
                     </ul>
                 </div>
 
                 <div class="estimator-promo-card">
-                    <h3>Ready to build your next web project?</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 1rem 0 1.5rem 0;">Let's collaborate
-                        to bring your website ideas into reality with quality code.</p>
+                    <h3>Ready to build something unique?</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin: 1rem 0 1.5rem 0;">Explore my
+                        interactive scope estimator to get real-time price and timeline projections for your next web
+                        project.</p>
                     <a href="services.html" class="mb-btn mb-btn-primary"
-                        style="display: block; text-align: center;">Start a Project</a>
+                        style="display: block; text-align: center;">Try Scope Estimator</a>
                 </div>
             </div>
         </section>
+
+        <!-- Contact Dialog Modal -->
+        <dialog id="contact-modal" class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" id="close-modal" class="close-btn" aria-label="Close modal">&times;</button>
+                <h3>Get in Touch</h3>
+                <p>Fill out the form below to request a quote or project consultation.</p>
+
+                <form action="thankyou.html" method="get" class="contact-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Service Required <span class="required">*</span></label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="Frontend Web Development">Frontend Web Development</option>
+                            <option value="API Integration">API Integration</option>
+                            <option value="Full Project Build">Full Project Build</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Overview</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Tell us about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="mb-btn mb-btn-primary mb-btn-full">Submit Request</button>
+                </form>
+            </div>
+        </dialog>
     </main>
 
     <!-- Shared Footer -->
@@ -145,7 +198,7 @@
                 <a href="https://www.youtube.com/watch?v=A6RyWVdXYxE" target="_blank" rel="noopener">Project
                     Demonstration Video</a>
             </p>
-            <p class="last-modified">Last Modified: 08/05/2026 18:00:00</p>
+            <p class="last-modified">Last Modified: <span id="last-modified-date"></span></p>
         </div>
     </footer>
 
